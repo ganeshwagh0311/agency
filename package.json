@@ -10,19 +10,18 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "^1.16.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.468.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-merge": "^3.6.0",
-    "three": "^0.184.0"
+    "tailwind-merge": "^2.5.5",
+    "three": "^0.173.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
+    "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "package-name": "^0.1.0",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.0.0",
     "vite": "^5.2.0",
-    "vite-plugin-singlefile": "^2.3.3"
+    "vite-plugin-singlefile": "^2.0.0"
   }
 }

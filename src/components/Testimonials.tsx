@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { Quote, Star, MessageSquare } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import img1 from '../img/img1.png';
+import img2 from '../img/img2.png';
+import img3 from '../img/img3.png';
+import img4 from '../img/img4.png';
 
 interface TestimonialItem {
   id: string;
@@ -177,22 +181,30 @@ export function Testimonials() {
         </motion.div>
 
         {/* Client Logos Strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-24 border-t border-white/[0.05] pt-12 flex flex-wrap items-center justify-center gap-12 md:gap-20 opacity-30 select-none grayscale"
-        >
-          {["MICROSOFT", "ADOBE", "FORBES", "NIKE", "SHOPIFY"].map((brand) => (
-            <span
-              key={brand}
-              className="font-sans text-xl md:text-2xl font-black tracking-[0.25em] text-white hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-            >
-              {brand}
-            </span>
-          ))}
-        </motion.div>
+        <div className="mt-24 border-t border-white/[0.05] pt-12 overflow-hidden relative w-full">
+          {/* Fading edges */}
+          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+          
+          <motion.div
+            className="flex items-center gap-12 md:gap-24 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 25,
+            }}
+          >
+            {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
+              <img
+                key={index}
+                src={logo}
+                alt="Client Logo"
+                className="h-16 md:h-24 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

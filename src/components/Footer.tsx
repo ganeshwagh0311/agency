@@ -1,4 +1,4 @@
-import { Layers } from "lucide-react";
+import drishakLogo from "../img/DRISHAK LOGO.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,12 +41,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <a href="#" className="flex items-center gap-2 group">
-              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 flex items-center justify-center shadow-lg">
-                <Layers className="text-white w-4 h-4" />
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 blur-sm -z-10 opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative h-5 md:h-7 flex items-center justify-center">
+                <img src={drishakLogo} alt="DRISHAK Logo" className="h-full w-auto object-contain" />
               </div>
               <span className="font-sans font-bold text-xl tracking-wider text-white">
-                NEXUS<span className="text-cyan-400 font-light">PRIME</span>
+                {/* DRISHAK */}
               </span>
             </a>
             <p className="text-sm leading-relaxed max-w-xs mt-2">
@@ -75,7 +74,7 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-3 text-sm">
               <li><a href="#services" className="hover:text-cyan-300 transition-colors">Digital Marketing</a></li>
-              <li><a href="#services" className="hover:text-cyan-300 transition-colors">Cloud Printing</a></li>
+              <li><a href="#services" className="hover:text-cyan-300 transition-colors">Clothing Printing</a></li>
               <li><a href="#services" className="hover:text-cyan-300 transition-colors">Paper Printing</a></li>
               <li><a href="#contact" className="hover:text-cyan-300 transition-colors">Priority Press API</a></li>
               <li><a href="#portfolio" className="hover:text-cyan-300 transition-colors">Bespoke Projects</a></li>
@@ -99,7 +98,7 @@ export function Footer() {
           {/* Newsletter / Glass CTA */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <h4 className="font-sans font-semibold text-white text-sm uppercase tracking-wider mb-2">
-              Subscribe to Nexus Insights
+              Subscribe to Drishak Insights
             </h4>
             <p className="text-xs leading-relaxed max-w-xs">
               Receive monthly updates on web-to-print technologies, campaign strategy, and material innovations.
@@ -126,7 +125,7 @@ export function Footer() {
 
         {/* Bottom copyright and compliance */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs font-mono text-slate-500">
-          <p>© {currentYear} NEXUSPRIME INC. ALL RIGHTS RESERVED.</p>
+          <p>© {currentYear} DRISHAK AGENCY. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-slate-400 transition-colors">PRIVACY POLICY</a>
             <a href="#" className="hover:text-slate-400 transition-colors">TERMS OF SERVICE</a>

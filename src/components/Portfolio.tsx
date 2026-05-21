@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Briefcase, ChevronRight } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import socialMediaMixedImg from "../img/social_media_mixed.png";
+import drishakShirtImg from "../img/drishak_shirt.png";
 
 interface ProjectItem {
   id: string;
@@ -19,64 +21,64 @@ export function Portfolio() {
   const categories = [
     { id: "all", name: "All Work" },
     { id: "digital", name: "Digital Marketing" },
-    { id: "cloud", name: "Cloud Printing" },
+    { id: "cloud", name: "Clothing Printing" },
     { id: "paper", name: "Paper Printing" },
   ] as const;
 
   const projects: ProjectItem[] = [
     {
       id: "p1",
-      title: "Artisan Perfume Packaging",
-      category: "paper",
-      categoryName: "Paper Printing",
-      client: "Aura Fragrances",
-      description: "Luxury custom-engineered box with embossed textures and premium gold foil finishes.",
-      image: "https://images.unsplash.com/photo-1628144073351-efd5ea1258ef?w=800&auto=format&fit=crop",
+      title: "Social Media Creative Post",
+      category: "digital",
+      categoryName: "Social Media Creative Post",
+      client: "Creative Brand",
+      description: "Engaging and viral social media creative posts designed to boost brand awareness and audience engagement.",
+      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop",
     },
     {
       id: "p2",
-      title: "FinTech SEO & PPC Growth",
+      title: "Website Development",
       category: "digital",
-      categoryName: "Digital Marketing",
-      client: "Apex Wealth",
-      description: "Comprehensive multi-channel campaign resulting in +142% leads and top-3 ranking for primary keywords.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      categoryName: "Website Development",
+      client: "Tech Solutions",
+      description: "Custom-built, high-performance website with modern glassmorphism design and seamless user experience.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
     },
     {
       id: "p3",
-      title: "Enterprise B2B Print Portal",
-      category: "cloud",
-      categoryName: "Cloud Printing",
-      client: "Global TechCorp",
-      description: "Custom web-to-print storefront integrating corporate branding and automated local dispatch.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+      title: "Social Media Page Handling",
+      category: "digital",
+      categoryName: "Social Media Handling",
+      client: "Global Brand",
+      description: "End-to-end social media page management, content scheduling, and community engagement strategies.",
+      image: socialMediaMixedImg,
     },
     {
       id: "p4",
-      title: "2026 Corporate Annual Report",
-      category: "paper",
-      categoryName: "Paper Printing",
-      client: "Vanguard Industries",
-      description: "High-end 120-page offset printed annual report using certified eco-friendly stocks and spot UV.",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop",
+      title: "Digital Marketing",
+      category: "digital",
+      categoryName: "Digital Marketing",
+      client: "Digital Marketing",
+      description: "Viral social media campaign and micro-influencer outreach that generated 50k+ signups in 30 days.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
     },
     {
       id: "p5",
-      title: "SaaS Product Launch Blitz",
-      category: "digital",
-      categoryName: "Digital Marketing",
-      client: "CloudSync Inc.",
-      description: "Viral social media campaign and micro-influencer outreach that generated 50k+ signups in 30 days.",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop",
+      title: "Custom Apparel Collection",
+      category: "cloud",
+      categoryName: "Clothing Printing",
+      client: "DRISHAK",
+      description: "High-quality, durable custom t-shirt printing with vibrant colors and premium fabric finishing.",
+      image: drishakShirtImg,
     },
     {
       id: "p6",
-      title: "Global On-Demand Publishing",
-      category: "cloud",
-      categoryName: "Cloud Printing",
-      client: "IndiePress Syndicate",
-      description: "Automated distribution network for authors, featuring instant preflighting and 24h printing.",
-      image: "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?w=800&auto=format&fit=crop",
+      title: "Premium Corporate Brochures",
+      category: "paper",
+      categoryName: "Paper Printing",
+      client: "Paper Printing",
+      description: "High-quality, bulk offset printing for premium corporate brochures, flyers, and marketing materials.",
+      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop",
     },
   ];
 

@@ -26,17 +26,43 @@ export function Contact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("service", formData.service);
+      data.append("message", formData.message);
+      data.append("_captcha", "false"); 
+      
+      if (file) {
+        data.append("attachment", file, file.name);
+      }
+
+      const response = await fetch("https://formsubmit.co/ajax/drishakagency@gmail.com", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", service: "digital", message: "" });
+        setFile(null);
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("An error occurred while sending the message.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", service: "digital", message: "" });
-      setFile(null);
-    }, 2000);
+    }
   };
 
   const formatFileSize = (bytes: number) => {
@@ -47,8 +73,8 @@ export function Contact() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
-  const waNumber = "1234567890"; // Sample WhatsApp number
-  const waText = encodeURIComponent("Hello NexusPrime! I would like to get a quote for my project.");
+  const waNumber = "8459656685"; // Sample WhatsApp number
+  const waText = encodeURIComponent("Hello Drishak ! I would like to get a quote for my project.");
   const waLink = `https://wa.me/${waNumber}?text=${waText}`;
 
   return (
@@ -113,9 +139,9 @@ export function Contact() {
               className="flex flex-col gap-4"
             >
               {[
-                { icon: Mail, label: "Email Us", value: "solutions@nexusprime.io", href: "mailto:solutions@nexusprime.io" },
-                { icon: Phone, label: "Call Directly", value: "+1 (888) NEXUS-01", href: "tel:+18886398701" },
-                { icon: MapPin, label: "HQ Innovation Lab", value: "700 Glassmorphism Way, Suite 101, Silicon Valley, CA 94025", href: "#" },
+                { icon: Mail, label: "Email Us", value: "drishakagency@gmail.com", href: "mailto:drishakagency@gmail.com" },
+                { icon: Phone, label: "Call Directly", value: "9021889499", href: "tel:9021889499" },
+                { icon: MapPin, label: "Near Punam furniture", value: "Shete complex, Gokul colony, rahuri, ahilyanagar", href: "#" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -249,9 +275,12 @@ export function Contact() {
                           className="p-3 bg-slate-900 border border-white/10 rounded-xl text-slate-300 text-sm focus:outline-none focus:border-cyan-400 focus:bg-slate-800 transition-all cursor-pointer"
                         >
                           <option value="digital">Digital Marketing Campaign</option>
-                          <option value="cloud">Cloud-Based Printing Integration</option>
+                          <option value="clothing">Clothing Printing Integration</option>
                           <option value="paper">Paper Printing & Packaging</option>
-                          <option value="multi">Multi-Service / Integrated Suite</option>
+                          <option value="Social">Social Media Cerative Post</option>
+                          <option value="website">Website Development</option>
+                          <option value="Social">Social Media Handling</option>
+
                         </select>
                       </div>
 

@@ -21,33 +21,33 @@ export function Testimonials() {
   const reviews: TestimonialItem[] = [
     {
       id: "t1",
-      name: "Sarah Jenkins",
-      role: "Chief Marketing Officer",
-      company: "TechCorp Global",
-      review: "NexusPrime revolutionized our launch strategy. Their Cloud Printing API allowed us to automate physical onboarding kits as soon as users signed up online. Combining digital growth with physical touchpoints is an absolute gamechanger!",
+      name: "Vishra Projects",
+      role: "Client",
+      company: "Google Review",
+      review: "The approach and result was better than thought.... Overall it was nicely handled looking forward to it for the same.. long to go , positive to suggest others for extraordinary work",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop",
+      image: "https://ui-avatars.com/api/?name=Vishra+Projects&background=0f172a&color=fff",
       gradient: "from-indigo-500 to-cyan-500",
     },
     {
       id: "t2",
-      name: "David Chen",
-      role: "Founder & Creative Director",
-      company: "Aura Artisan Fragrances",
-      review: "The custom foil-stamped boxes for our luxury perfume line are true works of art. The sub-atomic color accuracy, tactile textures, and heavy-weight stock exceeded our highest expectations. They are true offset printing masters.",
+      name: "Sandip Aghav",
+      role: "Local Guide",
+      company: "Google Review",
+      review: "Great experience with agency best work in rahuri",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop",
-      gradient: "from-purple-500 to-pink-500",
+      image: "https://ui-avatars.com/api/?name=Sandip+Aghav&background=ea580c&color=fff",
+      gradient: "from-indigo-500 to-cyan-500",
     },
     {
       id: "t3",
-      name: "Elena Rostova",
-      role: "Director of Growth",
-      company: "FinLyft Solutions",
-      review: "Our PPC campaign ROI jumped by 142.8% in just two months. The digital marketing team's data-first approach, continuous A/B testing, and bespoke SEO frameworks have made them an invaluable partner in our aggressive scaling journey.",
+      name: "Keshav Shinde",
+      role: "Client",
+      company: "Google Review",
+      review: "Excellent service! Thank you so much for the 5-star support. We truly appreciate the trust and the highly professional work.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop",
-      gradient: "from-cyan-500 to-emerald-500",
+      image: "https://ui-avatars.com/api/?name=Keshav+Shinde&background=78350f&color=fff",
+      gradient: "from-indigo-500 to-cyan-500",
     },
   ];
 
@@ -192,7 +192,7 @@ export function Testimonials() {
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 25,
+              duration:15,
             }}
           >
             {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
@@ -200,7 +200,7 @@ export function Testimonials() {
                 key={index}
                 src={logo}
                 alt="Client Logo"
-                className="h-16 md:h-24 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
               />
             ))}
           </motion.div>

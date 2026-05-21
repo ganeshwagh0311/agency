@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Megaphone, Cloud, Printer, ArrowUpRight, Shield, Zap, Sparkles } from "lucide-react";
+import { Megaphone, Shirt, Printer, ArrowUpRight, Shield, Zap, Sparkles } from "lucide-react";
 import { TiltCard } from "./TiltCard";
 
 interface ServiceItem {
@@ -32,7 +32,7 @@ export default function AboutUs() {
     },
     {
   id: "clothing",
-  icon: Cloud,
+  icon: Shirt,
   title: "Clothing Printing",
   description: "Create and customize high-quality apparel with precision printing. From bulk orders to personalized designs, our workflow ensures premium results.",
   features: [
@@ -97,7 +97,7 @@ export default function AboutUs() {
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
-            Our Core Expertise
+            AboutUs
           </motion.div>
           
           <motion.h2

@@ -190,7 +190,7 @@ export function Contact() {
                 <span>Chat via WhatsApp</span>
               </a>
               <p className="text-[10px] font-mono text-slate-500 text-center mt-2">
-                Available Mon-Fri 8:00 AM - 10:00 PM EST. Instant routing.
+                Available  24/7  Instant routing.
               </p>
             </motion.div>
           </div>
@@ -246,7 +246,7 @@ export function Contact() {
                             required
                             value={formData.name}
                             onChange={handleInputChange}
-                            placeholder="John Doe"
+                            placeholder="Ex.Lord Ram"
                             className="p-3 bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white/[0.04] transition-all"
                           />
                         </div>
@@ -263,7 +263,7 @@ export function Contact() {
                             required
                             value={formData.email}
                             onChange={handleInputChange}
-                            placeholder="john@company.com"
+                            placeholder="ram@company.com"
                             className="p-3 bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white/[0.04] transition-all"
                           />
                         </div>

@@ -7,6 +7,7 @@ import AboutUs  from "./components/AboutUs";
 import { Process } from "./components/Process";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
+import { Map } from "./components/Map";
 import { Footer } from "./components/Footer";
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         <Process />
         <Testimonials />
         <Contact />
+        <Map />
       </main>
       <Footer />
     </div>

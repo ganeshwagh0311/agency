@@ -37,6 +37,19 @@ export function Contact() {
       formParams.append("service", formData.service);
       formParams.append("message", formData.message);
 
+      if (file) {
+        const base64 = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.onerror = error => reject(error);
+          reader.readAsDataURL(file);
+        });
+        const base64Data = base64.split("base64,")[1];
+        formParams.append("fileName", file.name);
+        formParams.append("mimeType", file.type);
+        formParams.append("fileData", base64Data);
+      }
+
       const scriptUrl = "https://script.google.com/macros/s/AKfycbwGdS4HZbpeoIskOL8tpIVw77SY8BAr19opb5vdwZ_DOqPzvLEPVcP078dcHYVZX73M/exec";
       await fetch(scriptUrl, {
         method: "POST",

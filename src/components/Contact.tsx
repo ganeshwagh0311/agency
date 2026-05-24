@@ -31,32 +31,26 @@ export function Contact() {
     setIsSubmitting(true);
     
     try {
-      const data = new FormData();
-      data.append("name", formData.name);
-      data.append("email", formData.email);
-      data.append("service", formData.service);
-      data.append("message", formData.message);
-      data.append("_captcha", "false"); 
-      
-      if (file) {
-        data.append("attachment", file, file.name);
-      }
+      const formParams = new URLSearchParams();
+      formParams.append("name", formData.name);
+      formParams.append("email", formData.email);
+      formParams.append("service", formData.service);
+      formParams.append("message", formData.message);
 
-      const response = await fetch("https://formsubmit.co/ajax/drishakagency@gmail.com", {
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbwGdS4HZbpeoIskOL8tpIVw77SY8BAr19opb5vdwZ_DOqPzvLEPVcP078dcHYVZX73M/exec";
+      await fetch(scriptUrl, {
         method: "POST",
-        body: data,
+        body: formParams,
+        mode: "no-cors",
         headers: {
-          'Accept': 'application/json'
+          "Content-Type": "application/x-www-form-urlencoded"
         }
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", service: "digital", message: "" });
-        setFile(null);
-      } else {
-        alert("Failed to send message. Please try again later.");
-      }
+      // With no-cors, response.ok is always false, so we assume success if no error was thrown
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", service: "digital", message: "" });
+      setFile(null);
     } catch (error) {
       console.error("Form submission error:", error);
       alert("An error occurred while sending the message.");

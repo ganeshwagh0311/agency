@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 export function Map() {
   return (
-    <section id="location" className="relative py-24 bg-slate-950 text-white overflow-hidden border-t border-white/[0.05]">
+    <section id="location" className="relative pt-12 pb-24 bg-slate-950 text-white overflow-hidden border-t border-white/[0.05]">
       {/* Background Blurs */}
       <div className="absolute top-[30%] left-[20%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
 

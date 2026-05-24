@@ -147,7 +147,7 @@ export function Contact() {
             >
               {[
                 { icon: Mail, label: "Email Us", value: "drishakagency@gmail.com", href: "mailto:drishakagency@gmail.com" },
-                { icon: Phone, label: "Call Directly", value: "9021889499", href: "tel:+91 9021889499" },
+                { icon: Phone, label: "Call Directly", value: "+91 9021889499", href: "tel:+91 9021889499" },
                 { icon: MapPin, label: "Near Punam furniture", value: "Shete complex, Gokul colony, rahuri, ahilyanagar", href: "#" },
               ].map((item, i) => (
                 <div

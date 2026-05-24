@@ -133,7 +133,7 @@ export function Contact() {
             >
               <h3 className="font-sans font-bold text-2xl text-white">Start a Conversation</h3>
               <p className="text-slate-400 font-light leading-relaxed">
-                Have a complex printing requirement or a digital campaign that needs scaling? Reach out to us. Our enterprise strategists respond within 2 hours.
+                Have a complex printing requirement or a digital campaign that needs scaling? Reach out to us. Our enterprise strategists respond within 1 hours.
               </p>
             </motion.div>
 

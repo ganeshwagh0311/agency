@@ -84,7 +84,6 @@ export function Footer() {
               Company
             </h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><a href="#why-choose-us" className="hover:text-cyan-300 transition-colors">Why Choose Us</a></li>
               <li><a href="#process" className="hover:text-cyan-300 transition-colors">Our Process</a></li>
               <li><a href="#testimonials" className="hover:text-cyan-300 transition-colors">Client Reviews</a></li>
               <li><a href="#contact" className="hover:text-cyan-300 transition-colors">Contact Support</a></li>

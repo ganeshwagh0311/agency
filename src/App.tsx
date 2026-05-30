@@ -2,7 +2,6 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
-import { WhyChooseUs } from "./components/WhyChooseUs";
 import AboutUs  from "./components/AboutUs";
 import { Process } from "./components/Process";
 import { Testimonials } from "./components/Testimonials";
@@ -27,7 +26,6 @@ export default function App() {
         <Hero />
         <Services />
         <Portfolio />
-        <WhyChooseUs />
         <AboutUs/>
         <Process />
         <Testimonials />

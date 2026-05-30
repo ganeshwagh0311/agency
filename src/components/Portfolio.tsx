@@ -73,7 +73,7 @@ export function Portfolio() {
     },
     {
       id: "p6",
-      title: "Premium Corporate Brochures",
+      title: "Printing Solution ",
       category: "paper",
       categoryName: "Paper Printing",
       client: "Paper Printing",
@@ -82,7 +82,15 @@ export function Portfolio() {
     },
   ];
 
-  const filteredProjects = filter === "all" ? projects : projects.filter((p) => p.category === filter);
+  const filteredProjects = filter === "all"
+    ? projects
+    : filter === "digital"
+      ? [
+          projects.find((p) => p.id === "p4")!,
+          projects.find((p) => p.id === "p3")!,
+        ].filter(Boolean)
+      : projects.filter((p) => p.category === filter);
+
 
   return (
     <section id="portfolio" className="relative py-24 md:py-32 bg-slate-950 text-white overflow-hidden border-b border-white/5">

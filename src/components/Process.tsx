@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Palette, ThumbsUp, Truck, Terminal, ArrowRight } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import requirementProcessImg from "../img/requirement_process.jpg";
+import designProcessImg from "../img/design_process.jpg";
+import approvalProcessImg from "../img/approval_process.jpg";
+import deliveryProcessImg from "../img/delivery_process.jpg";
 
 interface StepItem {
   number: string;
@@ -10,6 +14,8 @@ interface StepItem {
   description: string;
   color: string;
   glow: string;
+  image?: string;
+  imageClass?: string;
 }
 
 export function Process() {
@@ -22,6 +28,8 @@ export function Process() {
       description: "We dive deep into your brand's DNA, extracting goals, audience data, and exact technical specifications for the job.",
       color: "from-cyan-400 to-blue-500 text-cyan-400",
       glow: "group-hover:shadow-cyan-500/10",
+      image: requirementProcessImg,
+      imageClass: "object-cover",
     },
     {
       number: "02",
@@ -31,6 +39,8 @@ export function Process() {
       description: "Our engineers craft bespoke digital campaigns or pixel-perfect print layouts, passing through automated preflight checks.",
       color: "from-indigo-500 to-purple-500 text-indigo-400",
       glow: "group-hover:shadow-indigo-500/10",
+      image: designProcessImg,
+      imageClass: "object-cover",
     },
     {
       number: "03",
@@ -40,6 +50,8 @@ export function Process() {
       description: "Inspect high-fidelity digital mockups or physical press proofs via our cloud portal. We calibrate until perfection is achieved.",
       color: "from-purple-500 to-pink-500 text-purple-400",
       glow: "group-hover:shadow-purple-500/10",
+      image: approvalProcessImg,
+      imageClass: "object-contain bg-white p-4",
     },
     {
       number: "04",
@@ -49,6 +61,8 @@ export function Process() {
       description: "Digital campaigns are deployed instantly with live tracking, while print products roll out via localized automated press hubs.",
       color: "from-pink-500 to-rose-500 text-pink-400",
       glow: "group-hover:shadow-rose-500/10",
+      image: deliveryProcessImg,
+      imageClass: "object-contain bg-white p-4",
     },
   ];
 
@@ -147,19 +161,28 @@ export function Process() {
                       {step.number}
                     </div>
 
-                    {/* Step Icon & Floating Glow */}
+                    {/* Step Icon / Image Circle & Floating Glow */}
                     <div className="relative mb-6 z-10">
                       {/* Step Circle Counter */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-900 border border-white/20 flex items-center justify-center text-xs font-bold text-white font-mono z-20">
+                      <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-slate-900 border border-white/20 flex items-center justify-center text-xs font-bold text-white font-mono z-20 shadow-md">
                         {step.number}
                       </div>
 
-                      <div className="w-14 h-14 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white relative z-10 group-hover:scale-110 transition-transform">
-                        <step.icon className={`w-6 h-6 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`} />
-                        <div className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl`} />
+                      <div className="w-24 h-24 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
+                        {step.image ? (
+                          <img 
+                            src={step.image} 
+                            alt={step.title} 
+                            className={`w-full h-full ${step.imageClass || 'object-cover'} rounded-full`}
+                          />
+                        ) : (
+                          <step.icon className={`w-10 h-10 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`} />
+                        )}
+                        <div className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-full`} />
                       </div>
-                      <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-2 bg-gradient-to-r ${step.color} opacity-30 blur-md rounded-full -z-10`} />
+                      <div className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-3 bg-gradient-to-r ${step.color} opacity-30 blur-md rounded-full -z-10`} />
                     </div>
+
 
                     {/* Title & Description */}
                     <div className="flex-1 relative z-10">

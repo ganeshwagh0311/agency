@@ -29,7 +29,7 @@ export function Process() {
       color: "from-cyan-400 to-blue-500 text-cyan-400",
       glow: "group-hover:shadow-cyan-500/10",
       image: requirementProcessImg,
-      imageClass: "object-cover",
+      imageClass: "object-contain bg-[#d5effc] p-2",
     },
     {
       number: "02",
@@ -40,7 +40,7 @@ export function Process() {
       color: "from-indigo-500 to-purple-500 text-indigo-400",
       glow: "group-hover:shadow-indigo-500/10",
       image: designProcessImg,
-      imageClass: "object-cover",
+      imageClass: "object-contain bg-[#03081e] p-1",
     },
     {
       number: "03",
@@ -129,7 +129,7 @@ export function Process() {
         {/* Steps Container */}
         <div className="relative max-w-6xl mx-auto mt-16">
           {/* Animated Connecting Line - Desktop */}
-          <div className="absolute top-[4.5rem] left-[5%] right-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block opacity-20" />
+          <div className="absolute top-[5.5rem] left-[5%] right-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block opacity-20" />
           
           {/* Animated Connecting Line Fill - Desktop */}
           <motion.div
@@ -137,7 +137,7 @@ export function Process() {
             whileInView={{ width: "90%" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute top-[4.5rem] left-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+            className="absolute top-[5.5rem] left-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)]"
           />
 
           <motion.div
@@ -151,7 +151,7 @@ export function Process() {
               <motion.div key={step.number} variants={itemVariants} className="group relative">
                 {/* Mobile timeline line */}
                 {index < steps.length - 1 && (
-                  <div className="absolute left-[2.25rem] top-16 bottom-[-3rem] w-1 bg-gradient-to-b from-indigo-500 to-cyan-500 lg:hidden opacity-20" />
+                  <div className="absolute left-[2.75rem] top-20 bottom-[-3rem] w-1 bg-gradient-to-b from-indigo-500 to-cyan-500 lg:hidden opacity-20" />
                 )}
 
                 <TiltCard className={`p-0.5 h-full transition-shadow duration-300 ${step.glow}`}>
@@ -168,7 +168,7 @@ export function Process() {
                         {step.number}
                       </div>
 
-                      <div className="w-24 h-24 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
+                      <div className="w-28 h-28 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
                         {step.image ? (
                           <img 
                             src={step.image} 

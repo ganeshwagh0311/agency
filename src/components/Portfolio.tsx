@@ -13,6 +13,7 @@ interface ProjectItem {
   client: string;
   description: string;
   image: string;
+  link?: string;
 }
 
 export function Portfolio() {
@@ -34,6 +35,7 @@ export function Portfolio() {
       client: "Creative Brand",
       description: "Engaging and viral social media creative posts designed to boost brand awareness and audience engagement.",
       image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop",
+      link: "https://drive.google.com/drive/folders/1QMBhTIQ80RyX2lq3CNzJhlXccCfIpV9Z?usp=drive_link",
     },
     {
       id: "p2",
@@ -171,7 +173,12 @@ export function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="group"
+                className={`group ${project.link ? "cursor-pointer" : ""}`}
+                onClick={() => {
+                  if (project.link) {
+                    window.open(project.link, "_blank");
+                  }
+                }}
               >
                 <TiltCard className="p-0 h-full">
                   <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-slate-950/20">

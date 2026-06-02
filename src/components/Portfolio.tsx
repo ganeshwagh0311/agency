@@ -35,7 +35,7 @@ export function Portfolio() {
       client: "Creative Brand",
       description: "Engaging and viral social media creative posts designed to boost brand awareness and audience engagement.",
       image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop",
-      link: "https://drive.google.com/drive/folders/1QMBhTIQ80RyX2lq3CNzJhlXccCfIpV9Z?usp=drive_link",
+      link: "/social-media-posts.zip",
     },
     {
       id: "p2",
@@ -176,7 +176,12 @@ export function Portfolio() {
                 className={`group ${project.link ? "cursor-pointer" : ""}`}
                 onClick={() => {
                   if (project.link) {
-                    window.open(project.link, "_blank");
+                    const link = document.createElement("a");
+                    link.href = project.link;
+                    link.download = project.link.split('/').pop() || "download";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                   }
                 }}
               >

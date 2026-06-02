@@ -54,6 +54,7 @@ export function Portfolio() {
       client: "Global Brand",
       description: "End-to-end social media page management, content scheduling, and community engagement strategies.",
       image: socialMediaMixedImg,
+      link: "https://www.instagram.com/cafe_delight_official?igsh=emI5cGZqaDR5M2Q5",
     },
     {
       id: "p4",
@@ -72,6 +73,7 @@ export function Portfolio() {
       client: "DRISHAK",
       description: "High-quality, durable custom t-shirt printing with vibrant colors and premium fabric finishing.",
       image: drishakShirtImg,
+      link: "/clothing-catalog.pdf",
     },
     {
       id: "p6",
@@ -176,12 +178,16 @@ export function Portfolio() {
                 className={`group ${project.link ? "cursor-pointer" : ""}`}
                 onClick={() => {
                   if (project.link) {
-                    const link = document.createElement("a");
-                    link.href = project.link;
-                    link.download = project.link.split('/').pop() || "download";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    if (project.link.startsWith("http")) {
+                      window.open(project.link, "_blank");
+                    } else {
+                      const link = document.createElement("a");
+                      link.href = project.link;
+                      link.download = project.link.split('/').pop() || "download";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }
                   }
                 }}
               >

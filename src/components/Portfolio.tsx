@@ -35,7 +35,6 @@ export function Portfolio() {
       client: "Creative Brand",
       description: "Engaging and viral social media creative posts designed to boost brand awareness and audience engagement.",
       image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop",
-      link: "/social-media-posts.zip",
     },
     {
       id: "p2",

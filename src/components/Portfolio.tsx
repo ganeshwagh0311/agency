@@ -14,6 +14,7 @@ interface ProjectItem {
   description: string;
   image: string;
   link?: string;
+  links?: { label: string; url: string }[];
 }
 
 export function Portfolio() {
@@ -53,7 +54,13 @@ export function Portfolio() {
       client: "Global Brand",
       description: "End-to-end social media page management, content scheduling, and community engagement strategies.",
       image: socialMediaMixedImg,
-      link: "https://www.instagram.com/cafe_delight_official?igsh=emI5cGZqaDR5M2Q5",
+      links: [
+        { label: "Cafe Delight", url: "https://www.instagram.com/cafe_delight_official?igsh=emI5cGZqaDR5M2Q5" },
+        { label: "Daivatam Dairy", url: "https://www.instagram.com/daivatamdairy?igsh=MzIzZHhhcHdzaWJ5" },
+        { label: "Janseva Motors", url: "https://www.instagram.com/jansevamotors?igsh=MzF5ZmhudjFqeG8y" },
+        { label: "Keshav Shinde", url: "https://www.instagram.com/keshav.shinde.1414?igsh=N2MwNDRsczR3bW1p" },
+        { label: "Drishak Agency", url: "https://www.instagram.com/drishakagency?igsh=MWJhM3lyczF3YXkybQ==" }
+      ]
     },
     {
       id: "p4",
@@ -232,10 +239,30 @@ export function Portfolio() {
                       </p>
                       
                       {/* Bottom action link */}
-                      <div className="mt-4 pt-4 border-t border-white/[0.04] flex items-center gap-1.5 text-xs text-white/50 font-medium group-hover:text-white transition-colors cursor-pointer">
-                        <span>View Case Study</span>
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
+                      {project.links ? (
+                        <div className="mt-4 pt-4 border-t border-white/[0.04] flex flex-col gap-2">
+                          <span className="text-xs text-white/50 font-medium">View Pages:</span>
+                          <div className="flex flex-wrap gap-2">
+                            {project.links.map((l, i) => (
+                              <a
+                                key={i}
+                                href={l.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-2.5 py-1.5 bg-white/5 hover:bg-indigo-500/20 rounded-lg border border-white/10 text-cyan-300 hover:text-white transition-all text-[11px] font-medium"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {l.label}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="mt-4 pt-4 border-t border-white/[0.04] flex items-center gap-1.5 text-xs text-white/50 font-medium group-hover:text-white transition-colors cursor-pointer">
+                          <span>View Case Study</span>
+                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </TiltCard>

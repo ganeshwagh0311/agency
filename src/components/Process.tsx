@@ -129,16 +129,10 @@ export function Process() {
         {/* Steps Container */}
         <div className="relative max-w-6xl mx-auto mt-16">
           {/* Animated Connecting Line - Desktop */}
-          <div className="absolute top-[5.5rem] left-[5%] right-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block opacity-20" />
+          <div className="hidden" />
           
           {/* Animated Connecting Line Fill - Desktop */}
-          <motion.div
-            initial={{ width: "0%" }}
-            whileInView={{ width: "90%" }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute top-[5.5rem] left-[5%] h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 hidden lg:block z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)]"
-          />
+          <div className="hidden" />
 
           <motion.div
             variants={containerVariants}

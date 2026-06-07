@@ -36,6 +36,7 @@ export function Portfolio() {
       client: "Creative Brand",
       description: "Engaging and viral social media creative posts designed to boost brand awareness and audience engagement.",
       image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop",
+      link: "/sm-post-vishal.pdf",
     },
     {
       id: "p2",
@@ -45,6 +46,7 @@ export function Portfolio() {
       client: "Tech Solutions",
       description: "Custom-built, high-performance website with modern glassmorphism design and seamless user experience.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
+      link: "https://ganeshwagh0311.github.io/portfolio/",
     },
     {
       id: "p3",
@@ -70,6 +72,7 @@ export function Portfolio() {
       client: "Digital Marketing",
       description: "Viral social media campaign and micro-influencer outreach that generated 50k+ signups in 30 days.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      link: "https://www.instagram.com/drishakagency?igsh=MXdua2VuM3NpMjF6Yg==",
     },
     {
       id: "p5",
@@ -89,6 +92,7 @@ export function Portfolio() {
       client: "Paper Printing",
       description: "High-quality, bulk offset printing for premium corporate brochures, flyers, and marketing materials.",
       image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop",
+      link: "/mockup.pdf",
     },
   ];
 

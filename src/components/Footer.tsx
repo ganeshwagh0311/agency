@@ -99,20 +99,19 @@ export function Footer() {
             <p className="text-xs leading-relaxed max-w-xs">
               Receive monthly updates on web-to-print technologies, campaign strategy, and material innovations.
             </p>
-            <form onSubmit={(e) => e.preventDefault()} className="w-full max-w-xs flex gap-2 p-1 rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md focus-within:border-cyan-400/50 focus-within:bg-white/[0.04] transition-all">
+            <div className="w-full max-w-xs flex gap-2 p-1 rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md focus-within:border-cyan-400/50 focus-within:bg-white/[0.04] transition-all">
               <input
                 type="email"
                 placeholder="newsletter@company.com"
-                required
                 className="bg-transparent flex-1 px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none"
               />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-semibold hover:opacity-90 transition-opacity"
+              <a
+                href="mailto:drishakagency@gmail.com"
+                className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-semibold hover:opacity-90 transition-opacity flex items-center justify-center"
               >
                 Join
-              </button>
-            </form>
+              </a>
+            </div>
             <span className="text-[10px] font-mono text-slate-600 uppercase">
               Secure transmission • Opt-out anytime
             </span>

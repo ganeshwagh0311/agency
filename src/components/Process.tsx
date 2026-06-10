@@ -1,5 +1,37 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Palette, ThumbsUp, Truck, Terminal, ArrowRight } from "lucide-react";
+import { Lightbulb, PenTool, ThumbsUp, Truck, Terminal, ArrowRight } from "lucide-react";
+
+const CustomPenToolIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <mask id="pen-mask">
+        <rect x="0" y="0" width="100" height="100" fill="white" />
+        <circle cx="50" cy="58" r="3.5" fill="black" />
+        <line x1="50" y1="58" x2="50" y2="33" stroke="black" strokeWidth="2" />
+        <line x1="43" y1="33" x2="57" y2="33" stroke="black" strokeWidth="3" />
+      </mask>
+    </defs>
+
+    {/* Tangent line with circle handles */}
+    <line x1="15" y1="38" x2="68" y2="18" stroke="currentColor" strokeWidth="2.5" />
+    <circle cx="15" cy="38" r="3.5" fill="currentColor" />
+    <circle cx="68" cy="18" r="3.5" fill="currentColor" />
+
+    {/* Bezier curve */}
+    <path d="M 22 75 C 20 10, 90 20, 85 50" stroke="currentColor" strokeWidth="2.5" fill="none" />
+    
+    {/* Square anchors */}
+    <rect x="18" y="71" width="8" height="8" fill="currentColor" transform="rotate(-15 22 75)" />
+    <rect x="81" y="46" width="8" height="8" fill="currentColor" transform="rotate(25 85 50)" />
+    <rect x="37" y="24" width="10" height="10" fill="currentColor" transform="rotate(-20 42 28)" />
+
+    {/* Pen nib pointing down with mask */}
+    <path d="M 43 35 L 57 35 L 68 60 L 50 80 L 32 60 Z" fill="currentColor" mask="url(#pen-mask)" />
+    
+    {/* Cap underneath */}
+    <path d="M 36 84 L 64 84 L 60 92 L 40 92 Z" fill="currentColor" />
+  </svg>
+);
 import { TiltCard } from "./TiltCard";
 import requirementProcessImg from "../img/requirement_process.jpg";
 import designProcessImg from "../img/design_process.jpg";
@@ -33,14 +65,12 @@ export function Process() {
     },
     {
       number: "02",
-      icon: Palette,
+      icon: CustomPenToolIcon,
       title: "Design",
       phase: "Creation & Preflight",
       description: "Our engineers craft bespoke digital campaigns or pixel-perfect print layouts, passing through automated preflight checks.",
       color: "from-indigo-500 to-purple-500 text-indigo-400",
       glow: "group-hover:shadow-indigo-500/10",
-      image: designProcessImg,
-      imageClass: "object-contain bg-[#03081e] p-1",
     },
     {
       number: "03",
@@ -170,7 +200,7 @@ export function Process() {
                             className={`w-full h-full ${step.imageClass || 'object-cover'} rounded-full`}
                           />
                         ) : (
-                          <step.icon className={`w-10 h-10 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`} />
+                          <step.icon className={`w-10 h-10 ${step.color}`} />
                         )}
                         <div className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-full`} />
                       </div>

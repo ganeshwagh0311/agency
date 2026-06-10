@@ -49,6 +49,36 @@ export function Testimonials() {
       image: "https://ui-avatars.com/api/?name=Keshav+Shinde&background=78350f&color=fff",
       gradient: "from-indigo-500 to-cyan-500",
     },
+    {
+      id: "t4",
+      name: "Sangram Sathe",
+      role: "Local Guide",
+      company: "Candid Stitch",
+      review: "I am a co-founder of Candid Stitch, a custom design apparel and corporate gifting store. We have worked with Drishak Agency on many projects. Their work is professional, creative, and top-notch. Vishal will understand your design needs ...",
+      rating: 5,
+      image: "https://ui-avatars.com/api/?name=Sangram+Sathe&background=16a34a&color=fff",
+      gradient: "from-indigo-500 to-cyan-500",
+    },
+    {
+      id: "t5",
+      name: "Janseva Motors",
+      role: "Client",
+      company: "Google Review",
+      review: "The agency improved our Social Media and gave weekly performance reports. Communication was fast and transparent.",
+      rating: 5,
+      image: "https://ui-avatars.com/api/?name=Janseva+Motors&background=dc2626&color=fff",
+      gradient: "from-indigo-500 to-cyan-500",
+    },
+    {
+      id: "t6",
+      name: "shri medical rahuri",
+      role: "Client",
+      company: "Google Review",
+      review: "Best experience in rahuri we design social media post and flex best work 🔝 💖",
+      rating: 5,
+      image: "https://ui-avatars.com/api/?name=shri+medical+rahuri&background=9333ea&color=fff",
+      gradient: "from-indigo-500 to-cyan-500",
+    },
   ];
 
   const containerVariants = {
@@ -111,17 +141,24 @@ export function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Testimonials Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-        >
-          {reviews.map((review) => (
-            <motion.div key={review.id} variants={itemVariants} className="group">
-              <TiltCard className="h-full p-0.5">
+        {/* Testimonials Slider */}
+        <div className="relative max-w-7xl mx-auto overflow-hidden">
+          {/* Fading edges */}
+          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            className="flex gap-6 md:gap-8 w-max py-4"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 35,
+            }}
+          >
+            {[...reviews, ...reviews].map((review, index) => (
+              <div key={`${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
+                <TiltCard className="h-full p-0.5">
                 <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
                   {/* Floating Giant Quote Icon */}
                   <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
@@ -176,9 +213,10 @@ export function Testimonials() {
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
               </TiltCard>
-            </motion.div>
-          ))}
-        </motion.div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Client Logos Strip */}
         <div className="mt-24 border-t border-white/[0.05] pt-12 overflow-hidden relative w-full">

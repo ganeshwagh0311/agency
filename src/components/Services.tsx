@@ -17,14 +17,14 @@ export function Services() {
     {
       id: "digital",
       icon: Megaphone,
-      title: "Digital Marketing",
-      description: "We orchestrate data-driven multi-channel digital campaigns that capture attention, engage audiences, and drive measurable ROI.",
+      title: "Digital Marketing in Rahuri",
+      description: "We orchestrate data-driven multi-channel digital campaigns. As a premier Google Ads agency in Rahuri, we capture attention, engage local audiences, and drive measurable ROI.",
       features: [
-        "SEO & SEM Optimization",
-        "Social Media Management",
-        "PPC & Paid Advertising",
-        "Content & Brand Strategy",
-        "Conversion Rate Optimization (CRO)",
+        "Affordable SEO services in Rahuri",
+        "Social Media marketing agency in Rahuri Maharashtra",
+        "Google Ads management services in Rahuri",
+        "Google Business Profile Optimization Rahuri",
+        "PPC Services Rahuri & CRO",
       ],
       colorClass: "from-indigo-500 to-purple-500 text-indigo-400",
       glowClass: "group-hover:shadow-indigo-500/20",
@@ -106,9 +106,9 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
           >
-            A Unified Ecosystem for{" "}
+            Comprehensive Marketing & Print{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Brand Growth
+              Services in Rahuri
             </span>
           </motion.h2>
           

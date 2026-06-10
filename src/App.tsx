@@ -7,6 +7,8 @@ import { Process } from "./components/Process";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Map } from "./components/Map";
+import { FAQ } from "./components/FAQ";
+import { Blog } from "./components/Blog";
 import { Footer } from "./components/Footer";
 
 export default function App() {
@@ -30,6 +32,8 @@ export default function App() {
         <Process />
         <Testimonials />
         <Contact />
+        <FAQ />
+        <Blog />
         <Map />
       </main>
       <Footer />

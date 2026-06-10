@@ -14,13 +14,14 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "AboutUs", href: "#about-us" },
-    { name: "Our Process", href: "#process" },
-    { name: "Testimonials", href: "#testimonials" },
-  ];
+    const navLinks = [
+      { name: "Services", href: "#services" },
+      { name: "Portfolio", href: "#portfolio" },
+      { name: "AboutUs", href: "#about-us" },
+      { name: "FAQ", href: "#faq" },
+      { name: "Blog", href: "#blog" },
+      { name: "Process", href: "#process" },
+    ];
 
   return (
     <header

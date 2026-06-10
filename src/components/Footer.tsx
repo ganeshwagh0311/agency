@@ -37,14 +37,17 @@ export function Footer() {
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <a href="#" className="flex items-center gap-2 group">
               <div className="relative h-5 md:h-7 flex items-center justify-center">
-                <img src={drishakLogo} alt="DRISHAK Logo" className="h-full w-auto object-contain" />
+                <img src={drishakLogo} alt="DRISHAK - Best SEO Company in Rahuri Logo" className="h-full w-auto object-contain" />
               </div>
               <span className="font-sans font-bold text-xl tracking-wider text-white">
                 {/* DRISHAK */}
               </span>
             </a>
             <p className="text-sm leading-relaxed max-w-xs mt-2">
-              A unified ecosystem for futuristic digital marketing campaigns, clothing-based print integrations, and high-end paper printing.
+              As the best SEO company in Rahuri, we offer a unified ecosystem for futuristic digital marketing campaigns, website development services in Rahuri, and high-end printing.
+            </p>
+            <p className="text-sm leading-relaxed max-w-xs mt-2 font-mono text-cyan-400">
+              📍 Rahuri, Ahilyanagar, Maharashtra, India
             </p>
             <div className="flex gap-4 mt-2">
               {socialIcons.map((social) => (

@@ -109,7 +109,7 @@ export default function AboutUs() {
           >
             A Unified Ecosystem for{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Brand Growth
+              Brand Growth in Rahuri
             </span>
           </motion.h2>
           
@@ -120,7 +120,7 @@ export default function AboutUs() {
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
-            We eliminate vendor fragmentation by offering fully integrated marketing and print services under one roof, designed for speed, scale, and uncompromising quality.
+            As a top lead generation and branding agency in Rahuri, we eliminate vendor fragmentation by offering fully integrated marketing, local SEO services in Rahuri, and print services under one roof—designed for speed, scale, and uncompromising quality in Ahilyanagar.
           </motion.p>
         </div>
 

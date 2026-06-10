@@ -36,7 +36,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
             </span>
-            Next-Gen Digital & Print Agency
+            Next-Gen Digital Marketing Agency in Rahuri
           </motion.div>
 
           <motion.h1
@@ -45,11 +45,10 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-extrabold text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400"
           >
-            We Turn Ideas Into{" "}
+            Best Digital Marketing Agency in{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
-              Digital & Print
-            </span>{" "}
-            Reality
+              Rahuri
+            </span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg text-slate-300 max-w-xl leading-relaxed font-light"
           >
-            Drishak is a leading digital marketing, clothing printing, and print solution company in Maharashtra, India. We provide SEO, social media marketing, branding, custom t-shirt printing, and high-quality paper printing services. With a focus on creativity, fast delivery, and results-driven strategies, Drishak helps businesses grow their brand online and offline.
+            Drishak is a leading digital marketing company in Ahilyanagar and Rahuri. We provide top-tier SEO services in Rahuri, social media marketing, and custom branding. Whether you need a website design company in Rahuri or comprehensive local SEO services, Drishak helps businesses grow their brand online and offline with results-driven strategies.
           </motion.p>
 
           <motion.div
@@ -97,7 +96,7 @@ export function Hero() {
       >
         <img
           src={image}
-          alt={`Client avatar ${i + 1}`}
+          alt={`Local SEO and Digital Marketing Client ${i + 1}`}
           className="w-8 h-8 object-contain"
           loading="lazy"
         />

@@ -34,7 +34,7 @@ const CustomPenToolIcon = ({ className }: { className?: string }) => (
 );
 import { TiltCard } from "./TiltCard";
 import requirementProcessImg from "../img/requirement_process.jpg";
-import designProcessImg from "../img/design_process.jpg";
+import designProcessImg from "../img/icom_design.jpg";
 import approvalProcessImg from "../img/approval_process.jpg";
 import deliveryProcessImg from "../img/delivery_process.jpg";
 
@@ -71,6 +71,8 @@ export function Process() {
       description: "Our engineers craft bespoke digital campaigns or pixel-perfect print layouts, passing through automated preflight checks.",
       color: "from-indigo-500 to-purple-500 text-indigo-400",
       glow: "group-hover:shadow-indigo-500/10",
+      image: designProcessImg,
+      imageClass: "object-contain bg-white p-2",
     },
     {
       number: "03",

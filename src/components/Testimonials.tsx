@@ -147,74 +147,126 @@ export function Testimonials() {
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
 
-          <motion.div
-            className="flex gap-6 md:gap-8 w-max py-4"
+          <motion.div 
+            className="flex w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 35,
+              duration: 40,
             }}
           >
-            {[...reviews, ...reviews].map((review, index) => (
-              <div key={`${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
-                <TiltCard className="h-full p-0.5">
-                <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
-                  {/* Floating Giant Quote Icon */}
-                  <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
+            {/* First Set */}
+            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-center">
+              {reviews.map((review, index) => (
+                <div key={`set1-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
+                  <TiltCard className="h-full p-0.5">
+                  <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
 
-                  {/* Rating Stars */}
-                  <div className="flex gap-1 mb-6 relative z-10">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Review Text */}
-                  <blockquote className="text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
-                    "{review.review}"
-                  </blockquote>
-
-                  {/* Client Info */}
-                  <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05] relative z-10">
-                    <div className="relative flex-shrink-0">
-                      {/* Avatar Image */}
-                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
-                        <img
-                          src={review.image}
-                          alt={review.name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
+                    <div className="flex gap-1 mb-6 relative z-10">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
                         />
-                      </div>
-                      {/* Decorative glowing dot */}
-                      <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center p-0.5`}>
-                        <div className={`w-full h-full rounded-full bg-gradient-to-r ${review.gradient}`} />
-                      </div>
+                      ))}
                     </div>
 
-                    <div>
-                      <h4 className="font-sans font-semibold text-white text-base">
-                        {review.name}
-                      </h4>
-                      <p className="text-xs font-light text-indigo-400">
-                        {review.role}
-                      </p>
-                      <p className="text-[10px] font-mono text-slate-500 mt-0.5">
-                        {review.company}
-                      </p>
+                    <blockquote className="text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
+                      "{review.review}"
+                    </blockquote>
+
+                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05] relative z-10">
+                      <div className="relative flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
+                          <img
+                            src={review.image}
+                            alt={review.name}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center p-0.5`}>
+                          <div className={`w-full h-full rounded-full bg-gradient-to-r ${review.gradient}`} />
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-sans font-semibold text-white text-base">
+                          {review.name}
+                        </h4>
+                        <p className="text-xs font-light text-indigo-400">
+                          {review.role}
+                        </p>
+                        <p className="text-[10px] font-mono text-slate-500 mt-0.5">
+                          {review.company}
+                        </p>
+                      </div>
                     </div>
+                    
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
-                  
-                  {/* Light Reflection Flare inside Card */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                </TiltCard>
                 </div>
-              </TiltCard>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Second Identical Set */}
+            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-center">
+              {reviews.map((review, index) => (
+                <div key={`set2-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
+                  <TiltCard className="h-full p-0.5">
+                  <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
+
+                    <div className="flex gap-1 mb-6 relative z-10">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+                        />
+                      ))}
+                    </div>
+
+                    <blockquote className="text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
+                      "{review.review}"
+                    </blockquote>
+
+                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05] relative z-10">
+                      <div className="relative flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
+                          <img
+                            src={review.image}
+                            alt={review.name}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center p-0.5`}>
+                          <div className={`w-full h-full rounded-full bg-gradient-to-r ${review.gradient}`} />
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-sans font-semibold text-white text-base">
+                          {review.name}
+                        </h4>
+                        <p className="text-xs font-light text-indigo-400">
+                          {review.role}
+                        </p>
+                        <p className="text-[10px] font-mono text-slate-500 mt-0.5">
+                          {review.company}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  </div>
+                </TiltCard>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
 
@@ -224,23 +276,36 @@ export function Testimonials() {
           <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
           
-          <motion.div
-            className="flex items-center gap-12 md:gap-24 w-max"
+          <motion.div 
+            className="flex w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration:15,
+              duration: 20,
             }}
           >
-            {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt="Client Logo"
-                className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
-              />
-            ))}
+            <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
+              {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
+                <img
+                  key={`logo-set1-${index}`}
+                  src={logo}
+                  alt="Client Logo"
+                  className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
+                />
+              ))}
+            </div>
+            
+            <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
+              {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
+                <img
+                  key={`logo-set2-${index}`}
+                  src={logo}
+                  alt="Client Logo"
+                  className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

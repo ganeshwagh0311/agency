@@ -13,7 +13,6 @@ const images = [
   "/creatives/Untitled-12.jpg",
   "/creatives/sm_4_1.jpg",
   "/creatives/SM-12.jpg",
-  "/creatives/sm_12.jpg",
   "/creatives/Untitled-2.jpg",
   "/creatives/sm_9.jpg",
   "/creatives/hiring_post.jpg"
@@ -25,7 +24,7 @@ export function CreativesSlider() {
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
-  // Optional: Auto slide
+  // Auto slide
   useEffect(() => {
     const timer = setInterval(nextSlide, 3500);
     return () => clearInterval(timer);
@@ -76,7 +75,7 @@ export function CreativesSlider() {
                 alt={`Creative ${index + 1}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 pointer-events-none" />
             </motion.div>
           );
         })}

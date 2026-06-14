@@ -6,27 +6,27 @@ export function Blog() {
   const posts = [
     {
       id: 1,
-      title: "Ultimate Guide to Social Media Marketing in Rahuri Maharashtra",
-      excerpt: "Learn how local businesses in Rahuri are leveraging Instagram and Facebook to boost foot traffic and engagement.",
+      title: "Grow Smarter. Reach Further. Convert Better.",
+      excerpt: "Digital marketing is more than just online promotion—it's about creating meaningful connections with your audience. Our data-driven strategies help brands increase visibility, attract customers, and maximize ROI in an ever-evolving digital landscape.",
       date: "Oct 12, 2026",
-      category: "Social Media",
-      imageColor: "from-pink-500 to-rose-500",
+      category: "Digital Marketing",
+      image: "/creatives/card1.jpg",
     },
     {
       id: 2,
-      title: "Lead Generation Services for Businesses in Rahuri",
-      excerpt: "Discover how top-tier local SEO and targeted lead generation strategies can skyrocket your local B2B and B2C sales.",
+      title: "Wear Your Brand with Confidence",
+      excerpt: "Custom apparel is more than clothing—it's a powerful marketing tool. High-quality clothing printing helps businesses build brand recognition, strengthen team identity, and create memorable customer experiences through stylish and professionally printed garments.",
       date: "Oct 05, 2026",
-      category: "Lead Generation",
-      imageColor: "from-cyan-500 to-blue-500",
+      category: "Clothing Printing",
+      image: "/creatives/card2.jpg",
     },
     {
       id: 3,
-      title: "How an SEO Expert in Rahuri Can Boost Your Traffic",
-      excerpt: "Understanding the importance of Google Business Profile Optimization and affordable SEO services for regional growth.",
+      title: "Professional Paper Printing Solutions for Every Business",
+      excerpt: "High-quality printed materials remain one of the most effective ways to communicate your brand message. From business cards and brochures to flyers, catalogs, and corporate stationery, professional paper printing helps businesses create a strong and lasting impression. With sharp details, vibrant colors, and premium paper options, every print reflects the quality and professionalism of your brand.",
       date: "Sep 28, 2026",
-      category: "SEO Services",
-      imageColor: "from-indigo-500 to-purple-500",
+      category: "Paper Printing",
+      image: "/creatives/card3.jpg",
     }
   ];
 
@@ -101,10 +101,10 @@ export function Blog() {
               <TiltCard className="h-full p-1 shadow-lg hover:shadow-indigo-500/10 transition-shadow duration-500">
                 <div className="bg-slate-950/40 rounded-xl flex flex-col h-full overflow-hidden border border-white/[0.05]">
                   {/* Image Placeholder */}
-                  <div className={`h-48 w-full bg-gradient-to-br ${post.imageColor} relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-slate-950/50 group-hover:bg-transparent transition-colors duration-500" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-white border border-white/10 uppercase">
+                  <div className="h-48 w-full bg-slate-800 relative overflow-hidden">
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500" />
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-white border border-white/10 uppercase z-10">
                       {post.category}
                     </div>
                   </div>

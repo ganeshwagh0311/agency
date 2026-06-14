@@ -37,7 +37,7 @@ export function Navbar() {
   <img 
     src={logo}
     alt="Drishak Prime Logo"
-    className="h-8 md:h-5 w-auto object-contain transition-transform group-hover:scale-105"
+    className="h-5 md:h-5 w-auto object-contain transition-transform group-hover:scale-105"
   />
 </a>
 

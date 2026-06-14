@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Megaphone, Shirt, Printer, ArrowUpRight, Shield, Zap, Sparkles } from "lucide-react";
+import { Megaphone, Shirt, Printer, ArrowUpRight, Shield, Zap, Sparkles, CheckCircle2 } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import { CreativesSlider } from "./CreativesSlider";
 
 interface ServiceItem {
   id: string;
@@ -19,47 +20,58 @@ export default function AboutUs() {
       id: "digital",
       icon: Megaphone,
       title: "Digital Marketing",
-      description: "We orchestrate data-driven multi-channel digital campaigns that capture attention, engage audiences, and drive measurable ROI.",
+      description: "Increase your online presence through our expert social media management and branding strategies.",
       features: [
-        "SEO & SEM Optimization",
         "Social Media Management",
-        "PPC & Paid Advertising",
-        "Content & Brand Strategy",
-        "Conversion Rate Optimization (CRO)",
+        "Content Creation",
+        "Advertising Campaigns",
+        "Branding Strategy",
+        "Promotional Strategies",
       ],
       colorClass: "from-indigo-500 to-purple-500 text-indigo-400",
       glowClass: "group-hover:shadow-indigo-500/20",
     },
     {
-  id: "clothing",
-  icon: Shirt,
-  title: "Clothing Printing",
-  description: "Create and customize high-quality apparel with precision printing. From bulk orders to personalized designs, our workflow ensures premium results.",
-  features: [
-    "Custom T-Shirt & Apparel Printing",
-    "High-Quality Fabric & Ink Finishing",
-    "Bulk & On-Demand Production",
-    "Design Upload & Preview System",
-    "Fast Delivery & Order Tracking",
-  ],
-  colorClass: "from-cyan-500 to-blue-500 text-cyan-400",
-  glowClass: "group-hover:shadow-cyan-500/20",
-},
+      id: "clothing",
+      icon: Shirt,
+      title: "Clothing Printing",
+      description: "Premium clothing printing solutions from custom T-shirts to promotional merchandise.",
+      features: [
+        "Custom T-shirts",
+        "Hoodies & Uniforms",
+        "Corporate Wear",
+        "Promotional Merchandise",
+        "High-Quality Finishing",
+      ],
+      colorClass: "from-cyan-500 to-blue-500 text-cyan-400",
+      glowClass: "group-hover:shadow-cyan-500/20",
+    },
     {
       id: "paper",
       icon: Printer,
       title: "Paper Printing",
-      description: "Experience tangible perfection. We combine traditional offset craftsmanship with advanced digital press technologies for premium print products.",
+      description: "Professional paper printing services for all your marketing and branding materials.",
       features: [
-        "Premium Commercial Offset",
-        "High-Speed Variable Digital Press",
-        "Luxury Packaging & Boxes",
-        "Specialty Finishes (Foil, Spot UV)",
-        "Certified Eco-Friendly Materials",
+        "Visiting Cards",
+        "Brochures & Flyers",
+        "Banners & Posters",
+        "Catalogs & Stickers",
+        "Other Branding Materials",
       ],
       colorClass: "from-fuchsia-500 to-pink-500 text-fuchsia-400",
       glowClass: "group-hover:shadow-fuchsia-500/20",
     },
+  ];
+
+  const reasons = [
+    "2+ Years of Industry Experience",
+    "Trusted by Multiple Satisfied Clients",
+    "Complete Digital Marketing Solutions",
+    "High-Quality Clothing Printing Services",
+    "Professional Paper Printing Services",
+    "Creative Design & Branding Support",
+    "Affordable Pricing & Timely Delivery",
+    "One Agency for All Your Business Needs"
   ];
 
   const containerVariants = {
@@ -89,7 +101,7 @@ export default function AboutUs() {
 
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
+        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +109,7 @@ export default function AboutUs() {
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
-            AboutUs
+            About Us
           </motion.div>
           
           <motion.h2
@@ -107,93 +119,81 @@ export default function AboutUs() {
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
           >
-            A Unified Ecosystem for{" "}
+            Welcome to{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Brand Growth in Rahuri
+              Drishak Agency
             </span>
           </motion.h2>
           
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg text-slate-400 mt-6 max-w-3xl mx-auto font-light space-y-4"
           >
-            As a top lead generation and branding agency in Rahuri, we eliminate vendor fragmentation by offering fully integrated marketing, local SEO services in Rahuri, and print services under one roof—designed for speed, scale, and uncompromising quality in Ahilyanagar.
-          </motion.p>
+            <p>
+              At Drishak Agency, we are passionate about helping businesses grow through creative marketing and high-quality branding solutions. With over 2 years of experience and satisfied clients across various industries, we have built a reputation for delivering reliable, innovative, and result-driven services.
+            </p>
+            <p>
+              We are a one-stop solution for all your marketing and printing needs. Our expert team specializes in Digital Marketing, helping businesses increase their online presence through social media management, content creation, advertising campaigns, branding, and promotional strategies.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Services Grid */}
+        {/* Creatives Heading */}
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
+        >
+          <h3 className="font-sans font-bold text-2xl md:text-4xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+            Explore Our Recent Social Media Creatives
+          </h3>
+        </motion.div>
+        {/* Creatives Slider */}
+        <CreativesSlider />
+
+        {/* Why Choose Us & Mission */}
+        <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          {services.map((service) => (
-            <motion.div key={service.id} variants={itemVariants} className="group">
-              <TiltCard className={`h-full p-1 shadow-lg transition-shadow duration-500 ${service.glowClass}`}>
-                <div className="bg-slate-950/40 rounded-xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden">
-                  {/* Subtle card grid lines */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity" />
+          <motion.div variants={itemVariants} className="space-y-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 mb-4">
+                Why Choose Drishak Agency?
+              </h3>
+            </div>
+            
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {reasons.map((reason, idx) => (
+                <li key={idx} className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.05] p-3 rounded-lg hover:bg-white/[0.04] transition-colors">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                  <span className="text-sm text-slate-300">{reason}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-                  {/* Card Glow Corner */}
-                  <div className={`absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br ${service.colorClass} opacity-10 blur-xl group-hover:opacity-30 group-hover:scale-150 transition-all duration-500 rounded-full`} />
-
-                  {/* Header: Icon + Arrow */}
-                  <div className="flex items-center justify-between mb-6 relative z-10">
-                    <div className={`p-4 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/[0.08] ${service.colorClass} shadow-inner`}>
-                      <service.icon className="w-6 h-6" />
-                    </div>
-                    
-                    <a
-                      href="#contact"
-                      className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-white/[0.1] group-hover:border-white/20 hover:scale-110 transition-all duration-300"
-                    >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  </div>
-
-                  {/* Title & Description */}
-                  <div className="relative z-10 flex-1">
-                    <h3 className="font-sans font-semibold text-xl text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-white group-hover:to-slate-300 transition-all">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-400 mt-3 font-light leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Features List */}
-                    <ul className="mt-6 flex flex-col gap-2.5">
-                      {service.features.map((feat, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300 font-light">
-                          <span className={`mt-0.5 rounded-full p-0.5 bg-gradient-to-br ${service.colorClass} flex-shrink-0`}>
-                            <div className="bg-slate-950 rounded-full p-0.5">
-                              <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${service.colorClass}`} />
-                            </div>
-                          </span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Floating glass overlay at bottom */}
-                  <div className="mt-8 pt-4 border-t border-white/[0.04] flex items-center justify-between text-xs text-slate-400 relative z-10">
-                    <span className="font-mono flex items-center gap-1">
-                      <Shield className="w-3.5 h-3.5 text-emerald-400" /> SLA Guaranteed
-                    </span>
-                    <span className="font-mono flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 text-amber-400" /> Ultra-Fast
-                    </span>
-                  </div>
+          <motion.div variants={itemVariants} className="relative">
+             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-fuchsia-500/10 rounded-2xl blur-2xl -z-10" />
+             <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-2xl shadow-xl">
+                <div className="inline-flex items-center gap-2 mb-6">
+                  <Shield className="w-6 h-6 text-indigo-400" />
+                  <h3 className="text-xl md:text-2xl font-bold text-white">Our Mission</h3>
                 </div>
-              </TiltCard>
-            </motion.div>
-          ))}
+                <p className="text-slate-300 leading-relaxed font-light text-lg">
+                  Our mission is to help businesses build a strong brand identity, attract more customers, and achieve long-term growth through effective marketing and quality printing services. Whether you are a startup, small business, or established company, Drishak Agency is committed to delivering solutions that make your brand stand out.
+                </p>
+             </div>
+          </motion.div>
         </motion.div>
+        
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export function Services() {
     {
       id: "digital",
       icon: Megaphone,
-      title: "Digital Marketing in Rahuri",
+      title: "Digital Marketing ",
       description: "We orchestrate data-driven multi-channel digital campaigns. As a premier Google Ads agency in Rahuri, we capture attention, engage local audiences, and drive measurable ROI.",
       features: [
         "Affordable SEO services in Rahuri",

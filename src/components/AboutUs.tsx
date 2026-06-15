@@ -161,33 +161,33 @@ export default function AboutUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="flex flex-col gap-12 lg:gap-16 max-w-5xl mx-auto"
         >
-          <motion.div variants={itemVariants} className="space-y-8">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 mb-4">
+          <motion.div variants={itemVariants} className="space-y-8 w-full">
+            <div className="text-center">
+              <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 mb-4">
                 Why Choose Drishak Agency?
               </h3>
             </div>
             
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {reasons.map((reason, idx) => (
-                <li key={idx} className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.05] p-3 rounded-lg hover:bg-white/[0.04] transition-colors">
+                <li key={idx} className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.05] p-4 rounded-lg hover:bg-white/[0.04] transition-colors">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span className="text-sm text-slate-300">{reason}</span>
+                  <span className="text-sm md:text-base text-slate-300">{reason}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="relative">
+          <motion.div variants={itemVariants} className="relative w-full max-w-4xl mx-auto">
              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-fuchsia-500/10 rounded-2xl blur-2xl -z-10" />
-             <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-2xl shadow-xl">
-                <div className="inline-flex items-center gap-2 mb-6">
+             <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-2xl shadow-xl text-center">
+                <div className="inline-flex items-center justify-center gap-2 mb-6">
                   <Shield className="w-6 h-6 text-indigo-400" />
-                  <h3 className="text-xl md:text-2xl font-bold text-white">Our Mission</h3>
+                  <h3 className="text-xl md:text-3xl font-bold text-white">Our Mission</h3>
                 </div>
-                <p className="text-slate-300 leading-relaxed font-light text-lg">
+                <p className="text-slate-300 leading-relaxed font-light text-lg md:text-xl">
                   Our mission is to help businesses build a strong brand identity, attract more customers, and achieve long-term growth through effective marketing and quality printing services. Whether you are a startup, small business, or established company, Drishak Agency is committed to delivering solutions that make your brand stand out.
                 </p>
              </div>

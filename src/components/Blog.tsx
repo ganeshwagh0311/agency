@@ -8,15 +8,15 @@ export function Blog() {
       id: 1,
       title: "Grow Smarter. Reach Further. Convert Better.",
       excerpt: "Digital marketing is more than just online promotion—it's about creating meaningful connections with your audience. Our data-driven strategies help brands increase visibility, attract customers, and maximize ROI in an ever-evolving digital landscape.",
-      date: "Oct 12, 2026",
+
       category: "Digital Marketing",
-      image: "/creatives/card1.jpg",
+      image: "/creatives/card3.jpg",
     },
     {
       id: 2,
       title: "Wear Your Brand with Confidence",
       excerpt: "Custom apparel is more than clothing—it's a powerful marketing tool. High-quality clothing printing helps businesses build brand recognition, strengthen team identity, and create memorable customer experiences through stylish and professionally printed garments.",
-      date: "Oct 05, 2026",
+      
       category: "Clothing Printing",
       image: "/creatives/card2.jpg",
     },
@@ -24,9 +24,9 @@ export function Blog() {
       id: 3,
       title: "Professional Paper Printing Solutions for Every Business",
       excerpt: "High-quality printed materials remain one of the most effective ways to communicate your brand message. From business cards and brochures to flyers, catalogs, and corporate stationery, professional paper printing helps businesses create a strong and lasting impression. With sharp details, vibrant colors, and premium paper options, every print reflects the quality and professionalism of your brand.",
-      date: "Sep 28, 2026",
+      
       category: "Paper Printing",
-      image: "/creatives/card3.jpg",
+      image: "/creatives/card1.jpg",
     }
   ];
 

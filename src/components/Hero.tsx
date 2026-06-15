@@ -51,6 +51,27 @@ export function Hero() {
             </span>
           </motion.h1>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex items-center gap-6 md:gap-8 my-2"
+          >
+            <div className="flex flex-col">
+              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">60+</h3>
+              <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
+              <p className="text-sm md:text-base text-slate-300 font-medium">Happy Clients</p>
+            </div>
+            
+            <div className="w-[1px] h-16 bg-white/10 mx-2"></div>
+            
+            <div className="flex flex-col">
+              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">3+</h3>
+              <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
+              <p className="text-sm md:text-base text-slate-300 font-medium">Years of Experience</p>
+            </div>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -267,7 +288,7 @@ export function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -bottom-6 -left-6 p-4 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/10 shadow-2xl z-20 flex items-center gap-3 hidden md:flex"
+            className="absolute -bottom-20 -left-6 p-4 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/10 shadow-2xl z-20 flex items-center gap-3 hidden md:flex"
           >
             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
               <CheckCircle2 className="w-4 h-4" />

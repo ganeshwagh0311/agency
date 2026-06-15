@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Quote, Star, MessageSquare } from "lucide-react";
 import { TiltCard } from "./TiltCard";
-import img1 from '../img/img1.png';
-import img2 from '../img/img2.png';
-import img3 from '../img/img3.png';
-import img4 from '../img/img4.png';
+import logo1 from '../img/client-logo-1.png';
+import logo2 from '../img/client-logo-2.png';
+import logo3 from '../img/client-logo-3.png';
+import logo4 from '../img/client-logo-4.png';
+import logo5 from '../img/client-logo-5.png';
+import logo6 from '../img/client-logo-6.png';
+import logo7 from '../img/client-logo-7.png';
 
 interface TestimonialItem {
   id: string;
@@ -286,7 +289,7 @@ export function Testimonials() {
             }}
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
+              {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set1-${index}`}
                   src={logo}
@@ -297,7 +300,7 @@ export function Testimonials() {
             </div>
             
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[img1, img2, img3, img4, img1, img2, img3, img4].map((logo, index) => (
+              {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set2-${index}`}
                   src={logo}

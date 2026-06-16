@@ -276,8 +276,11 @@ export function Testimonials() {
         {/* Client Logos Strip */}
         <div className="mt-24 border-t border-white/[0.05] pt-12 overflow-hidden relative w-full">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-              Brands We've Crafted
+            <h3 className="text-2xl md:text-4xl font-bold text-white">
+              Brands We've{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                Crafted
+              </span>
             </h3>
           </div>
           

@@ -36,7 +36,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
             </span>
-            Next-Gen Digital Marketing Agency in Rahuri
+            First Digital marketing & advertising agency in Rahuri
           </motion.div>
 
           <motion.h1
@@ -278,26 +278,7 @@ export function Hero() {
             </TiltCard>
           </motion.div>
 
-          {/* Floating extra glass element */}
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -bottom-20 -left-6 p-4 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/10 shadow-2xl z-20 flex items-center gap-3 hidden md:flex"
-          >
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <CheckCircle2 className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-xs font-semibold text-white">Order Synced</p>
-              <p className="text-[10px] text-slate-400">Print queues optimized</p>
-            </div>
-          </motion.div>
+
         </div>
       </div>
       

@@ -275,6 +275,12 @@ export function Testimonials() {
 
         {/* Client Logos Strip */}
         <div className="mt-24 border-t border-white/[0.05] pt-12 overflow-hidden relative w-full">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+              Brands We've Crafted
+            </h3>
+          </div>
+          
           {/* Fading edges */}
           <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
@@ -289,7 +295,7 @@ export function Testimonials() {
             }}
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+              {[logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set1-${index}`}
                   src={logo}
@@ -300,7 +306,7 @@ export function Testimonials() {
             </div>
             
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+              {[logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set2-${index}`}
                   src={logo}

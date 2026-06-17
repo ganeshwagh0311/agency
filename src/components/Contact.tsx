@@ -148,7 +148,7 @@ export function Contact() {
               {[
                 { icon: Mail, label: "Email Us", value: "drishakagency@gmail.com", href: "mailto:drishakagency@gmail.com" },
                 { icon: Phone, label: "Call Directly", value: "+91 9021889499", href: "tel:+91 9021889499" },
-                { icon: MapPin, label: "Near Punam furniture", value: "Shete complex, Gokul colony, rahuri, ahilyanagar", href: "#" },
+                { icon: MapPin, label: "Location", value: "Near Poonam furniture, Gokul colony, rahuri, ahilyanagar", href: "#" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -237,7 +237,7 @@ export function Contact() {
                         {/* Name Input */}
                         <div className="flex flex-col gap-2">
                           <label htmlFor="name" className="text-xs font-mono text-slate-400 uppercase tracking-wider">
-                            Your Name
+                            Full Name
                           </label>
                           <input
                             type="text"

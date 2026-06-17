@@ -88,11 +88,13 @@ export function Hero() {
             className="flex flex-wrap items-center gap-4 mt-2 w-full sm:w-auto"
           >
             <a
-              href="#contact"
+              href="https://www.behance.net/vishalwagh21"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 text-white font-semibold text-base shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto group overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative z-10">Get Instant Quote</span>
+              <span className="relative z-10">Our Portfolio</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
             </a>
             <a

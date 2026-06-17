@@ -55,8 +55,8 @@ export function Blog() {
       <div className="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col items-center text-center mb-16 gap-6 max-w-3xl mx-auto">
+          <div className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -76,17 +76,6 @@ export function Blog() {
               Marketing <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-fuchsia-400">Knowledge Hub</span>
             </motion.h2>
           </div>
-          
-          <motion.a
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            href="#contact"
-            className="group flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-          >
-            View all articles
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.a>
         </div>
 
         <motion.div
@@ -102,7 +91,7 @@ export function Blog() {
                 <div className="bg-slate-950/40 rounded-xl flex flex-col h-full overflow-hidden border border-white/[0.05]">
                   {/* Image Placeholder */}
                   <div className="h-48 w-full bg-slate-800 relative overflow-hidden">
-                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img src={post.image} alt={post.title} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500" />
                     <div className="absolute top-4 left-4 px-3 py-1 bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-white border border-white/10 uppercase z-10">
                       {post.category}
@@ -118,9 +107,7 @@ export function Blog() {
                     <p className="text-sm text-slate-400 font-light line-clamp-3 mb-6 flex-1">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-2 text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 transition-colors mt-auto">
-                      Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    {/* Read Article link removed */}
                   </div>
                 </div>
               </TiltCard>

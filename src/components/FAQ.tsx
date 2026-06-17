@@ -13,15 +13,15 @@ export function FAQ() {
 
   const faqs: FAQItem[] = [
     {
-      question: "Why do I need local SEO services in Rahuri?",
+      question: "Why do I need local SEO services in Rahuri , Ahilyanagar?",
       answer: "Local SEO ensures your business ranks high when customers in Rahuri and Ahilyanagar search for your products or services. As a top lead generation company in Rahuri, we optimize your Google Business Profile and local keywords to drive foot traffic and online inquiries directly to you."
     },
     {
-      question: "What makes Drishak the best digital marketing agency in Rahuri for small businesses?",
+      question: "What makes Drishak the best digital marketing agency in Rahuri ,Ahilyanagar for small businesses?",
       answer: "We offer an integrated ecosystem combining digital marketing, branding, and printing. Our affordable SEO services in Rahuri, combined with our ROI-focused approach, allow small businesses to scale effectively without dealing with multiple vendors."
     },
     {
-      question: "Do you provide website development services in Rahuri?",
+      question: "Do you provide website development services in Rahuri , Ahilyanagar?",
       answer: "Yes! We are a leading website design company in Rahuri. We build premium, high-performance websites optimized for SEO and conversion. Whether you need an e-commerce platform or a corporate site, our web development team delivers."
     },
     {

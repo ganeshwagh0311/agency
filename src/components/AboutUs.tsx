@@ -146,7 +146,7 @@ export default function AboutUs() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
+          className="max-w-6xl mx-auto text-center mb-12 md:mb-16"
         >
           <h2 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
             Explore Our Recent{" "}

@@ -66,7 +66,7 @@ export function Hero() {
             <div className="w-[1px] h-16 bg-white/10 mx-2"></div>
             
             <div className="flex flex-col">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">3+</h3>
+              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">5+</h3>
               <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
               <p className="text-sm md:text-base text-slate-300 font-medium">Years of Experience</p>
             </div>

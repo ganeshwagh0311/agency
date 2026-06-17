@@ -109,7 +109,7 @@ export function Testimonials() {
 
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
+        <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export function Testimonials() {
           >
             What Industry Leaders{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Say About Us
+              Say About&nbsp;Us
             </span>
           </motion.h2>
           
@@ -160,7 +160,7 @@ export function Testimonials() {
             }}
           >
             {/* First Set */}
-            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-center">
+            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-stretch">
               {reviews.map((review, index) => (
                 <div key={`set1-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
                   <TiltCard className="h-full p-0.5">
@@ -216,7 +216,7 @@ export function Testimonials() {
             </div>
 
             {/* Second Identical Set */}
-            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-center">
+            <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-stretch">
               {reviews.map((review, index) => (
                 <div key={`set2-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
                   <TiltCard className="h-full p-0.5">

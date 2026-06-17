@@ -148,9 +148,12 @@ export default function AboutUs() {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
         >
-          <h3 className="font-sans font-bold text-2xl md:text-4xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-            Explore Our Recent Social Media Creatives
-          </h3>
+          <h2 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
+            Explore Our Recent{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+              Social Media Creatives
+            </span>
+          </h2>
         </motion.div>
         {/* Creatives Slider */}
         <CreativesSlider />

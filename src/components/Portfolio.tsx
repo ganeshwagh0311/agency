@@ -66,10 +66,10 @@ export function Portfolio() {
     },
     {
       id: "p4",
-      title: "Digital Marketing",
+      title: "Digital Growth",
       category: "digital",
       categoryName: "Digital Marketing",
-      client: "Digital Marketing",
+      client: "Online Marketing",
       description: "Viral social media campaign and micro-influencer outreach that generated 50k+ signups in 30 days.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
       link: "https://www.instagram.com/drishakagency?igsh=MXdua2VuM3NpMjF6Yg==",
@@ -79,17 +79,17 @@ export function Portfolio() {
       title: "Custom Apparel Collection",
       category: "cloud",
       categoryName: "Clothing Printing",
-      client: "DRISHAK",
+      client: "Brand Apparel",
       description: "High-quality, durable custom t-shirt printing with vibrant colors and premium fabric finishing.",
       image: drishakShirtImg,
       link: "/clothing-catalog.pdf",
     },
     {
       id: "p6",
-      title: "Printing Solution ",
+      title: "Print Media",
       category: "paper",
       categoryName: "Paper Printing",
-      client: "Paper Printing",
+      client: "Print Production",
       description: "High-quality, bulk offset printing for premium corporate brochures, flyers, and marketing materials.",
       image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop",
       link: "/mockup.pdf",
@@ -119,8 +119,8 @@ export function Portfolio() {
 
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 md:mb-16 gap-6 max-w-7xl mx-auto">
-          <div className="max-w-xl">
+        <div className="flex flex-col items-center justify-center text-center mb-12 md:mb-16 gap-8 max-w-7xl mx-auto">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -138,9 +138,9 @@ export function Portfolio() {
               transition={{ delay: 0.1 }}
               className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400"
             >
-              Excellence Crafted In{" "}
+              Comprehensive Marketing & Print{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
-                Pixel & Print
+                Services in Rahuri
               </span>
             </motion.h2>
           </div>

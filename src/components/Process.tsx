@@ -130,7 +130,6 @@ export function Process() {
             viewport={{ once: true, margin: "-100px" }}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
-            <Terminal className="w-4 h-4" />
             Execution Pipeline
           </motion.div>
           

@@ -87,7 +87,7 @@ export function TiltCard({
       />
       
       {/* Content wrapper with 3D depth */}
-      <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }}>
+      <div className="h-full" style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }}>
         {children}
       </div>
     </motion.div>

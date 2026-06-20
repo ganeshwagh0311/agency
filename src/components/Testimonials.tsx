@@ -3,8 +3,8 @@ import { Quote, Star, MessageSquare } from "lucide-react";
 import { TiltCard } from "./TiltCard";
 import logo1 from '../img/client-logo-1.png';
 import logo2 from '../img/client-logo-2.png';
-import logo3 from '../img/client-logo-3.png';
-import logo4 from '../img/client-logo-4.png';
+import logo3 from '../img/new-logo-vishra.png';
+import logo4 from '../img/new-logo-snf.png';
 import logo5 from '../img/client-logo-5.png';
 import logo6 from '../img/client-logo-6.png';
 import logo7 from '../img/client-logo-7.png';
@@ -102,7 +102,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden border-b border-white/5">
+    <section id="testimonials" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden border-b border-white/5">
       {/* Decorative background blur */}
       <div className="absolute top-[40%] right-[-10%] w-[35rem] h-[35rem] bg-purple-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[20%] left-[-10%] w-[30rem] h-[30rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
@@ -298,23 +298,27 @@ export function Testimonials() {
             }}
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+              {[logo2, logo4, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set1-${index}`}
                   src={logo}
                   alt="Client Logo"
-                  className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
+                    logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                  }`}
                 />
               ))}
             </div>
             
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+              {[logo2, logo4, logo6, logo7].map((logo, index) => (
                 <img
                   key={`logo-set2-${index}`}
                   src={logo}
                   alt="Client Logo"
-                  className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
+                    logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                  }`}
                 />
               ))}
             </div>

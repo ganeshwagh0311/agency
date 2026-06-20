@@ -85,8 +85,8 @@ export function Contact() {
   const waLink = `https://wa.me/${waNumber}?text=${waText}`;
 
   return (
-    <section id="contact" className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-slate-950 text-white overflow-hidden">
-      {/* Background Blurs */}
+    <section id="contact" className="relative pt-8 pb-6 md:pt-12 md:pb-8 bg-slate-950 text-white overflow-hidden">
+      {/* Decorative background blur */}
       <div className="absolute top-[30%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
 

@@ -3,13 +3,13 @@ import { ArrowRight, BarChart3, Cloud, ScrollText, CheckCircle2 } from "lucide-r
 import { ThreeHeroBg } from "./ThreeHeroBg";
 import { TiltCard } from "./TiltCard";
 import { Shirt } from "lucide-react";
-import img1 from "../img/img1.png";
+import vishraLogo from "../img/new-logo-vishra.png";
 import img2 from "../img/img2.png";
 import img3 from "../img/img3.png";
 import img4 from "../img/img4.png";
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full bg-slate-950 text-white flex items-center overflow-hidden pt-24 md:pt-16">
+    <section id="home" className="relative min-h-screen w-full bg-slate-950 text-white flex items-center overflow-hidden pt-24 md:pt-16">
       {/* Three.js Liquid Background */}
       <ThreeHeroBg />
 
@@ -23,7 +23,7 @@ export function Hero() {
         className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] -z-10 pointer-events-none"
       />
 
-      <div className="container mx-auto px-4 md:px-8 z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12 md:py-24">
+      <div className="container mx-auto px-4 md:px-8 z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-4 md:py-16">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-6 flex flex-col items-start gap-6 text-left">
           <motion.div
@@ -112,7 +112,7 @@ export function Hero() {
   className="flex items-center gap-6 mt-6 border-t border-white/10 pt-6 w-full"
 >
   <div className="flex -space-x-3">
-    {[img1, img2, img3, img4].map((image, i) => (
+    {[vishraLogo, img2, img3, img4].map((image, i) => (
       <div
         key={i}
         className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center overflow-hidden"
@@ -129,7 +129,7 @@ export function Hero() {
 
   <div>
     <p className="text-sm font-semibold text-white">
-      Trusted by 500+ Businesses
+      Trusted by 213+ Businesses
     </p>
     <p className="text-xs text-slate-400">
       99% Client Satisfaction across all services

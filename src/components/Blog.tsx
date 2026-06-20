@@ -50,7 +50,7 @@ export function Blog() {
   };
 
   return (
-    <section id="blog" className="relative py-24 bg-slate-900 text-white overflow-hidden border-t border-white/[0.05]">
+    <section id="blog" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden border-t border-white/[0.05]">
       {/* Decorative background blur */}
       <div className="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />
 
@@ -91,7 +91,7 @@ export function Blog() {
                 <div className="bg-slate-950/40 rounded-xl flex flex-col h-full overflow-hidden border border-white/[0.05]">
                   {/* Image Placeholder */}
                   <div className="h-48 w-full bg-slate-800 relative overflow-hidden">
-                    <img src={post.image} alt={post.title} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500" />
                     <div className="absolute top-4 left-4 px-3 py-1 bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-white border border-white/10 uppercase z-10">
                       {post.category}

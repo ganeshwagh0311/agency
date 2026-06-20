@@ -116,8 +116,8 @@ export function Process() {
   };
 
   return (
-    <section id="process" className="relative py-24 md:py-32 bg-slate-950 text-white overflow-hidden">
-      {/* Background Orbs */}
+    <section id="process" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden">
+      {/* Decorative background blur */}
       <div className="absolute top-[30%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
 

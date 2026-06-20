@@ -39,8 +39,8 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-24 bg-slate-950 text-white overflow-hidden">
-      {/* Decorative background blur */}
+    <section id="faq" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden">
+      {/* Decorative background elements */}
       <div className="absolute top-[10%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
 
       <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">

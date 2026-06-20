@@ -94,7 +94,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section id="about-us" className="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
+    <section id="about-us" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden">
       {/* Decorative background blur */}
       <div className="absolute top-[20%] right-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[20%] left-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />

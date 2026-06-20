@@ -107,8 +107,8 @@ export function Portfolio() {
 
 
   return (
-    <section id="portfolio" className="relative py-24 md:py-32 bg-slate-950 text-white overflow-hidden border-b border-white/5">
-      {/* Background Blurs */}
+    <section id="portfolio" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden border-b border-white/5">
+      {/* Decorative background blur */}
       <div className="absolute top-[10%] left-[-10%] w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[10%] right-[-10%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10" />
 

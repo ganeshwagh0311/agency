@@ -44,7 +44,7 @@ export function Portfolio() {
       category: "digital",
       categoryName: "Website Development",
       client: "Tech Solutions",
-      description: "Custom-built, high-performance website with modern glassmorphism design and seamless user experience.",
+      description: "Custom-built, high-performance website developed by our premier website design and SEO company in Rahuri, featuring modern glassmorphism design and seamless user experience.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
       link: "https://ganeshwagh0311.github.io/portfolio/",
     },
@@ -54,7 +54,7 @@ export function Portfolio() {
       category: "digital",
       categoryName: "Social Media Handling",
       client: "Global Brand",
-      description: "End-to-end social media page management, content scheduling, and community engagement strategies.",
+      description: "End-to-end social media page management, content scheduling, and community engagement strategies by our expert social media marketing agency in Rahuri Maharashtra.",
       image: socialMediaMixedImg,
       links: [
         { label: "Cafe Delight", url: "https://www.instagram.com/cafe_delight_official?igsh=emI5cGZqaDR5M2Q5" },
@@ -207,7 +207,7 @@ export function Portfolio() {
                     <div className="relative w-full aspect-[4/3] overflow-hidden">
                       <img
                         src={project.image}
-                        alt={project.title}
+                        alt={`${project.title} - Digital Marketing Agency Project`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />

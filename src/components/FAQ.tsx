@@ -14,7 +14,7 @@ export function FAQ() {
   const faqs: FAQItem[] = [
     {
       question: "Why do I need local SEO services in Rahuri , Ahilyanagar?",
-      answer: "Local SEO ensures your business ranks high when customers in Rahuri and Ahilyanagar search for your products or services. As a top lead generation company in Rahuri, we optimize your Google Business Profile and local keywords to drive foot traffic and online inquiries directly to you."
+      answer: "Local SEO ensures your business ranks high when customers in Rahuri and Ahilyanagar search for your products or services. As the best SEO company in Rahuri, we optimize your Google Business Profile and local keywords to drive foot traffic, effectively providing lead generation services for businesses in Rahuri to boost online inquiries directly to you."
     },
     {
       question: "What makes Drishak the best digital marketing agency in Rahuri ,Ahilyanagar for small businesses?",

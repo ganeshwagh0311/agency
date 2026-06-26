@@ -185,7 +185,7 @@ export function Testimonials() {
                         <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
                           <img
                             src={review.image}
-                            alt={review.name}
+                            alt={`${review.name} - SEO Expert in Rahuri Client Review`}
                             className="w-full h-full object-cover"
                             loading="lazy"
                           />
@@ -241,7 +241,7 @@ export function Testimonials() {
                         <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
                           <img
                             src={review.image}
-                            alt={review.name}
+                            alt={`${review.name} - SEO Expert in Rahuri Client Review`}
                             className="w-full h-full object-cover"
                             loading="lazy"
                           />
@@ -302,7 +302,7 @@ export function Testimonials() {
                 <img
                   key={`logo-set1-${index}`}
                   src={logo}
-                  alt="Client Logo"
+                  alt="Drishak Client Logo - Digital Marketing Services"
                   className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
                     logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
                   }`}
@@ -315,7 +315,7 @@ export function Testimonials() {
                 <img
                   key={`logo-set2-${index}`}
                   src={logo}
-                  alt="Client Logo"
+                  alt="Drishak Client Logo - Digital Marketing Services"
                   className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
                     logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
                   }`}

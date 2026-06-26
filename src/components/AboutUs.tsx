@@ -133,10 +133,10 @@ export default function AboutUs() {
             className="text-base md:text-lg text-slate-400 mt-6 max-w-3xl mx-auto font-light space-y-4"
           >
             <p>
-              At Drishak Agency, we are passionate about helping businesses grow through creative marketing and high-quality branding solutions. With over 2 years of experience and satisfied clients across various industries, we have built a reputation for delivering reliable, innovative, and result-driven services.
+              At Drishak Agency, we are passionate about helping businesses grow through creative marketing and high-quality branding solutions. As a trusted digital marketing company in Ahilyanagar and a dedicated brand marketing agency, we have built a reputation for delivering reliable, innovative, and result-driven services with over 2 years of experience.
             </p>
             <p>
-              We are a one-stop solution for all your marketing and printing needs. Our expert team specializes in Digital Marketing, helping businesses increase their online presence through social media management, content creation, advertising campaigns, branding, and promotional strategies.
+              We are a one-stop solution for all your marketing and printing needs. Our expert team specializes in comprehensive digital growth, helping businesses increase their online presence through social media management, advertising campaigns, and premium website development services in Rahuri.
             </p>
           </motion.div>
         </div>

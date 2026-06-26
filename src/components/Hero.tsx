@@ -78,7 +78,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg text-slate-300 max-w-xl leading-relaxed font-light"
           >
-            Drishak is a leading digital marketing company in Ahilyanagar and Rahuri. We provide top-tier SEO services in Rahuri, social media marketing, and custom branding. Whether you need a website design company in Rahuri or comprehensive local SEO services, Drishak helps businesses grow their brand online and offline with results-driven strategies.
+            Drishak is a leading digital marketing company in Ahilyanagar and Rahuri. As a premier Google Ads agency in Rahuri and an expert lead generation company, we provide top-tier SEO services in Rahuri, social media marketing, and custom branding. Whether you need a website design company in Rahuri or comprehensive local SEO services, we help businesses grow their brand online and offline with results-driven strategies.
           </motion.p>
 
           <motion.div

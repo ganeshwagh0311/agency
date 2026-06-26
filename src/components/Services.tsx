@@ -18,7 +18,7 @@ export function Services() {
       id: "digital",
       icon: Megaphone,
       title: "Digital Marketing ",
-      description: "We orchestrate data-driven multi-channel digital campaigns. As a premier Google Ads agency in Rahuri, we capture attention, engage local audiences, and drive measurable ROI.",
+      description: "We orchestrate data-driven multi-channel digital campaigns. As a premier Meta Ads Agency Rahuri and an expert online marketing agency Rahuri, we capture attention, engage local audiences, and drive measurable ROI.",
       features: [
         "Affordable SEO services in Rahuri",
         "Social Media marketing agency in Rahuri Maharashtra",
@@ -119,7 +119,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
-            We eliminate vendor fragmentation by offering fully integrated marketing and print services under one roof, designed for speed, scale, and uncompromising quality.
+            We eliminate vendor fragmentation by providing local business marketing services in Rahuri under one roof. Our integrated digital and print solutions are designed for speed, scale, and uncompromising quality.
           </motion.p>
         </div>
 

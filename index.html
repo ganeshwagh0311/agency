@@ -5,48 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://www.drishak.in/" />
     <!-- Favicon configurations -->
-    <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
     <!-- SEO Meta Tags -->
     <title>Drishak | Best Digital Marketing Agency in Rahuri & Ahilyanagar</title>
     <meta name="description" content="Looking for the best digital marketing agency in Rahuri? Drishak offers top SEO services, social media marketing, website design, and local SEO in Rahuri and Ahilyanagar. Grow your business with our expert team!" />
     <meta name="keywords" content="Digital Marketing Agency in Rahuri, SEO Services in Rahuri, Social Media Marketing in Rahuri, Google Ads Agency in Rahuri, Website Design Company in Rahuri, Local SEO Services in Rahuri, Digital Marketing Company in Ahilyanagar, SEO Expert in Rahuri" />
+    <meta name="robots" content="index, follow" />
     
-    <!-- Local SEO Schema Markup -->
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Drishak | Best Digital Marketing Agency in Rahuri & Ahilyanagar" />
+    <meta property="og:description" content="Looking for the best digital marketing agency in Rahuri? Drishak offers top SEO services, social media marketing, website design, and local SEO in Rahuri and Ahilyanagar." />
+    <meta property="og:url" content="https://www.drishak.in/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.drishak.in/favicon.png" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Drishak | Best Digital Marketing Agency in Rahuri" />
+    <meta name="twitter:description" content="Drishak offers top SEO services, social media marketing, and website design in Rahuri and Ahilyanagar." />
+    <meta name="twitter:image" content="https://www.drishak.in/favicon.png" />
+    <meta name="twitter:site" content="@drishakagency" />
+
+    <!-- Local SEO & Structured Data Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Drishak",
-      "image": "https://www.drishak.in/favicon.png",
-      "@id": "https://www.drishak.in/",
-      "url": "https://www.drishak.in",
-      "telephone": "",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "",
-        "addressLocality": "Rahuri",
-        "addressRegion": "Maharashtra",
-        "postalCode": "",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 19.3892,
-        "longitude": 74.6468
-      },
-      "areaServed": ["Rahuri", "Ahilyanagar", "Maharashtra"],
-      "sameAs": [
-        "https://www.instagram.com/drishakagency",
-        "https://www.facebook.com/share/1BDA2naTXi/",
-        "https://www.linkedin.com/company/drishak-agency/",
-        "https://x.com/drishakagency"
-      ],
-      "description": "Drishak is the best digital marketing agency in Rahuri offering SEO services, social media marketing, Google Ads management, and website design.",
-      "priceRange": "$$"
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.drishak.in/#localbusiness",
+          "name": "Drishak Agency",
+          "image": "https://www.drishak.in/favicon.png",
+          "url": "https://www.drishak.in/",
+          "telephone": "+919021889499",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Near Poonam furniture, Gokul colony",
+            "addressLocality": "Rahuri",
+            "addressRegion": "Maharashtra",
+            "postalCode": "413705",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.3892,
+            "longitude": 74.6468
+          },
+          "areaServed": ["Rahuri", "Ahilyanagar", "Maharashtra"],
+          "description": "Drishak is the best digital marketing agency in Rahuri offering SEO services, social media marketing, Google Ads management, and website design.",
+          "priceRange": "$$"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.drishak.in/#organization",
+          "name": "Drishak",
+          "url": "https://www.drishak.in/",
+          "logo": "https://www.drishak.in/favicon.png",
+          "sameAs": [
+            "https://www.instagram.com/drishakagency",
+            "https://www.facebook.com/share/1BDA2naTXi/",
+            "https://www.linkedin.com/company/drishak-agency/",
+            "https://x.com/drishakagency"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.drishak.in/#website",
+          "url": "https://www.drishak.in/",
+          "name": "Drishak Digital Marketing Agency",
+          "description": "Premium digital marketing, SEO, and website design services in Rahuri.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.drishak.in/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.drishak.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why do I need local SEO services in Rahuri, Ahilyanagar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Local SEO ensures your business ranks high when customers in Rahuri and Ahilyanagar search for your products or services. As a top lead generation company in Rahuri, we optimize your Google Business Profile and local keywords to drive foot traffic and online inquiries directly to you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes Drishak the best digital marketing agency in Rahuri, Ahilyanagar for small businesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer an integrated ecosystem combining digital marketing, branding, and printing. Our affordable SEO services in Rahuri, combined with our ROI-focused approach, allow small businesses to scale effectively without dealing with multiple vendors."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Search Engine Optimization (SEO)",
+          "provider": {
+            "@id": "https://www.drishak.in/#localbusiness"
+          },
+          "areaServed": "Rahuri",
+          "description": "Professional SEO services in Rahuri including local SEO and website optimization."
+        }
+      ]
     }
     </script>
   </head>

@@ -81,7 +81,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden">
+    <section id="services" className="relative py-6 md:py-12 bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white overflow-hidden">
       {/* Decorative background blur */}
       <div className="absolute top-[20%] right-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[20%] left-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />
@@ -93,7 +93,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
             Our Core Expertise
@@ -104,7 +104,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
             Comprehensive Marketing & Print{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
@@ -117,7 +117,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
             We eliminate vendor fragmentation by providing local business marketing services in Rahuri under one roof. Our integrated digital and print solutions are designed for speed, scale, and uncompromising quality.
           </motion.p>
@@ -134,22 +134,22 @@ export function Services() {
           {services.map((service) => (
             <motion.div key={service.id} variants={itemVariants} className="group">
               <TiltCard className={`h-full p-1 shadow-lg transition-shadow duration-500 ${service.glowClass}`}>
-                <div className="bg-slate-950/40 rounded-xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden">
+                <div className="bg-slate-50/80 dark:bg-slate-950/40 rounded-xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden">
                   {/* Subtle card grid lines */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity" />
 
                   {/* Card Glow Corner */}
                   <div className={`absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br ${service.colorClass} opacity-10 blur-xl group-hover:opacity-30 group-hover:scale-150 transition-all duration-500 rounded-full`} />
 
                   {/* Header: Icon + Arrow */}
                   <div className="flex items-center justify-between mb-6 relative z-10">
-                    <div className={`p-4 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/[0.08] ${service.colorClass} shadow-inner`}>
+                    <div className={`p-4 rounded-xl bg-gradient-to-br from-slate-900/[0.04] to-slate-900/[0.01] border border-slate-900/[0.08] dark:from-white/[0.04] dark:to-white/[0.01] dark:border-white/[0.08] ${service.colorClass} shadow-inner`}>
                       <service.icon className="w-6 h-6" />
                     </div>
                     
                     <a
                       href="#contact"
-                      className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-white/[0.1] group-hover:border-white/20 hover:scale-110 transition-all duration-300"
+                      className="w-10 h-10 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/[0.05] dark:border-white/[0.05] flex items-center justify-center text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white group-hover:bg-slate-900/[0.1] dark:group-hover:bg-white/[0.1] group-hover:border-slate-900/20 dark:group-hover:border-white/20 hover:scale-110 transition-all duration-300"
                     >
                       <ArrowUpRight className="w-5 h-5" />
                     </a>
@@ -157,19 +157,19 @@ export function Services() {
 
                   {/* Title & Description */}
                   <div className="relative z-10 flex-1">
-                    <h3 className="font-sans font-semibold text-xl text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-white group-hover:to-slate-300 transition-all">
+                    <h3 className="font-sans font-semibold text-xl text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:via-slate-900 group-hover:to-slate-600 dark:group-hover:from-white dark:group-hover:via-white dark:group-hover:to-slate-300 transition-all">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-slate-400 mt-3 font-light leading-relaxed">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-3 font-light leading-relaxed">
                       {service.description}
                     </p>
 
                     {/* Features List */}
                     <ul className="mt-6 flex flex-col gap-2.5">
                       {service.features.map((feat, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300 font-light">
+                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 font-light">
                           <span className={`mt-0.5 rounded-full p-0.5 bg-gradient-to-br ${service.colorClass} flex-shrink-0`}>
-                            <div className="bg-slate-950 rounded-full p-0.5">
+                            <div className="bg-slate-50 dark:bg-slate-950 rounded-full p-0.5">
                               <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${service.colorClass}`} />
                             </div>
                           </span>
@@ -180,7 +180,7 @@ export function Services() {
                   </div>
 
                   {/* Floating glass overlay at bottom */}
-                  <div className="mt-8 pt-4 border-t border-white/[0.04] flex items-center justify-between text-xs text-slate-400 relative z-10">
+                  <div className="mt-8 pt-4 border-t border-slate-900/[0.04] dark:border-white/[0.04] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 relative z-10">
                     <span className="font-mono flex items-center gap-1">
                       <Shield className="w-3.5 h-3.5 text-emerald-400" /> SLA Guaranteed
                     </span>

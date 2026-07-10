@@ -85,7 +85,7 @@ export function Contact() {
   const waLink = `https://wa.me/${waNumber}?text=${waText}`;
 
   return (
-    <section id="contact" className="relative pt-8 pb-6 md:pt-12 md:pb-8 bg-slate-950 text-white overflow-hidden">
+    <section id="contact" className="relative pt-8 pb-6 md:pt-12 md:pb-8 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden">
       {/* Decorative background blur */}
       <div className="absolute top-[30%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
@@ -102,7 +102,7 @@ export function Contact() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Mail className="w-4 h-4" />
             Connect With Us
@@ -113,7 +113,7 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
             Let's Shape Your{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
@@ -131,8 +131,8 @@ export function Contact() {
               viewport={{ once: true }}
               className="flex flex-col items-start gap-4"
             >
-              <h3 className="font-sans font-bold text-2xl text-white">Start a Conversation</h3>
-              <p className="text-slate-400 font-light leading-relaxed">
+              <h3 className="font-sans font-bold text-2xl text-slate-900 dark:text-white">Start a Conversation</h3>
+              <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                 Searching for a top-tier digital marketing agency near you? Whether you have a complex printing requirement or a digital campaign that needs scaling, reach out to us. Our enterprise strategists respond within 1 hour.
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ export function Contact() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors flex items-start gap-4 group"
+                  className="p-4 rounded-xl bg-slate-900/[0.02] dark:bg-white/[0.02] border border-slate-900/[0.05] dark:border-white/[0.05] hover:bg-slate-900/[0.04] dark:hover:bg-white/[0.04] transition-colors flex items-start gap-4 group"
                 >
                   <div className="p-3 rounded-lg bg-indigo-500/10 text-indigo-400 group-hover:scale-110 transition-transform">
                     <item.icon className="w-5 h-5" />
@@ -160,11 +160,11 @@ export function Contact() {
                   <div>
                     <p className="text-xs text-slate-500 font-mono uppercase">{item.label}</p>
                     {item.href !== "#" ? (
-                      <a href={item.href} className="text-slate-200 font-medium text-base hover:text-cyan-400 transition-colors">
+                      <a href={item.href} className="text-slate-900 dark:text-slate-200 font-medium text-base hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-slate-200 font-medium text-base leading-relaxed">{item.value}</p>
+                      <p className="text-slate-900 dark:text-slate-200 font-medium text-base leading-relaxed">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 text-[#25D366] font-semibold text-lg hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#25D366]/5 hover:shadow-[#25D366]/15 transition-all group"
               >
-                <div className="p-1 bg-[#25D366] rounded-lg text-slate-900 group-hover:scale-110 transition-transform">
+                <div className="p-1 bg-[#25D366] rounded-lg text-white dark:text-slate-900 group-hover:scale-110 transition-transform">
                   <MessageSquare className="w-5 h-5 fill-current" />
                 </div>
                 <span>Chat via WhatsApp</span>
@@ -207,7 +207,7 @@ export function Contact() {
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-purple-500/10 rounded-2xl blur-md -z-10" />
 
               <TiltCard className="p-0.5" tiltMaxAngleX={5} tiltMaxAngleY={5}>
-                <div className="p-6 md:p-10 rounded-2xl bg-slate-950/40 backdrop-blur-xl relative overflow-hidden">
+                <div className="p-6 md:p-10 rounded-2xl bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none backdrop-blur-xl relative overflow-hidden">
                   
                   {isSubmitted ? (
                     /* Success Message */
@@ -219,13 +219,13 @@ export function Contact() {
                       <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/10">
                         <CheckCircle className="w-8 h-8" />
                       </div>
-                      <h4 className="text-2xl font-bold text-white">Pipeline Initiated!</h4>
-                      <p className="text-slate-400 font-light max-w-sm mt-2">
+                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Pipeline Initiated!</h4>
+                      <p className="text-slate-600 dark:text-slate-400 font-light max-w-sm mt-2">
                         Thank you! Your project data and files have been securely encrypted and uploaded. A solutions strategist will contact you within 2 hours.
                       </p>
                       <button
                         onClick={() => setIsSubmitted(false)}
-                        className="mt-8 px-6 py-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-white hover:bg-white/[0.1] transition-all text-sm font-medium"
+                        className="mt-8 px-6 py-2.5 rounded-xl bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/10 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-900/[0.1] dark:hover:bg-white/[0.1] transition-all text-sm font-medium"
                       >
                         Send Another Message
                       </button>
@@ -247,7 +247,7 @@ export function Contact() {
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder="Ex.Lord Ram"
-                            className="p-3 bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white/[0.04] transition-all"
+                            className="p-3 bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-slate-100 dark:focus:bg-white/[0.04] transition-all"
                           />
                         </div>
 
@@ -264,7 +264,7 @@ export function Contact() {
                             value={formData.email}
                             onChange={handleInputChange}
                             placeholder="ram@company.com"
-                            className="p-3 bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white/[0.04] transition-all"
+                            className="p-3 bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-slate-100 dark:focus:bg-white/[0.04] transition-all"
                           />
                         </div>
                       </div>
@@ -279,7 +279,7 @@ export function Contact() {
                           name="service"
                           value={formData.service}
                           onChange={handleInputChange}
-                          className="p-3 bg-slate-900 border border-white/10 rounded-xl text-slate-300 text-sm focus:outline-none focus:border-cyan-400 focus:bg-slate-800 transition-all cursor-pointer"
+                          className="p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-slate-300 text-sm focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-slate-100 dark:focus:bg-slate-800 transition-all cursor-pointer"
                         >
                           <option value="digital">Digital Marketing Campaign</option>
                           <option value="clothing">Clothing Printing Integration</option>
@@ -304,7 +304,7 @@ export function Contact() {
                           value={formData.message}
                           onChange={handleInputChange}
                           placeholder="Briefly describe your objectives, timelines, and scale..."
-                          className="p-3 bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white/[0.04] transition-all resize-none"
+                          className="p-3 bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-slate-100 dark:focus:bg-white/[0.04] transition-all resize-none"
                         />
                       </div>
 
@@ -317,8 +317,8 @@ export function Contact() {
 
                         <label
                           htmlFor="file-upload"
-                          className={`relative flex flex-col items-center justify-center border border-dashed rounded-xl p-6 cursor-pointer bg-white/[0.01] hover:bg-white/[0.03] hover:border-cyan-400/50 transition-all text-center ${
-                            file ? "border-cyan-400 bg-cyan-400/[0.02]" : "border-white/20"
+                          className={`relative flex flex-col items-center justify-center border border-dashed rounded-xl p-6 cursor-pointer bg-slate-50 dark:bg-white/[0.01] hover:bg-slate-100 dark:hover:bg-white/[0.03] hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-all text-center ${
+                            file ? "border-cyan-500 dark:border-cyan-400 bg-cyan-50 dark:bg-cyan-400/[0.02]" : "border-slate-300 dark:border-white/20"
                           }`}
                         >
                           <input
@@ -341,7 +341,7 @@ export function Contact() {
                                 <Upload className="w-5 h-5 animate-bounce" />
                               </div>
                               <div className="flex-1 overflow-hidden">
-                                <p className="text-sm font-semibold text-white truncate">{file.name}</p>
+                                <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{file.name}</p>
                                 <p className="text-xs text-slate-400 font-mono mt-0.5">
                                   {formatFileSize(file.size)} • File Ready
                                 </p>
@@ -354,7 +354,7 @@ export function Contact() {
                             /* Default Upload View */
                             <>
                               <Upload className="w-6 h-6 text-slate-500 mb-2 group-hover:text-cyan-400" />
-                              <span className="text-sm font-medium text-slate-300">Drag & drop or click to browse</span>
+                              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Drag & drop or click to browse</span>
                               <span className="text-xs text-slate-500 mt-1">Upload artwork, guidelines, or data sheets</span>
                             </>
                           )}

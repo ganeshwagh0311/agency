@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Layers, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import logo from "../img/DRISHAK LOGO.png";
+import { useTheme } from "../context/ThemeContext";
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +31,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "py-3 bg-slate-950/40 backdrop-blur-lg border-b border-white/10"
+          ? "py-3 bg-white/70 dark:bg-slate-950/40 backdrop-blur-lg border-b border-slate-200 dark:border-white/10"
           : "py-6 bg-transparent border-b border-transparent"
       }`}
     >
@@ -43,20 +46,28 @@ export function Navbar() {
 </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/[0.02] backdrop-blur-md border border-white/[0.05] rounded-full px-6 py-2">
+        <nav className="hidden md:flex items-center gap-1 bg-slate-100/50 dark:bg-white/[0.02] backdrop-blur-md border border-slate-200 dark:border-white/[0.05] rounded-full px-6 py-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="px-4 py-1.5 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-300"
+              className="px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:text-white dark:hover:bg-white/[0.05] transition-all duration-300"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Desktop CTA & Theme Toggle */}
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-full bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          
           <a
             href="#contact"
             className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all group overflow-hidden"

@@ -107,7 +107,7 @@ export function Portfolio() {
 
 
   return (
-    <section id="portfolio" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden border-b border-white/5">
+    <section id="portfolio" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden border-b border-slate-200 dark:border-white/5">
       {/* Decorative background blur */}
       <div className="absolute top-[10%] left-[-10%] w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[10%] right-[-10%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10" />
@@ -125,7 +125,7 @@ export function Portfolio() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
             >
               <Briefcase className="w-4 h-4" />
               Featured Projects
@@ -136,7 +136,7 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
-              className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400"
+              className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400"
             >
               Comprehensive Marketing & Print{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
@@ -151,14 +151,14 @@ export function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="flex flex-wrap items-center gap-2 bg-white/[0.03] backdrop-blur-md border border-white/10 p-1 rounded-2xl w-full sm:w-auto overflow-x-auto justify-start sm:justify-center"
+            className="flex flex-wrap items-center gap-2 bg-slate-900/[0.03] dark:bg-white/[0.03] backdrop-blur-md border border-slate-900/10 dark:border-white/10 p-1 rounded-2xl w-full sm:w-auto overflow-x-auto justify-start sm:justify-center"
           >
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
                 className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  filter === cat.id ? "text-white" : "text-slate-400 hover:text-white"
+                  filter === cat.id ? "text-slate-900 dark:text-white" : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 {filter === cat.id && (
@@ -202,7 +202,7 @@ export function Portfolio() {
                 }}
               >
                 <TiltCard className="p-0 h-full">
-                  <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-slate-950/20">
+                  <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-950/20">
                     {/* Project Image */}
                     <div className="relative w-full aspect-[4/3] overflow-hidden">
                       <img
@@ -212,40 +212,40 @@ export function Portfolio() {
                         loading="lazy"
                       />
                       {/* Image Overlays */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
                       
                       {/* Category Pill on Image */}
-                      <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-wider bg-slate-950/60 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full text-cyan-300">
+                      <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-wider bg-white/60 dark:bg-slate-950/60 backdrop-blur-md border border-slate-200 dark:border-white/10 px-2.5 py-1 rounded-full text-cyan-600 dark:text-cyan-300">
                         {project.categoryName}
                       </div>
 
                       {/* View Button */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm bg-indigo-950/30">
-                        <div className="w-12 h-12 rounded-full bg-white text-slate-950 flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
+                        <div className="w-12 h-12 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-950 flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
                           <ExternalLink className="w-5 h-5" />
                         </div>
                       </div>
                     </div>
 
                     {/* Project Details */}
-                    <div className="p-6 flex flex-col flex-1 border-t border-white/[0.05] relative bg-slate-900/30 backdrop-blur-md">
+                    <div className="p-6 flex flex-col flex-1 border-t border-slate-200 dark:border-white/[0.05] relative bg-white/80 dark:bg-slate-900/30 backdrop-blur-md">
                       {/* Sub-header */}
                       <span className="text-xs font-semibold tracking-wider text-indigo-400 uppercase">
                         {project.client}
                       </span>
                       {/* Title */}
-                      <h3 className="text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white mt-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                         {project.title}
                       </h3>
                       {/* Description */}
-                      <p className="text-slate-400 text-sm mt-2 font-light leading-relaxed flex-1">
+                      <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 font-light leading-relaxed flex-1">
                         {project.description}
                       </p>
                       
                       {/* Bottom action link */}
                       {project.links ? (
-                        <div className="mt-4 pt-4 border-t border-white/[0.04] flex flex-col gap-2">
-                          <span className="text-xs text-white/50 font-medium">View Pages:</span>
+                        <div className="mt-4 pt-4 border-t border-slate-200 dark:border-white/[0.04] flex flex-col gap-2">
+                          <span className="text-xs text-slate-500 dark:text-white/50 font-medium">View Pages:</span>
                           <div className="flex flex-wrap gap-2">
                             {project.links.map((l, i) => (
                               <a
@@ -253,7 +253,7 @@ export function Portfolio() {
                                 href={l.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-2.5 py-1.5 bg-white/5 hover:bg-indigo-500/20 rounded-lg border border-white/10 text-cyan-300 hover:text-white transition-all text-[11px] font-medium"
+                                className="px-2.5 py-1.5 bg-slate-100 dark:bg-white/5 hover:bg-indigo-50 dark:hover:bg-indigo-500/20 rounded-lg border border-slate-200 dark:border-white/10 text-cyan-700 dark:text-cyan-300 hover:text-slate-900 dark:hover:text-white transition-all text-[11px] font-medium"
                                 onClick={(e) => e.stopPropagation()}
                               >
                                 {l.label}
@@ -262,7 +262,7 @@ export function Portfolio() {
                           </div>
                         </div>
                       ) : (
-                        <div className="mt-4 pt-4 border-t border-white/[0.04] flex items-center gap-1.5 text-xs text-white/50 font-medium group-hover:text-white transition-colors cursor-pointer">
+                        <div className="mt-4 pt-4 border-t border-slate-200 dark:border-white/[0.04] flex items-center gap-1.5 text-xs text-slate-500 dark:text-white/50 font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors cursor-pointer">
                           <span>View Case Study</span>
                           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>

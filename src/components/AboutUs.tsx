@@ -94,7 +94,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section id="about-us" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden">
+    <section id="about-us" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white overflow-hidden">
       {/* Decorative background blur */}
       <div className="absolute top-[20%] right-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[20%] left-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />
@@ -106,7 +106,7 @@ export default function AboutUs() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
             About Us
@@ -117,7 +117,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
             Welcome to{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
@@ -130,7 +130,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-slate-400 mt-6 max-w-3xl mx-auto font-light space-y-4"
+            className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-6 max-w-3xl mx-auto font-light space-y-4"
           >
             <p>
               At Drishak Agency, we are passionate about helping businesses grow through creative marketing and high-quality branding solutions. As a trusted digital marketing company in Ahilyanagar and a dedicated brand marketing agency, we have built a reputation for delivering reliable, innovative, and result-driven services with over 2 years of experience.
@@ -148,7 +148,7 @@ export default function AboutUs() {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-6xl mx-auto text-center mb-12 md:mb-16"
         >
-          <h2 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
+          <h2 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400">
             Explore Our Recent{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
               Social Media Creatives
@@ -168,16 +168,16 @@ export default function AboutUs() {
         >
           <motion.div variants={itemVariants} className="space-y-8 w-full">
             <div className="text-center">
-              <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 mb-4">
+              <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 mb-4">
                 Why Choose Drishak Agency?
               </h3>
             </div>
             
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {reasons.map((reason, idx) => (
-                <li key={idx} className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.05] p-4 rounded-lg hover:bg-white/[0.04] transition-colors">
+                <li key={idx} className="flex items-center gap-3 bg-slate-900/[0.02] dark:bg-white/[0.02] border border-slate-900/[0.05] dark:border-white/[0.05] p-4 rounded-lg hover:bg-slate-900/[0.04] dark:hover:bg-white/[0.04] transition-colors">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span className="text-sm md:text-base text-slate-300">{reason}</span>
+                  <span className="text-sm md:text-base text-slate-600 dark:text-slate-300">{reason}</span>
                 </li>
               ))}
             </ul>
@@ -185,12 +185,12 @@ export default function AboutUs() {
 
           <motion.div variants={itemVariants} className="relative w-full max-w-4xl mx-auto">
              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-fuchsia-500/10 rounded-2xl blur-2xl -z-10" />
-             <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-2xl shadow-xl text-center">
+             <div className="bg-white/80 dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200 dark:border-white/10 p-8 md:p-12 rounded-2xl shadow-xl text-center">
                 <div className="inline-flex items-center justify-center gap-2 mb-6">
                   <Shield className="w-6 h-6 text-indigo-400" />
-                  <h3 className="text-xl md:text-3xl font-bold text-white">Our Mission</h3>
+                  <h3 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white">Our Mission</h3>
                 </div>
-                <p className="text-slate-300 leading-relaxed font-light text-lg md:text-xl">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-light text-lg md:text-xl">
                   Our mission is to help businesses build a strong brand identity, attract more customers, and achieve long-term growth through effective marketing and quality printing services. Whether you are a startup, small business, or established company, Drishak Agency is committed to delivering solutions that make your brand stand out.
                 </p>
              </div>

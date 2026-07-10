@@ -116,7 +116,7 @@ export function Process() {
   };
 
   return (
-    <section id="process" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden">
+    <section id="process" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden">
       {/* Decorative background blur */}
       <div className="absolute top-[30%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
@@ -128,7 +128,7 @@ export function Process() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             Execution Pipeline
           </motion.div>
@@ -138,7 +138,7 @@ export function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
             A Seamless, Automated{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400">
@@ -151,7 +151,7 @@ export function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
             Our operational framework is engineered to eliminate delays, minimize manual error, and provide complete transparency over your projects from inception to delivery.
           </motion.p>
@@ -180,20 +180,20 @@ export function Process() {
                 )}
 
                 <TiltCard className={`p-0.5 h-full transition-shadow duration-300 ${step.glow}`}>
-                  <div className="bg-slate-950/40 rounded-2xl p-6 md:p-8 flex flex-col h-full items-center text-center relative overflow-hidden">
+                  <div className="bg-slate-100/80 dark:bg-slate-950/40 rounded-2xl p-6 md:p-8 flex flex-col h-full items-center text-center relative overflow-hidden shadow-sm dark:shadow-none border border-slate-200/50 dark:border-transparent">
                     {/* Background number */}
-                    <div className="absolute -bottom-6 -right-6 text-8xl font-sans font-black text-white/[0.02] tracking-tighter group-hover:text-white/[0.04] transition-colors">
+                    <div className="absolute -bottom-6 -right-6 text-8xl font-sans font-black text-slate-900/[0.02] dark:text-white/[0.02] tracking-tighter group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.04] transition-colors">
                       {step.number}
                     </div>
 
                     {/* Step Icon / Image Circle & Floating Glow */}
                     <div className="relative mb-6 z-10">
                       {/* Step Circle Counter */}
-                      <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-slate-900 border border-white/20 flex items-center justify-center text-xs font-bold text-white font-mono z-20 shadow-md">
+                      <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/20 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white font-mono z-20 shadow-md">
                         {step.number}
                       </div>
 
-                      <div className="w-28 h-28 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
+                      <div className="w-28 h-28 rounded-full bg-slate-900/[0.04] dark:bg-white/[0.04] backdrop-blur-md border border-slate-900/[0.08] dark:border-white/[0.08] flex items-center justify-center text-slate-900 dark:text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
                         {step.image ? (
                           <img 
                             src={step.image} 
@@ -211,20 +211,20 @@ export function Process() {
 
                     {/* Title & Description */}
                     <div className="flex-1 relative z-10">
-                      <h4 className="text-xs font-mono font-semibold tracking-wider bg-white/[0.05] border border-white/[0.05] text-slate-300 px-3 py-1 rounded-full uppercase inline-block mb-3">
+                      <h4 className="text-xs font-mono font-semibold tracking-wider bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/[0.05] dark:border-white/[0.05] text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full uppercase inline-block mb-3">
                         {step.phase}
                       </h4>
-                      <h3 className="font-sans font-bold text-xl text-white group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sans font-bold text-xl text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-slate-400 mt-3 font-light leading-relaxed">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-3 font-light leading-relaxed">
                         {step.description}
                       </p>
                     </div>
 
                     {/* Next arrow inside cards on desktop */}
                     {index < steps.length - 1 && (
-                      <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-white/10 hidden lg:block group-hover:text-white/30 group-hover:translate-x-2 transition-all w-6 h-6 z-20 pointer-events-none" />
+                      <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-slate-900/10 dark:text-white/10 hidden lg:block group-hover:text-slate-900/30 dark:group-hover:text-white/30 group-hover:translate-x-2 transition-all w-6 h-6 z-20 pointer-events-none" />
                     )}
                   </div>
                 </TiltCard>
@@ -241,17 +241,17 @@ export function Process() {
           transition={{ delay: 0.4 }}
           className="flex justify-center mt-16 md:mt-24"
         >
-          <div className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left max-w-2xl shadow-xl">
+          <div className="p-4 rounded-2xl bg-slate-900/[0.03] dark:bg-white/[0.03] backdrop-blur-md border border-slate-900/10 dark:border-white/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left max-w-2xl shadow-xl">
             <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex flex-shrink-0 items-center justify-center text-indigo-400 font-mono text-xl font-bold">
               ?
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Need an expedited pipeline?</p>
-              <p className="text-xs text-slate-400 leading-relaxed mt-0.5">We offer "Priority Press" routes for campaigns or prints that need deployment within 12 to 24 hours. Contact our strategists directly.</p>
+              <p className="text-sm font-semibold text-slate-900 dark:text-white">Need an expedited pipeline?</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mt-0.5">We offer "Priority Press" routes for campaigns or prints that need deployment within 12 to 24 hours. Contact our strategists directly.</p>
             </div>
             <a
               href="#contact"
-              className="px-4 py-2 rounded-xl bg-white/[0.05] border border-white/10 text-white font-medium text-xs whitespace-nowrap hover:bg-white/[0.1] hover:border-white/20 transition-all"
+              className="px-4 py-2 rounded-xl bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/10 dark:border-white/10 text-slate-900 dark:text-white font-medium text-xs whitespace-nowrap hover:bg-slate-900/[0.1] dark:hover:bg-white/[0.1] hover:border-slate-900/20 dark:hover:border-white/20 transition-all"
             >
               Consult Strategist
             </a>

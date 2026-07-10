@@ -9,7 +9,7 @@ import img3 from "../img/img3.png";
 import img4 from "../img/img4.png";
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen w-full bg-slate-950 text-white flex items-center overflow-hidden pt-24 md:pt-16">
+    <section id="home" className="relative min-h-screen w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex items-center overflow-hidden pt-24 md:pt-16">
       {/* Three.js Liquid Background */}
       <ThreeHeroBg />
 
@@ -30,7 +30,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] backdrop-blur-md border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -43,7 +43,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-sans font-extrabold text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400"
+            className="font-sans font-extrabold text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-slate-400"
           >
             Best Digital Marketing Agency in{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
@@ -60,7 +60,7 @@ export function Hero() {
             <div className="flex flex-col">
               <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">60+</h3>
               <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
-              <p className="text-sm md:text-base text-slate-300 font-medium">Happy Clients</p>
+              <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Happy Clients</p>
             </div>
             
             <div className="w-[1px] h-16 bg-white/10 mx-2"></div>
@@ -68,7 +68,7 @@ export function Hero() {
             <div className="flex flex-col">
               <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">5+</h3>
               <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
-              <p className="text-sm md:text-base text-slate-300 font-medium">Years of Experience</p>
+              <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Years of Experience</p>
             </div>
           </motion.div>
 
@@ -76,7 +76,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg text-slate-300 max-w-xl leading-relaxed font-light"
+            className="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-light"
           >
             Drishak is a leading digital marketing company in Ahilyanagar and Rahuri. As a premier Google Ads agency in Rahuri and an expert lead generation company, we provide top-tier SEO services in Rahuri, social media marketing, and custom branding. Whether you need a website design company in Rahuri or comprehensive local SEO services, we help businesses grow their brand online and offline with results-driven strategies.
           </motion.p>
@@ -99,7 +99,7 @@ export function Hero() {
             </a>
             <a
               href="#services"
-              className="relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/10 text-white font-semibold text-base hover:bg-white/[0.08] hover:border-white/20 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+              className="relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900/[0.04] dark:bg-white/[0.04] backdrop-blur-md border border-slate-900/10 dark:border-white/10 text-slate-900 dark:text-white font-semibold text-base hover:bg-slate-900/[0.08] hover:border-slate-900/20 dark:hover:bg-white/[0.08] dark:hover:border-white/20 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
             >
               Explore Services
             </a>
@@ -109,7 +109,7 @@ export function Hero() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.8, delay: 0.4 }}
-  className="flex items-center gap-6 mt-6 border-t border-white/10 pt-6 w-full"
+  className="flex items-center gap-6 mt-6 border-t border-slate-200 dark:border-white/10 pt-6 w-full"
 >
   <div className="flex -space-x-3">
     {[vishraLogo, img2, img3, img4].map((image, i) => (
@@ -128,10 +128,10 @@ export function Hero() {
   </div>
 
   <div>
-    <p className="text-sm font-semibold text-white">
+    <p className="text-sm font-semibold text-slate-900 dark:text-white">
       Trusted by 213+ Businesses
     </p>
-    <p className="text-xs text-slate-400">
+    <p className="text-xs text-slate-600 dark:text-slate-400">
       99% Client Satisfaction across all services
     </p>
   </div>
@@ -150,16 +150,16 @@ export function Hero() {
             className="w-full max-w-lg"
           >
             <TiltCard className="p-1 pb-2">
-              <div className="rounded-xl overflow-hidden bg-slate-950/40 p-5 md:p-6 flex flex-col gap-6">
+              <div className="rounded-xl overflow-hidden bg-slate-100/80 dark:bg-slate-950/40 p-5 md:p-6 flex flex-col gap-6">
                 {/* Glass Card Header */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4">
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-rose-500/70" />
                       <div className="w-3 h-3 rounded-full bg-amber-500/70" />
                       <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
                     </div>
-                    <span className="text-xs text-slate-400 font-mono ml-2">drishak_dashboard_v2.0</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-mono ml-2">drishak_dashboard_v2.0</span>
                   </div>
                   <span className="text-xs font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-0.5 rounded-full">
                     Live System
@@ -173,19 +173,19 @@ export function Hero() {
                     initial={{ x: 20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="flex gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] hover:border-white/[0.1] transition-all group/panel"
+                    className="flex gap-4 p-3.5 rounded-xl bg-slate-50/50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/[0.05] hover:bg-slate-100/50 hover:border-slate-300/50 dark:hover:bg-white/[0.06] dark:hover:border-white/[0.1] transition-all group/panel"
                   >
                     <div className="p-3 rounded-lg bg-indigo-500/10 text-indigo-400 group-hover/panel:scale-110 transition-transform">
                       <BarChart3 className="w-5 h-5 animate-pulse" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-semibold text-sm text-white">Digital Marketing</h4>
+                        <h4 className="font-semibold text-sm text-slate-900 dark:text-white">Digital Marketing</h4>
                         <span className="text-xs font-mono text-emerald-400 flex items-center gap-1">
                           +142.8%
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 mt-1">ROI-focused campaigns, SEO & Social growth.</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">ROI-focused campaigns, SEO & Social growth.</p>
                       
                       {/* Mini Bar Chart */}
                       <div className="flex items-end gap-1 h-8 mt-3">
@@ -213,22 +213,22 @@ export function Hero() {
   initial={{ x: 20, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ delay: 0.5, duration: 0.5 }}
-  className="flex gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] hover:border-white/[0.1] transition-all group/panel"
+  className="flex gap-4 p-3.5 rounded-xl bg-slate-50/50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/[0.05] hover:bg-slate-100/50 hover:border-slate-300/50 dark:hover:bg-white/[0.06] dark:hover:border-white/[0.1] transition-all group/panel"
 >
   <div className="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover/panel:scale-110 transition-transform">
     <Shirt className="w-5 h-5" />
   </div>
   <div className="flex-1">
     <div className="flex items-center justify-between">
-      <h4 className="font-semibold text-sm text-white">Clothing Printing</h4>
+      <h4 className="font-semibold text-sm text-slate-900 dark:text-white">Clothing Printing</h4>
       <span className="text-xs font-mono text-cyan-400">89.4% Complete</span>
     </div>
-    <p className="text-xs text-slate-400 mt-1">
+    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
       Custom apparel printing with high-quality fabric and design precision.
     </p>
     
     {/* Progress Bar */}
-    <div className="w-full h-2 bg-white/5 rounded-full mt-3 overflow-hidden">
+    <div className="w-full h-2 bg-slate-200 dark:bg-white/5 rounded-full mt-3 overflow-hidden">
       <motion.div
         className="h-full bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full"
         initial={{ width: "0%" }}
@@ -236,7 +236,7 @@ export function Hero() {
         transition={{ duration: 1.5, delay: 0.8 }}
       />
     </div>
-    <p className="text-[10px] font-mono text-slate-500 mt-1 flex justify-between">
+    <p className="text-[10px] font-mono text-slate-500 dark:text-slate-500 mt-1 flex justify-between">
       <span>tshirt_design_final.png (8.7 MB)</span>
       <span className="animate-pulse">Printing...</span>
     </p>
@@ -248,19 +248,19 @@ export function Hero() {
                     initial={{ x: 20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
-                    className="flex gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] hover:border-white/[0.1] transition-all group/panel"
+                    className="flex gap-4 p-3.5 rounded-xl bg-slate-50/50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/[0.05] hover:bg-slate-100/50 hover:border-slate-300/50 dark:hover:bg-white/[0.06] dark:hover:border-white/[0.1] transition-all group/panel"
                   >
                     <div className="p-3 rounded-lg bg-purple-500/10 text-purple-400 group-hover/panel:scale-110 transition-transform">
                       <ScrollText className="w-5 h-5" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-semibold text-sm text-white">Paper Printing</h4>
+                        <h4 className="font-semibold text-sm text-slate-900 dark:text-white">Paper Printing</h4>
                         <span className="text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded flex items-center gap-1">
                           <CheckCircle2 className="w-3 h-3" /> Ready
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 mt-1">Premium paper, offset & digital, 2400 DPI.</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Premium paper, offset & digital, 2400 DPI.</p>
                       
                       {/* CMYK color bars */}
                       <div className="flex gap-1.5 mt-3">

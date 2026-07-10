@@ -105,7 +105,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden border-b border-white/5">
+    <section id="testimonials" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white overflow-hidden border-b border-slate-200 dark:border-white/5">
       {/* Decorative background blur */}
       <div className="absolute top-[40%] right-[-10%] w-[35rem] h-[35rem] bg-purple-500/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[20%] left-[-10%] w-[30rem] h-[30rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
@@ -117,7 +117,7 @@ export function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <MessageSquare className="w-4 h-4" />
             Client Validation
@@ -128,7 +128,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
             What Industry Leaders{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
@@ -141,7 +141,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-slate-400 mt-4 max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
             Don't just take our word for it. We are backed by a long track record of success with enterprise brands, agile startups, and meticulous creators.
           </motion.p>
@@ -150,8 +150,8 @@ export function Testimonials() {
         {/* Testimonials Slider */}
         <div className="relative max-w-7xl mx-auto overflow-hidden">
           {/* Fading edges */}
-          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
 
           <motion.div 
             className="flex w-max"
@@ -167,8 +167,8 @@ export function Testimonials() {
               {reviews.map((review, index) => (
                 <div key={`set1-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
                   <TiltCard className="h-full p-0.5">
-                  <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
-                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
+                  <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-slate-900/[0.02] dark:text-white/[0.01] group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
 
                     <div className="flex gap-1 mb-6 relative z-10">
                       {[...Array(review.rating)].map((_, i) => (
@@ -179,13 +179,13 @@ export function Testimonials() {
                       ))}
                     </div>
 
-                    <blockquote className="text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
+                    <blockquote className="text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
                       "{review.review}"
                     </blockquote>
 
-                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05] relative z-10">
+                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-white/[0.05] relative z-10">
                       <div className="relative flex-shrink-0">
-                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-slate-300 dark:border-white/20 group-hover:border-slate-400 dark:group-hover:border-white/40 transition-colors">
                           <img
                             src={review.image}
                             alt={`${review.name} - SEO Expert in Rahuri Client Review`}
@@ -193,13 +193,13 @@ export function Testimonials() {
                             loading="lazy"
                           />
                         </div>
-                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center p-0.5`}>
+                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center p-0.5`}>
                           <div className={`w-full h-full rounded-full bg-gradient-to-r ${review.gradient}`} />
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="font-sans font-semibold text-white text-base">
+                        <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-base">
                           {review.name}
                         </h4>
                         <p className="text-xs font-light text-indigo-400">
@@ -211,7 +211,7 @@ export function Testimonials() {
                       </div>
                     </div>
                     
-                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/10 dark:via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 </TiltCard>
                 </div>
@@ -223,8 +223,8 @@ export function Testimonials() {
               {reviews.map((review, index) => (
                 <div key={`set2-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
                   <TiltCard className="h-full p-0.5">
-                  <div className="bg-slate-950/40 rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
-                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-white/[0.01] group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
+                  <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                    <Quote className="absolute -top-6 -right-6 w-32 h-32 text-slate-900/[0.02] dark:text-white/[0.01] group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
 
                     <div className="flex gap-1 mb-6 relative z-10">
                       {[...Array(review.rating)].map((_, i) => (
@@ -235,13 +235,13 @@ export function Testimonials() {
                       ))}
                     </div>
 
-                    <blockquote className="text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
+                    <blockquote className="text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed flex-1 relative z-10">
                       "{review.review}"
                     </blockquote>
 
-                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05] relative z-10">
+                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-white/[0.05] relative z-10">
                       <div className="relative flex-shrink-0">
-                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-white/40 transition-colors">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden border border-slate-300 dark:border-white/20 group-hover:border-slate-400 dark:group-hover:border-white/40 transition-colors">
                           <img
                             src={review.image}
                             alt={`${review.name} - SEO Expert in Rahuri Client Review`}
@@ -249,13 +249,13 @@ export function Testimonials() {
                             loading="lazy"
                           />
                         </div>
-                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center p-0.5`}>
+                        <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center p-0.5`}>
                           <div className={`w-full h-full rounded-full bg-gradient-to-r ${review.gradient}`} />
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="font-sans font-semibold text-white text-base">
+                        <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-base">
                           {review.name}
                         </h4>
                         <p className="text-xs font-light text-indigo-400">
@@ -267,7 +267,7 @@ export function Testimonials() {
                       </div>
                     </div>
                     
-                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/10 dark:via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 </TiltCard>
                 </div>
@@ -277,9 +277,9 @@ export function Testimonials() {
         </div>
 
         {/* Client Logos Strip */}
-        <div className="mt-24 border-t border-white/[0.05] pt-12 overflow-hidden relative w-full">
+        <div className="mt-24 border-t border-slate-200 dark:border-white/[0.05] pt-12 overflow-hidden relative w-full">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-4xl font-bold text-white">
+            <h3 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white">
               Brands We've{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
                 Crafted
@@ -288,8 +288,8 @@ export function Testimonials() {
           </div>
           
           {/* Fading edges */}
-          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
           
           <motion.div 
             className="flex w-max"

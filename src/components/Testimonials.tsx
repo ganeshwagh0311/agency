@@ -8,6 +8,9 @@ import logo4 from '../img/new-logo-snf.png';
 import logo5 from '../img/client-logo-5.png';
 import logo6 from '../img/client-logo-6.png';
 import logo7 from '../img/client-logo-7.png';
+import logo8 from '../img/PNG.png';
+import logo9 from '../img/logo (1).png';
+import logo10 from '../img/cafe logo.png';
 
 interface TestimonialItem {
   id: string;
@@ -298,7 +301,7 @@ export function Testimonials() {
             }}
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo2, logo4, logo6, logo7].map((logo, index) => (
+              {[logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10].map((logo, index) => (
                 <img
                   key={`logo-set1-${index}`}
                   src={logo}
@@ -311,7 +314,7 @@ export function Testimonials() {
             </div>
             
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo2, logo4, logo6, logo7].map((logo, index) => (
+              {[logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10].map((logo, index) => (
                 <img
                   key={`logo-set2-${index}`}
                   src={logo}

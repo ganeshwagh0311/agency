@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 export function Map() {
   return (
-    <section id="location" className="relative pt-12 pb-24 bg-slate-950 text-white overflow-hidden border-t border-white/[0.05]">
+    <section id="location" className="relative pt-12 pb-24 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden border-t border-slate-200 dark:border-white/[0.05]">
       {/* Background Blurs */}
       <div className="absolute top-[30%] left-[20%] w-[35rem] h-[35rem] bg-cyan-500/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
 
@@ -13,7 +13,7 @@ export function Map() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <MapPin className="w-4 h-4" />
             Our Location
@@ -25,7 +25,7 @@ export function Map() {
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight"
           >
-            Locate Drishak <span className="text-cyan-400">Here</span>
+            Locate Drishak <span className="text-cyan-600 dark:text-cyan-400">Here</span>
           </motion.h2>
         </div>
 
@@ -34,7 +34,7 @@ export function Map() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-cyan-500/10 h-[400px] md:h-[500px]"
+          className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl shadow-cyan-500/5 dark:shadow-cyan-500/10 h-[400px] md:h-[500px]"
         >
           {/* Google Maps Embed iframe */}
           <iframe

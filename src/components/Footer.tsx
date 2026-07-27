@@ -27,26 +27,26 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-slate-950 border-t border-white/[0.05] text-slate-400 font-light overflow-hidden">
+    <footer className="relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/[0.05] text-slate-600 dark:text-slate-400 font-light overflow-hidden">
       {/* Decorative background flare */}
       <div className="absolute bottom-0 right-0 w-[40rem] h-[20rem] bg-indigo-500/5 rounded-t-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-white/[0.05]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-slate-200 dark:border-white/[0.05]">
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <a href="#" className="flex items-center gap-2 group">
               <div className="relative h-5 md:h-7 flex items-center justify-center">
-                <img src={drishakLogo} alt="DRISHAK - Best Digital Marketing Agency in Rahuri" className="h-full w-auto object-contain" />
+                <img src={drishakLogo} alt="DRISHAK - Best Digital Marketing Agency in Rahuri" className="h-full w-auto object-contain dark:invert-0 invert" />
               </div>
-              <span className="font-sans font-bold text-xl tracking-wider text-white">
+              <span className="font-sans font-bold text-xl tracking-wider text-slate-900 dark:text-white">
                 {/* DRISHAK */}
               </span>
             </a>
             <p className="text-sm leading-relaxed max-w-xs mt-2">
               As the best SEO company in Rahuri, we offer a unified ecosystem for futuristic digital marketing campaigns, digital marketing services Ahilyanagar, website development services in Rahuri, and high-end printing.
             </p>
-            <p className="text-sm leading-relaxed max-w-xs mt-2 font-mono text-cyan-400">
+            <p className="text-sm leading-relaxed max-w-xs mt-2 font-mono text-cyan-700 dark:text-cyan-400">
               📍 Rahuri, Ahilyanagar, Maharashtra, India
             </p>
             <div className="flex gap-4 mt-2">
@@ -57,7 +57,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={social.name}
-                  className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/[0.08] hover:border-white/20 hover:scale-110 transition-all"
+                  className="w-8 h-8 rounded-lg bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/[0.05] dark:border-white/[0.05] flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-900/[0.08] dark:hover:bg-white/[0.08] hover:border-slate-900/20 dark:hover:border-white/20 hover:scale-110 transition-all"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d={social.path} />
@@ -69,44 +69,44 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
               Services
             </h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><a href="#services" className="hover:text-cyan-300 transition-colors">Digital Marketing</a></li>
-              <li><a href="#services" className="hover:text-cyan-300 transition-colors">Clothing Printing</a></li>
-              <li><a href="#services" className="hover:text-cyan-300 transition-colors">Paper Printing</a></li>
-              <li><a href="#contact" className="hover:text-cyan-300 transition-colors">Website Development</a></li>
-              <li><a href="#portfolio" className="hover:text-cyan-300 transition-colors">Social Media Handling</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Digital Marketing</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Clothing Printing</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Paper Printing</a></li>
+              <li><a href="#contact" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Website Development</a></li>
+              <li><a href="#portfolio" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Social Media Handling</a></li>
             </ul>
           </div>
 
           {/* About Links */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
               Company
             </h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><a href="#process" className="hover:text-cyan-300 transition-colors">Our Process</a></li>
-              <li><a href="#testimonials" className="hover:text-cyan-300 transition-colors">Client Reviews</a></li>
-              <li><a href="#contact" className="hover:text-cyan-300 transition-colors">Contact Support</a></li>
-              <li><a href="#" className="hover:text-cyan-300 transition-colors">Terms & Privacy</a></li>
+              <li><a href="#process" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Our Process</a></li>
+              <li><a href="#testimonials" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Client Reviews</a></li>
+              <li><a href="#contact" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Contact Support</a></li>
+              <li><a href="#" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Terms & Privacy</a></li>
             </ul>
           </div>
 
           {/* Newsletter / Glass CTA */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
-            <h4 className="font-sans font-semibold text-white text-sm uppercase tracking-wider mb-2">
+            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-2">
               Subscribe to Drishak Insights
             </h4>
             <p className="text-xs leading-relaxed max-w-xs">
               Receive monthly updates on web-to-print technologies, campaign strategy, and material innovations.
             </p>
-            <div className="w-full max-w-xs flex gap-2 p-1 rounded-xl bg-white/[0.02] border border-white/10 backdrop-blur-md focus-within:border-cyan-400/50 focus-within:bg-white/[0.04] transition-all">
+            <div className="w-full max-w-xs flex gap-2 p-1 rounded-xl bg-slate-900/[0.02] dark:bg-white/[0.02] border border-slate-900/10 dark:border-white/10 backdrop-blur-md focus-within:border-cyan-500/50 dark:focus-within:border-cyan-400/50 focus-within:bg-slate-900/[0.04] dark:focus-within:bg-white/[0.04] transition-all">
               <input
                 type="email"
                 placeholder="newsletter@company.com"
-                className="bg-transparent flex-1 px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none"
+                className="bg-transparent flex-1 px-3 py-2 text-sm text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600 focus:outline-none"
               />
               <a
                 href="mailto:drishakagency@gmail.com"
@@ -115,7 +115,7 @@ export function Footer() {
                 Join
               </a>
             </div>
-            <span className="text-[10px] font-mono text-slate-600 uppercase">
+            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-600 uppercase">
               Secure transmission • Opt-out anytime
             </span>
           </div>
@@ -125,9 +125,9 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs font-mono text-slate-500">
           <p>© {currentYear} DRISHAK AGENCY. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-400 transition-colors">PRIVACY POLICY</a>
-            <a href="#" className="hover:text-slate-400 transition-colors">TERMS OF SERVICE</a>
-            <a href="#" className="hover:text-slate-400 transition-colors">SECURITY SLA</a>
+            <a href="#" className="hover:text-slate-700 dark:hover:text-slate-400 transition-colors">PRIVACY POLICY</a>
+            <a href="#" className="hover:text-slate-700 dark:hover:text-slate-400 transition-colors">TERMS OF SERVICE</a>
+            <a href="#" className="hover:text-slate-700 dark:hover:text-slate-400 transition-colors">SECURITY SLA</a>
           </div>
         </div>
       </div>

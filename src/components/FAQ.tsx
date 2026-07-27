@@ -39,7 +39,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-6 md:py-12 bg-slate-950 text-white overflow-hidden">
+    <section id="faq" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-[10%] left-[-10%] w-[35rem] h-[35rem] bg-indigo-500/5 rounded-full blur-[140px] -z-10" />
 
@@ -49,7 +49,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
             Common Questions
@@ -59,27 +59,27 @@ export function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+            className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
-            Frequently Asked <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Questions</span>
+            Frequently Asked <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-indigo-600 dark:from-cyan-400 dark:to-indigo-400">Questions</span>
           </motion.h2>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <TiltCard key={index} className="p-[1px] shadow-lg">
-              <div className="bg-slate-900/80 rounded-xl overflow-hidden backdrop-blur-sm border border-white/[0.05]">
+              <div className="bg-white/80 dark:bg-slate-900/80 rounded-xl overflow-hidden backdrop-blur-sm border border-slate-200 dark:border-white/[0.05] shadow-sm dark:shadow-none">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none group hover:bg-white/[0.02] transition-colors"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none group hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors"
                 >
-                  <h3 className="font-semibold text-base md:text-lg text-slate-200 group-hover:text-white transition-colors pr-8">
+                  <h3 className="font-semibold text-base md:text-lg text-slate-900 dark:text-slate-200 group-hover:text-cyan-700 dark:group-hover:text-white transition-colors pr-8">
                     {faq.question}
                   </h3>
                   <motion.div
                     animate={{ rotate: activeIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0 text-cyan-400"
+                    className="flex-shrink-0 text-cyan-600 dark:text-cyan-400"
                   >
                     <ChevronDown className="w-5 h-5" />
                   </motion.div>
@@ -93,7 +93,7 @@ export function FAQ() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-5 md:p-6 pt-0 text-slate-400 text-sm md:text-base font-light border-t border-white/[0.05]">
+                      <div className="p-5 md:p-6 pt-0 text-slate-600 dark:text-slate-400 text-sm md:text-base font-light border-t border-slate-200 dark:border-white/[0.05]">
                         {faq.answer}
                       </div>
                     </motion.div>

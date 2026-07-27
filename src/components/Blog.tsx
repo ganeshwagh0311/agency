@@ -50,7 +50,7 @@ export function Blog() {
   };
 
   return (
-    <section id="blog" className="relative py-6 md:py-12 bg-slate-900 text-white overflow-hidden border-t border-white/[0.05]">
+    <section id="blog" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white overflow-hidden border-t border-slate-200 dark:border-white/[0.05]">
       {/* Decorative background blur */}
       <div className="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-fuchsia-500/5 rounded-full blur-[140px] -z-10" />
 
@@ -61,7 +61,7 @@ export function Blog() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
             >
               <BookOpen className="w-4 h-4" />
               Latest Insights
@@ -71,9 +71,9 @@ export function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
-              className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400"
+              className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
             >
-              Marketing <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-fuchsia-400">Knowledge Hub</span>
+              Marketing <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-fuchsia-600 dark:from-indigo-400 dark:to-fuchsia-400">Knowledge Hub</span>
             </motion.h2>
           </div>
         </div>
@@ -88,23 +88,23 @@ export function Blog() {
           {posts.map((post) => (
             <motion.article key={post.id} variants={itemVariants as any} className="group cursor-pointer">
               <TiltCard className="h-full p-1 shadow-lg hover:shadow-indigo-500/10 transition-shadow duration-500">
-                <div className="bg-slate-950/40 rounded-xl flex flex-col h-full overflow-hidden border border-white/[0.05]">
+                <div className="bg-white/80 dark:bg-slate-950/40 rounded-xl flex flex-col h-full overflow-hidden border border-slate-200 dark:border-white/[0.05]">
                   {/* Image Placeholder */}
                   <div className="h-48 w-full bg-slate-800 relative overflow-hidden">
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500" />
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-white border border-white/10 uppercase z-10">
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-slate-100/90 dark:bg-slate-950/80 backdrop-blur-sm rounded-full text-[10px] font-mono tracking-wider text-slate-900 dark:text-white border border-slate-300 dark:border-white/10 uppercase z-10">
                       {post.category}
                     </div>
                   </div>
                   
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="text-xs text-slate-400 font-mono mb-3">{post.date}</span>
-                    <h3 className="font-semibold text-lg md:text-xl text-white mb-3 group-hover:text-cyan-300 transition-colors line-clamp-2">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-mono mb-3">{post.date}</span>
+                    <h3 className="font-semibold text-lg md:text-xl text-slate-900 dark:text-white mb-3 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-sm text-slate-400 font-light line-clamp-3 mb-6 flex-1">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 font-light line-clamp-3 mb-6 flex-1">
                       {post.excerpt}
                     </p>
                     {/* Read Article link removed */}

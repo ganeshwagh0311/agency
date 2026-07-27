@@ -9,7 +9,6 @@ import logo5 from '../img/client-logo-5.png';
 import logo6 from '../img/client-logo-6.png';
 import logo7 from '../img/client-logo-7.png';
 import logo8 from '../img/PNG.png';
-import logo9 from '../img/logo (1).png';
 import logo10 from '../img/cafe logo.png';
 
 interface TestimonialItem {
@@ -85,6 +84,15 @@ export function Testimonials() {
       image: "https://ui-avatars.com/api/?name=shri+medical+rahuri&background=9333ea&color=fff",
       gradient: "from-indigo-500 to-cyan-500",
     },
+  ];
+
+  const clientLogos = [
+    { src: logo3, isWhite: true },
+    { src: logo4, isWhite: true },
+    { src: logo6, isWhite: false },
+    { src: logo7, isWhite: false },
+    { src: logo8, isWhite: true },
+    { src: logo10, isWhite: false },
   ];
 
   const containerVariants = {
@@ -301,26 +309,26 @@ export function Testimonials() {
             }}
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10].map((logo, index) => (
+              {clientLogos.map((item, index) => (
                 <img
                   key={`logo-set1-${index}`}
-                  src={logo}
+                  src={item.src}
                   alt="Drishak Client Logo - Digital Marketing Services"
-                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
-                    logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${item.isWhite ? 'dark:invert-0 invert' : ''} ${
+                    item.src === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
                   }`}
                 />
               ))}
             </div>
             
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
-              {[logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10].map((logo, index) => (
+              {clientLogos.map((item, index) => (
                 <img
                   key={`logo-set2-${index}`}
-                  src={logo}
+                  src={item.src}
                   alt="Drishak Client Logo - Digital Marketing Services"
-                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
-                    logo === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${item.isWhite ? 'dark:invert-0 invert' : ''} ${
+                    item.src === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
                   }`}
                 />
               ))}

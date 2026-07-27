@@ -112,15 +112,20 @@ export function Hero() {
   className="flex items-center gap-6 mt-6 border-t border-slate-200 dark:border-white/10 pt-6 w-full"
 >
   <div className="flex -space-x-3">
-    {[vishraLogo, img2, img3, img4].map((image, i) => (
+    {[
+      { src: vishraLogo, isWhite: true },
+      { src: img2, isWhite: false },
+      { src: img3, isWhite: false },
+      { src: img4, isWhite: false }
+    ].map((item, i) => (
       <div
         key={i}
         className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center overflow-hidden"
       >
         <img
-          src={image}
+          src={item.src}
           alt={`Local SEO and Digital Marketing Client ${i + 1}`}
-          className="w-8 h-8 object-contain"
+          className={`w-8 h-8 object-contain ${item.isWhite ? 'dark:invert-0 invert' : ''}`}
           loading="lazy"
         />
       </div>

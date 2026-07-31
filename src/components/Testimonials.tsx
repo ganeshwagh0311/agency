@@ -320,7 +320,6 @@ export function Testimonials() {
                 />
               ))}
             </div>
-            
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
               {clientLogos.map((item, index) => (
                 <img

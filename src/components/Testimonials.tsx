@@ -11,6 +11,23 @@ import logo7 from '../img/client-logo-7.png';
 import logo8 from '../img/PNG.png';
 import logo10 from '../img/cafe logo.png';
 
+// New Logos
+import newLogo1 from '../img/new-logo-1.png';
+import newLogo14 from '../img/new-logo-14.png';
+import logo2Light from '../img/new-logo-2-light.png';
+import logo2Dark from '../img/new-logo-2-dark.png';
+import newLogo3 from '../img/new-logo-3.png';
+import newLogo4 from '../img/new-logo-4.png';
+import logo5Light from '../img/new-logo-5-light.png';
+import logo5Dark from '../img/new-logo-5-dark.png';
+import newLogo6 from '../img/new-logo-6.png';
+import newLogo7 from '../img/new-logo-7.png';
+import newLogo8 from '../img/new-logo-8.png';
+import newLogo9 from '../img/new-logo-9.png';
+import newLogo10 from '../img/new-logo-10.png';
+import newLogo11 from '../img/new-logo-11.png';
+import newLogo12 from '../img/new-logo-12.png';
+
 interface TestimonialItem {
   id: string;
   name: string;
@@ -88,10 +105,19 @@ export function Testimonials() {
 
   const clientLogos = [
     { src: logo3, isWhite: true },
-    { src: logo4, isWhite: true },
-    { src: logo6, isWhite: false },
-    { src: logo7, isWhite: false },
-    { src: logo8, isWhite: true },
+    { src: newLogo1, isWhite: false },
+    { src: newLogo14, isWhite: false },
+    { src: logo2Dark, darkSrc: logo2Light },
+    { src: newLogo3, isWhite: false },
+    { src: newLogo4, isWhite: false },
+    { src: logo5Light, darkSrc: logo5Dark },
+    { src: newLogo6, isWhite: false },
+    { src: newLogo7, isWhite: false },
+    { src: newLogo8, isWhite: false },
+    { src: newLogo9, isWhite: false },
+    { src: newLogo10, isWhite: false },
+    { src: newLogo11, isWhite: false },
+    { src: newLogo12, isWhite: false },
     { src: logo10, isWhite: false },
   ];
 
@@ -310,26 +336,68 @@ export function Testimonials() {
           >
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
               {clientLogos.map((item, index) => (
-                <img
-                  key={`logo-set1-${index}`}
-                  src={item.src}
-                  alt="Drishak Client Logo - Digital Marketing Services"
-                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${item.isWhite ? 'dark:invert-0 invert' : ''} ${
-                    item.src === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
-                  }`}
-                />
+                item.darkSrc ? (
+                  <div key={`logo-set1-${index}`} className="relative flex items-center justify-center">
+                    <img
+                      src={item.src}
+                      alt="Drishak Client Logo - Digital Marketing Services"
+                      className="w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer block dark:hidden h-16 md:h-24"
+                    />
+                    <img
+                      src={item.darkSrc}
+                      alt="Drishak Client Logo - Digital Marketing Services"
+                      className="w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer hidden dark:block h-16 md:h-24"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    key={`logo-set1-${index}`}
+                    src={item.src}
+                    alt="Drishak Client Logo - Digital Marketing Services"
+                    className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
+                      item.onlyLight ? 'dark:hidden' : ''
+                    } ${
+                      item.isWhite 
+                        ? 'invert hue-rotate-180 saturate-200 brightness-[0.8] dark:invert-0 dark:hue-rotate-0 dark:saturate-100 dark:brightness-100' 
+                        : ''
+                    } ${
+                      item.src === newLogo1 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                    }`}
+                  />
+                )
               ))}
             </div>
             <div className="flex items-center gap-12 md:gap-24 pr-12 md:pr-24">
               {clientLogos.map((item, index) => (
-                <img
-                  key={`logo-set2-${index}`}
-                  src={item.src}
-                  alt="Drishak Client Logo - Digital Marketing Services"
-                  className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${item.isWhite ? 'dark:invert-0 invert' : ''} ${
-                    item.src === logo4 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
-                  }`}
-                />
+                item.darkSrc ? (
+                  <div key={`logo-set2-${index}`} className="relative flex items-center justify-center">
+                    <img
+                      src={item.src}
+                      alt="Drishak Client Logo - Digital Marketing Services"
+                      className="w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer block dark:hidden h-16 md:h-24"
+                    />
+                    <img
+                      src={item.darkSrc}
+                      alt="Drishak Client Logo - Digital Marketing Services"
+                      className="w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer hidden dark:block h-16 md:h-24"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    key={`logo-set2-${index}`}
+                    src={item.src}
+                    alt="Drishak Client Logo - Digital Marketing Services"
+                    className={`w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-pointer ${
+                      item.onlyLight ? 'dark:hidden' : ''
+                    } ${
+                      item.isWhite 
+                        ? 'invert hue-rotate-180 saturate-200 brightness-[0.8] dark:invert-0 dark:hue-rotate-0 dark:saturate-100 dark:brightness-100' 
+                        : ''
+                    } ${
+                      item.src === newLogo1 ? 'h-16 md:h-24 scale-110' : 'h-16 md:h-24'
+                    }`}
+                  />
+                )
               ))}
             </div>
           </motion.div>

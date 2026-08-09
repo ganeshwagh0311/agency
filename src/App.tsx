@@ -10,10 +10,12 @@ import { Map } from "./components/Map";
 import { FAQ } from "./components/FAQ";
 import { Blog } from "./components/Blog";
 import { Footer } from "./components/Footer";
+import { Preloader } from "./components/Preloader";
 
 export default function App() {
   return (
     <div className="bg-slate-50 dark:bg-slate-950 font-sans min-h-screen text-slate-900 dark:text-white select-none transition-colors duration-500">
+      <Preloader />
       {/* Dynamic Smooth Background Lighting (static/ambient elements) */}
       <div className="fixed inset-0 bg-slate-50 dark:bg-slate-950 -z-50 transition-colors duration-500" />
       <div className="fixed top-[-20%] left-[-20%] w-[60rem] h-[60rem] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[200px] -z-50 pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />

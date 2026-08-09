@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { ArrowRight, BarChart3, Cloud, ScrollText, CheckCircle2 } from "lucide-react";
 import { ThreeHeroBg } from "./ThreeHeroBg";
 import { TiltCard } from "./TiltCard";
@@ -7,6 +8,23 @@ import vishraLogo from "../img/new-logo-vishra.png";
 import img2 from "../img/img2.png";
 import img3 from "../img/img3.png";
 import img4 from "../img/img4.png";
+
+function Counter({ from, to }: { from: number; to: number }) {
+  const count = useMotionValue(from);
+  const rounded = useTransform(count, Math.round);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      const animation = animate(count, to, { duration: 2.5, ease: "easeOut" });
+      return animation.stop;
+    }
+  }, [count, to, isInView]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+}
+
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex items-center overflow-hidden pt-24 md:pt-16">
@@ -58,7 +76,7 @@ export function Hero() {
             className="flex items-center gap-6 md:gap-8 my-2"
           >
             <div className="flex flex-col">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">60+</h3>
+              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight"><Counter from={1} to={60} />+</h3>
               <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
               <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Happy Clients</p>
             </div>
@@ -66,7 +84,7 @@ export function Hero() {
             <div className="w-[1px] h-16 bg-white/10 mx-2"></div>
             
             <div className="flex flex-col">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight">5+</h3>
+              <h3 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 tracking-tight"><Counter from={1} to={5} />+</h3>
               <div className="h-1 w-10 bg-gradient-to-r from-indigo-400 to-cyan-400 mt-2 mb-1.5 rounded-full opacity-80"></div>
               <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Years of Experience</p>
             </div>

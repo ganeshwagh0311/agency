@@ -5,11 +5,10 @@ export const Preloader: React.FC = () => {
   const [isWiped, setIsWiped] = useState(false);
 
   useEffect(() => {
-    // The animation takes about 1.7s total (1.15s delay + 0.55s subtitle).
-    // Let's add the wipe class after 2.5 seconds to reveal the site smoothly.
+    // Increased delay for the slower animation.
     const timer = setTimeout(() => {
       setIsWiped(true);
-    }, 2500);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -20,6 +19,7 @@ export const Preloader: React.FC = () => {
         <div className="stark-preloader__mark">
           <img src="/drishak-logo.png" alt="DRISHAK" className="stark-preloader__logo" />
         </div>
+        <p className="stark-preloader__sub">THE FUTURE OF SOCIAL MEDIA</p>
       </div>
     </div>
   );

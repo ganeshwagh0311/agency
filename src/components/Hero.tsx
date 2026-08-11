@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, BarChart3, Cloud, ScrollText, CheckCircle2 } from "lucide-react";
 import { ThreeHeroBg } from "./ThreeHeroBg";
 import { TiltCard } from "./TiltCard";
@@ -13,14 +13,29 @@ function Counter({ from, to }: { from: number; to: number }) {
   const count = useMotionValue(from);
   const rounded = useTransform(count, Math.round);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false }); // Allow re-animating when coming back into view
+  const [preloaderDone, setPreloaderDone] = useState(() => {
+    return typeof window !== 'undefined' && !!(window as any).preloaderDone;
+  });
 
   useEffect(() => {
-    if (isInView) {
-      const animation = animate(count, to, { duration: 2.5, ease: "easeOut" });
+    if (preloaderDone) return;
+
+    const handleWiped = () => {
+      setPreloaderDone(true);
+    };
+
+    window.addEventListener('preloaderWiped', handleWiped);
+    return () => window.removeEventListener('preloaderWiped', handleWiped);
+  }, [preloaderDone]);
+
+  useEffect(() => {
+    if (isInView && preloaderDone) {
+      count.set(from); // Reset to start value before animating
+      const animation = animate(count, to, { duration: 2.0, ease: "easeOut" });
       return animation.stop;
     }
-  }, [count, to, isInView]);
+  }, [count, from, to, isInView, preloaderDone]);
 
   return <motion.span ref={ref}>{rounded}</motion.span>;
 }

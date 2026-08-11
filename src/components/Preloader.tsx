@@ -8,6 +8,10 @@ export const Preloader: React.FC = () => {
     // Increased delay for the slower animation.
     const timer = setTimeout(() => {
       setIsWiped(true);
+      if (typeof window !== 'undefined') {
+        (window as any).preloaderDone = true;
+        window.dispatchEvent(new CustomEvent('preloaderWiped'));
+      }
     }, 4000);
 
     return () => clearTimeout(timer);

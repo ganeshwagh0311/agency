@@ -12,7 +12,72 @@ interface ServiceItem {
   glowClass: string;
 }
 
-export function Services() {
+interface ServicesProps {
+  selectedService?: string;
+  setSelectedService?: (service: string) => void;
+}
+
+interface ServiceStyle {
+  iconBgNormal: string;
+  iconTextNormal: string;
+  arrowTextNormal: string;
+  arrowBorderNormal: string;
+  borderHover: string;
+  glowHover: string;
+  arrowHover: string;
+  bgActive: string;
+  borderActive: string;
+  glowActive: string;
+  bulletBgNormal: string;
+  bulletBgActive: string;
+}
+
+const serviceStyles: Record<string, ServiceStyle> = {
+  digital: {
+    iconBgNormal: "bg-indigo-500/10 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+    iconTextNormal: "text-indigo-600 dark:text-indigo-400",
+    arrowTextNormal: "text-slate-500 dark:text-slate-400",
+    arrowBorderNormal: "border-slate-900/[0.05] dark:border-white/[0.05]",
+    borderHover: "",
+    glowHover: "",
+    arrowHover: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400 group-hover:border-indigo-500/30",
+    bgActive: "bg-slate-50/80 dark:bg-slate-950/40",
+    borderActive: "border-slate-200/50 dark:border-white/10",
+    glowActive: "",
+    bulletBgNormal: "from-indigo-500 to-purple-500",
+    bulletBgActive: "from-indigo-500 to-purple-500",
+  },
+  clothing: {
+    iconBgNormal: "bg-cyan-500/10 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
+    iconTextNormal: "text-cyan-600 dark:text-cyan-400",
+    arrowTextNormal: "text-slate-500 dark:text-slate-400",
+    arrowBorderNormal: "border-slate-900/[0.05] dark:border-white/[0.05]",
+    borderHover: "",
+    glowHover: "",
+    arrowHover: "group-hover:text-[#00D4FF] group-hover:border-[#00B8E6]/50",
+    bgActive: "bg-slate-50/80 dark:bg-slate-950/40",
+    borderActive: "border-slate-200/50 dark:border-white/10",
+    glowActive: "",
+    bulletBgNormal: "from-cyan-500 to-blue-500",
+    bulletBgActive: "from-cyan-500 to-blue-500",
+  },
+  paper: {
+    iconBgNormal: "bg-fuchsia-500/10 dark:bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 border-fuchsia-500/20",
+    iconTextNormal: "text-fuchsia-600 dark:text-fuchsia-400",
+    arrowTextNormal: "text-slate-500 dark:text-slate-400",
+    arrowBorderNormal: "border-slate-900/[0.05] dark:border-white/[0.05]",
+    borderHover: "",
+    glowHover: "",
+    arrowHover: "group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-400 group-hover:border-fuchsia-500/30",
+    bgActive: "bg-slate-50/80 dark:bg-slate-950/40",
+    borderActive: "border-slate-200/50 dark:border-white/10",
+    glowActive: "",
+    bulletBgNormal: "from-fuchsia-500 to-pink-500",
+    bulletBgActive: "from-fuchsia-500 to-pink-500",
+  },
+};
+
+export function Services({ selectedService, setSelectedService }: ServicesProps) {
   const services: ServiceItem[] = [
     {
       id: "digital",
@@ -30,20 +95,20 @@ export function Services() {
       glowClass: "group-hover:shadow-indigo-500/20",
     },
     {
-  id: "clothing",
-  icon: Shirt,
-  title: "Clothing Printing",
-  description: "Create and customize high-quality apparel with precision printing. From bulk orders to personalized designs, our workflow ensures premium results.",
-  features: [
-    "Custom T-Shirt & Apparel Printing",
-    "High-Quality Fabric & Ink Finishing",
-    "Bulk & On-Demand Production",
-    "Design Upload & Preview System",
-    "Fast Delivery & Order Tracking",
-  ],
-  colorClass: "from-cyan-500 to-blue-500 text-cyan-400",
-  glowClass: "group-hover:shadow-cyan-500/20",
-},
+      id: "clothing",
+      icon: Shirt,
+      title: "Clothing Printing",
+      description: "Create and customize high-quality apparel with precision printing. From bulk orders to personalized designs, our workflow ensures premium results.",
+      features: [
+        "Custom T-Shirt & Apparel Printing",
+        "High-Quality Fabric & Ink Finishing",
+        "Bulk & On-Demand Production",
+        "Design Upload & Preview System",
+        "Fast Delivery & Order Tracking",
+      ],
+      colorClass: "from-cyan-500 to-blue-500 text-cyan-400",
+      glowClass: "group-hover:shadow-cyan-500/20",
+    },
     {
       id: "paper",
       icon: Printer,
@@ -131,69 +196,103 @@ export function Services() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
         >
-          {services.map((service) => (
-            <motion.div key={service.id} variants={itemVariants} className="group">
-              <TiltCard className={`h-full p-1 shadow-lg transition-shadow duration-500 ${service.glowClass}`}>
-                <div className="bg-slate-50/80 dark:bg-slate-950/40 rounded-xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden">
-                  {/* Subtle card grid lines */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity" />
+          {services.map((service) => {
+            const isActive = selectedService === service.id;
+            const styles = serviceStyles[service.id];
 
-                  {/* Card Glow Corner */}
-                  <div className={`absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br ${service.colorClass} opacity-10 blur-xl group-hover:opacity-30 group-hover:scale-150 transition-all duration-500 rounded-full`} />
+            return (
+              <motion.div
+                key={service.id}
+                variants={itemVariants}
+                className="group cursor-pointer"
+                onClick={() => {
+                  if (setSelectedService) {
+                    setSelectedService(service.id);
+                  }
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                <TiltCard
+                  className="h-full p-1 shadow-lg transition-all duration-500 border-slate-200/50 dark:border-white/10"
+                >
+                  <div
+                    className="rounded-xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden transition-all duration-500 bg-slate-50/80 dark:bg-slate-950/40"
+                  >
+                    {/* Subtle card grid lines */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity" />
 
-                  {/* Header: Icon + Arrow */}
-                  <div className="flex items-center justify-between mb-6 relative z-10">
-                    <div className={`p-4 rounded-xl bg-gradient-to-br from-slate-900/[0.04] to-slate-900/[0.01] border border-slate-900/[0.08] dark:from-white/[0.04] dark:to-white/[0.01] dark:border-white/[0.08] ${service.colorClass} shadow-inner`}>
-                      <service.icon className="w-6 h-6" />
+                    {/* Card Glow Corner */}
+                    <div className={`absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br ${service.colorClass} opacity-10 blur-xl group-hover:opacity-30 group-hover:scale-150 transition-all duration-500 rounded-full`} />
+
+                    {/* Header: Icon + Arrow */}
+                    <div className="flex items-center justify-between mb-6 relative z-10">
+                      <div
+                        className={`p-4 rounded-xl border transition-all duration-500 ${styles.iconBgNormal}`}
+                      >
+                        <service.icon className="w-6 h-6" />
+                      </div>
+                      
+                      <div
+                        className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${styles.arrowBorderNormal} ${styles.arrowTextNormal} ${styles.arrowHover} group-hover:bg-slate-900/[0.1] dark:group-hover:bg-white/[0.1] hover:scale-110`}
+                      >
+                        <ArrowUpRight className="w-5 h-5" />
+                      </div>
                     </div>
-                    
-                    <a
-                      href="#contact"
-                      className="w-10 h-10 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/[0.05] dark:border-white/[0.05] flex items-center justify-center text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white group-hover:bg-slate-900/[0.1] dark:group-hover:bg-white/[0.1] group-hover:border-slate-900/20 dark:group-hover:border-white/20 hover:scale-110 transition-all duration-300"
+
+                    {/* Title & Description */}
+                    <div className="relative z-10 flex-1">
+                      <h3
+                        className="font-sans font-semibold text-xl transition-all text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:via-slate-900 group-hover:to-slate-600 dark:group-hover:from-white dark:group-hover:via-white dark:group-hover:to-slate-300"
+                      >
+                        {service.title}
+                      </h3>
+                      <p
+                        className="text-sm mt-3 font-light leading-relaxed transition-all text-slate-600 dark:text-slate-400"
+                      >
+                        {service.description}
+                      </p>
+
+                      {/* Features List */}
+                      <ul className="mt-6 flex flex-col gap-2.5">
+                        {service.features.map((feat, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2.5 text-xs font-light transition-all text-slate-700 dark:text-slate-300"
+                          >
+                            <span
+                              className={`mt-0.5 rounded-full p-0.5 bg-gradient-to-br flex-shrink-0 ${styles.bulletBgNormal}`}
+                            >
+                              <div className="rounded-full p-0.5 bg-slate-50 dark:bg-slate-950">
+                                <div
+                                  className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${styles.bulletBgNormal}`}
+                                />
+                              </div>
+                            </span>
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Floating glass overlay at bottom */}
+                    <div
+                      className="mt-8 pt-4 border-t flex items-center justify-between text-xs transition-all border-slate-900/[0.04] dark:border-white/[0.04] text-slate-500 dark:text-slate-400"
                     >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
+                      <span className="font-mono flex items-center gap-1">
+                        <Shield className="w-3.5 h-3.5 text-emerald-400" /> SLA Guaranteed
+                      </span>
+                      <span className="font-mono flex items-center gap-1">
+                        <Zap className="w-3.5 h-3.5 text-amber-400" /> Ultra-Fast
+                      </span>
+                    </div>
                   </div>
-
-                  {/* Title & Description */}
-                  <div className="relative z-10 flex-1">
-                    <h3 className="font-sans font-semibold text-xl text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:via-slate-900 group-hover:to-slate-600 dark:group-hover:from-white dark:group-hover:via-white dark:group-hover:to-slate-300 transition-all">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-3 font-light leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Features List */}
-                    <ul className="mt-6 flex flex-col gap-2.5">
-                      {service.features.map((feat, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 font-light">
-                          <span className={`mt-0.5 rounded-full p-0.5 bg-gradient-to-br ${service.colorClass} flex-shrink-0`}>
-                            <div className="bg-slate-50 dark:bg-slate-950 rounded-full p-0.5">
-                              <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${service.colorClass}`} />
-                            </div>
-                          </span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Floating glass overlay at bottom */}
-                  <div className="mt-8 pt-4 border-t border-slate-900/[0.04] dark:border-white/[0.04] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 relative z-10">
-                    <span className="font-mono flex items-center gap-1">
-                      <Shield className="w-3.5 h-3.5 text-emerald-400" /> SLA Guaranteed
-                    </span>
-                    <span className="font-mono flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 text-amber-400" /> Ultra-Fast
-                    </span>
-                  </div>
-                </div>
-              </TiltCard>
-            </motion.div>
-          ))}
+                </TiltCard>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
   );
 }
+

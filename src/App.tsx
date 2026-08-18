@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
@@ -8,11 +9,12 @@ import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Map } from "./components/Map";
 import { FAQ } from "./components/FAQ";
-import { Blog } from "./components/Blog";
 import { Footer } from "./components/Footer";
 import { Preloader } from "./components/Preloader";
 
 export default function App() {
+  const [selectedService, setSelectedService] = useState<string>("digital");
+
   return (
     <div className="bg-slate-50 dark:bg-slate-950 font-sans min-h-screen text-slate-900 dark:text-white select-none transition-colors duration-500">
       <Preloader />
@@ -28,14 +30,13 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
+        <Services selectedService={selectedService} setSelectedService={setSelectedService} />
         <Portfolio />
         <AboutUs/>
         <Process />
         <Testimonials />
-        <Contact />
+        <Contact selectedService={selectedService} />
         <FAQ />
-        <Blog />
         <Map />
       </main>
       <Footer />

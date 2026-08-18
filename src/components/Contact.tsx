@@ -1,15 +1,25 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Upload, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { TiltCard } from "./TiltCard";
 
-export function Contact() {
+interface ContactProps {
+  selectedService?: string;
+}
+
+export function Contact({ selectedService }: ContactProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     service: "digital",
     message: "",
   });
+
+  useEffect(() => {
+    if (selectedService) {
+      setFormData((prev) => ({ ...prev, service: selectedService }));
+    }
+  }, [selectedService]);
   
   const [file, setFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -146,8 +156,8 @@ export function Contact() {
               className="flex flex-col gap-4"
             >
               {[
-                { icon: Mail, label: "Email Us", value: "drishakagency@gmail.com", href: "mailto:drishakagency@gmail.com" },
-                { icon: Phone, label: "Call Directly", value: "+91 9021889499", href: "tel:+91 9021889499" },
+                { icon: Mail, label: "Email Us", value: "sales@drishak.in", href: "mailto:sales@drishak.in" },
+                { icon: Phone, label: "Call Directly", value: "+91 8459656685 , 9021889499", href: "tel: +91 8459656685 , 9021889499" },
                 { icon: MapPin, label: "Location", value: "Near Poonam furniture, Gokul colony, rahuri, ahilyanagar", href: "#" },
               ].map((item, i) => (
                 <div

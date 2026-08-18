@@ -23,7 +23,6 @@ export function Navbar() {
       { name: "Portfolio", href: "#portfolio" },
       { name: "AboutUs", href: "#about-us" },
       { name: "FAQ", href: "#faq" },
-      { name: "Blog", href: "#blog" },
       { name: "Process", href: "#process" },
     ];
 

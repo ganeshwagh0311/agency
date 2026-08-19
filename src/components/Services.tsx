@@ -131,17 +131,50 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.08,
       },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const leftItemVariants = {
+    hidden: { opacity: 0, x: -300 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8
+      },
+    },
+  };
+
+  const middleItemVariants = {
+    hidden: { opacity: 0, y: 200 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as any },
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8
+      },
+    },
+  };
+
+  const rightItemVariants = {
+    hidden: { opacity: 0, x: 300 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8
+      },
     },
   };
 
@@ -157,7 +190,7 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-4 h-4" />
@@ -167,7 +200,7 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
@@ -180,7 +213,7 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
@@ -193,17 +226,25 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
         >
-          {services.map((service) => {
+          {services.map((service, index) => {
             const isActive = selectedService === service.id;
             const styles = serviceStyles[service.id];
+
+            // Select variant based on the position of the card
+            let cardVariants = leftItemVariants;
+            if (index === 1) {
+              cardVariants = middleItemVariants;
+            } else if (index === 2) {
+              cardVariants = rightItemVariants;
+            }
 
             return (
               <motion.div
                 key={service.id}
-                variants={itemVariants}
+                variants={cardVariants}
                 className="group cursor-pointer"
                 onClick={() => {
                   if (setSelectedService) {

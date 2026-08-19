@@ -27,6 +27,7 @@ import newLogo9 from '../img/new-logo-9.png';
 import newLogo10 from '../img/new-logo-10.png';
 import newLogo11 from '../img/new-logo-11.png';
 import newLogo12 from '../img/new-logo-12.png';
+import logoMarathi from '../img/logo-marathi.png';
 
 interface TestimonialItem {
   id: string;
@@ -119,6 +120,7 @@ export function Testimonials() {
     { src: newLogo11, isWhite: false },
     { src: newLogo12, isWhite: false },
     { src: logo10, isWhite: false },
+    { src: logoMarathi, isWhite: false },
   ];
 
   const containerVariants = {

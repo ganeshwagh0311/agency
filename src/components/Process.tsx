@@ -179,55 +179,57 @@ export function Process() {
                   <div className="absolute left-[2.75rem] top-20 bottom-[-3rem] w-1 bg-gradient-to-b from-indigo-500 to-cyan-500 lg:hidden opacity-20" />
                 )}
 
-                <TiltCard className={`p-0.5 h-full transition-shadow duration-300 ${step.glow}`}>
-                  <div className="bg-slate-100/80 dark:bg-slate-950/40 rounded-2xl p-6 md:p-8 flex flex-col h-full items-center text-center relative overflow-hidden shadow-sm dark:shadow-none border border-slate-200/50 dark:border-transparent">
-                    {/* Background number */}
-                    <div className="absolute -bottom-6 -right-6 text-8xl font-sans font-black text-slate-900/[0.02] dark:text-white/[0.02] tracking-tighter group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.04] transition-colors">
-                      {step.number}
-                    </div>
-
-                    {/* Step Icon / Image Circle & Floating Glow */}
-                    <div className="relative mb-6 z-10">
-                      {/* Step Circle Counter */}
-                      <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/20 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white font-mono z-20 shadow-md">
+                <div className="h-full pipeline-card-hover-wrapper">
+                  <TiltCard className="h-full p-0.5 pipeline-tilt-card">
+                    <div className="bg-slate-100/80 dark:bg-slate-950/40 rounded-2xl p-6 md:p-8 flex flex-col h-full items-center text-center relative overflow-hidden shadow-sm dark:shadow-none border border-slate-200/50 dark:border-transparent pipeline-card-inner">
+                      {/* Background number */}
+                      <div className="absolute -bottom-6 -right-6 text-8xl font-sans font-black text-slate-900/[0.02] dark:text-white/[0.02] tracking-tighter group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.04] transition-colors">
                         {step.number}
                       </div>
 
-                      <div className="w-28 h-28 rounded-full bg-slate-900/[0.04] dark:bg-white/[0.04] backdrop-blur-md border border-slate-900/[0.08] dark:border-white/[0.08] flex items-center justify-center text-slate-900 dark:text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
-                        {step.image ? (
-                          <img 
-                            src={step.image} 
-                            alt={step.title} 
-                            className={`w-full h-full ${step.imageClass || 'object-cover'} rounded-full`}
-                          />
-                        ) : (
-                          <step.icon className={`w-10 h-10 ${step.color}`} />
-                        )}
-                        <div className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-full`} />
+                      {/* Step Icon / Image Circle & Floating Glow */}
+                      <div className="relative mb-6 z-10">
+                        {/* Step Circle Counter */}
+                        <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/20 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white font-mono z-20 shadow-md">
+                          {step.number}
+                        </div>
+
+                        <div className="w-28 h-28 rounded-full bg-slate-900/[0.04] dark:bg-white/[0.04] backdrop-blur-md border border-slate-900/[0.08] dark:border-white/[0.08] flex items-center justify-center text-slate-900 dark:text-white relative z-10 group-hover:scale-110 transition-transform overflow-hidden">
+                          {step.image ? (
+                            <img 
+                              src={step.image} 
+                              alt={step.title} 
+                              className={`w-full h-full ${step.imageClass || 'object-cover'} rounded-full`}
+                            />
+                          ) : (
+                            <step.icon className={`w-10 h-10 ${step.color}`} />
+                          )}
+                          <div className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-full`} />
+                        </div>
+                        <div className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-3 bg-gradient-to-r ${step.color} opacity-30 blur-md rounded-full -z-10`} />
                       </div>
-                      <div className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-3 bg-gradient-to-r ${step.color} opacity-30 blur-md rounded-full -z-10`} />
+
+
+                      {/* Title & Description */}
+                      <div className="flex-1 relative z-10">
+                        <h4 className="text-xs font-mono font-semibold tracking-wider bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/[0.05] dark:border-white/[0.05] text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full uppercase inline-block mb-3">
+                          {step.phase}
+                        </h4>
+                        <h3 className="font-sans font-bold text-xl text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-3 font-light leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+
+                      {/* Next arrow inside cards on desktop */}
+                      {index < steps.length - 1 && (
+                        <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-slate-900/10 dark:text-white/10 hidden lg:block group-hover:text-slate-900/30 dark:group-hover:text-white/30 group-hover:translate-x-2 transition-all w-6 h-6 z-20 pointer-events-none" />
+                      )}
                     </div>
-
-
-                    {/* Title & Description */}
-                    <div className="flex-1 relative z-10">
-                      <h4 className="text-xs font-mono font-semibold tracking-wider bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/[0.05] dark:border-white/[0.05] text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full uppercase inline-block mb-3">
-                        {step.phase}
-                      </h4>
-                      <h3 className="font-sans font-bold text-xl text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-3 font-light leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
-
-                    {/* Next arrow inside cards on desktop */}
-                    {index < steps.length - 1 && (
-                      <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-slate-900/10 dark:text-white/10 hidden lg:block group-hover:text-slate-900/30 dark:group-hover:text-white/30 group-hover:translate-x-2 transition-all w-6 h-6 z-20 pointer-events-none" />
-                    )}
-                  </div>
-                </TiltCard>
+                  </TiltCard>
+                </div>
               </motion.div>
             ))}
           </motion.div>

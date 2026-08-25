@@ -31,7 +31,7 @@ export function CreativesSlider() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto h-[400px] md:h-[550px] flex items-center justify-center overflow-hidden mb-20 md:mb-32">
+    <div className="relative w-full max-w-7xl mx-auto h-[320px] md:h-[380px] lg:h-[450px] flex items-center justify-center overflow-hidden mb-10 md:mb-16">
       <div className="absolute w-full h-full flex items-center justify-center">
         {images.map((img, index) => {
           let offset = index - currentIndex;
@@ -61,7 +61,7 @@ export function CreativesSlider() {
                 zIndex,
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className={`absolute w-[60%] sm:w-[45%] md:w-[35%] lg:w-[25%] max-w-[320px] aspect-[4/5] rounded-2xl overflow-hidden ${isVisible ? "pointer-events-auto cursor-pointer" : "pointer-events-none"}`}
+              className={`absolute top-0 bottom-0 my-auto w-[60%] sm:w-[45%] md:w-[35%] lg:w-[25%] max-w-[320px] aspect-[4/5] rounded-2xl overflow-hidden ${isVisible ? "pointer-events-auto cursor-pointer" : "pointer-events-none"}`}
               style={{
                  boxShadow: isCenter ? "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.2)" : "0 10px 15px -3px rgba(0, 0, 0, 0.2)",
               }}
@@ -83,14 +83,14 @@ export function CreativesSlider() {
 
       <button 
         onClick={prevSlide}
-        className="absolute left-2 md:left-8 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-slate-900/60 border border-white/20 text-white backdrop-blur hover:bg-indigo-500/80 hover:scale-110 transition-all shadow-xl"
+        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-slate-900/60 border border-white/20 text-white backdrop-blur hover:bg-indigo-500/80 hover:scale-110 transition-all shadow-xl"
       >
         <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
       </button>
       
       <button 
         onClick={nextSlide}
-        className="absolute right-2 md:right-8 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-slate-900/60 border border-white/20 text-white backdrop-blur hover:bg-fuchsia-500/80 hover:scale-110 transition-all shadow-xl"
+        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-slate-900/60 border border-white/20 text-white backdrop-blur hover:bg-fuchsia-500/80 hover:scale-110 transition-all shadow-xl"
       >
         <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
       </button>

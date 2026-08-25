@@ -101,7 +101,7 @@ export default function AboutUs() {
 
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+        <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export default function AboutUs() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-6xl mx-auto text-center mb-12 md:mb-16"
+          className="max-w-6xl mx-auto text-center mb-6 md:mb-8"
         >
           <h2 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400">
             Explore Our Recent{" "}

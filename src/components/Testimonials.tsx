@@ -202,8 +202,9 @@ export function Testimonials() {
             <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-stretch">
               {reviews.map((review, index) => (
                 <div key={`set1-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
-                  <TiltCard className="h-full p-0.5">
-                  <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                  <div className="h-full testimonial-card-hover-wrapper">
+                    <TiltCard className="h-full p-0.5 testimonial-tilt-card">
+                      <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden testimonial-card-inner">
                     <Quote className="absolute -top-6 -right-6 w-32 h-32 text-slate-900/[0.02] dark:text-white/[0.01] group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
 
                     <div className="flex gap-1 mb-6 relative z-10">
@@ -248,8 +249,9 @@ export function Testimonials() {
                     </div>
                     
                     <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/10 dark:via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      </div>
+                    </TiltCard>
                   </div>
-                </TiltCard>
                 </div>
               ))}
             </div>
@@ -258,8 +260,9 @@ export function Testimonials() {
             <div className="flex gap-6 md:gap-8 pr-6 md:pr-8 py-4 items-stretch">
               {reviews.map((review, index) => (
                 <div key={`set2-${review.id}-${index}`} className="group w-[300px] md:w-[400px] flex-shrink-0">
-                  <TiltCard className="h-full p-0.5">
-                  <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden">
+                  <div className="h-full testimonial-card-hover-wrapper">
+                    <TiltCard className="h-full p-0.5 testimonial-tilt-card">
+                      <div className="bg-white/80 dark:bg-slate-950/40 border border-slate-200/50 dark:border-transparent shadow-sm dark:shadow-none rounded-2xl p-8 flex flex-col h-full relative overflow-hidden testimonial-card-inner">
                     <Quote className="absolute -top-6 -right-6 w-32 h-32 text-slate-900/[0.02] dark:text-white/[0.01] group-hover:text-slate-900/[0.04] dark:group-hover:text-white/[0.03] group-hover:rotate-12 transition-all duration-700 font-black pointer-events-none" />
 
                     <div className="flex gap-1 mb-6 relative z-10">
@@ -304,8 +307,9 @@ export function Testimonials() {
                     </div>
                     
                     <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/10 dark:via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      </div>
+                    </TiltCard>
                   </div>
-                </TiltCard>
                 </div>
               ))}
             </div>

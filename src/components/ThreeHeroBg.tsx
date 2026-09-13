@@ -1,192 +1,223 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useTheme } from "../context/ThemeContext";
 
 export function ThreeHeroBg() {
   const mountRef = useRef<HTMLDivElement>(null);
+  
+  // Refs to allow smooth theme updates without rebuilding the Three.js scene
+  const materialRef = useRef<THREE.MeshPhongMaterial | null>(null);
+  const ambientLightRef = useRef<THREE.AmbientLight | null>(null);
+  const pointLight1Ref = useRef<THREE.PointLight | null>(null);
+  const pointLight2Ref = useRef<THREE.PointLight | null>(null);
+  const dirLightRef = useRef<THREE.DirectionalLight | null>(null);
+  
+  const { theme } = useTheme();
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const container = mountRef.current;
+    if (!container) return;
 
-    // Dimensions
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    // Use container dimensions with window size fallback to avoid 0x0 canvas sizes on mount
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
 
-    // Scene
+    // 1. Initialize Scene & Camera
     const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera.position.z = 25;
 
-    // Camera
-    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
-    camera.position.z = 8;
-
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    // 2. Initialize Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mountRef.current.appendChild(renderer.domElement);
-
-    // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
-    scene.add(ambientLight);
-
-    const light1 = new THREE.DirectionalLight(0x4f46e5, 1.5); // Purple
-    light1.position.set(5, 5, 5);
-    scene.add(light1);
-
-    const light2 = new THREE.DirectionalLight(0x06b6d4, 1.2); // Cyan/Blue
-    light2.position.set(-5, -5, 5);
-    scene.add(light2);
-
-    const light3 = new THREE.PointLight(0xec4899, 1.0); // Pink/Purple
-    light3.position.set(0, 0, 3);
-    scene.add(light3);
-
-    // Objects - Liquid Blobs
-    // We will create a high-detail sphere and displace its vertices in the animation loop
-    const geometry = new THREE.IcosahedronGeometry(2.5, 32); // Radius, Detail
     
-    // Custom vertex shader to deform the sphere (or we can deform vertices in JS for simplicity)
-    const material = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
-      roughness: 0.1,
-      metalness: 0.1,
-      transparent: true,
-      opacity: 0.25,
-      transmission: 0.9, // Glass-like transparency
-      ior: 1.5,
-      thickness: 1.0,
-      specularIntensity: 1.0,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.1,
-      wireframe: false,
+    // Explicitly style the canvas element to fill the container
+    renderer.domElement.style.position = "absolute";
+    renderer.domElement.style.top = "0";
+    renderer.domElement.style.left = "0";
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.pointerEvents = "none";
+    
+    container.appendChild(renderer.domElement);
+
+    // 3. Generate Low-Poly Geometry
+    // We create a plane large enough to cover the screen plus tilt/parallax margin
+    const geometry = new THREE.PlaneGeometry(105, 65, 22, 14);
+    const positionAttribute = geometry.attributes.position;
+    const vertexCount = positionAttribute.count;
+
+    // Save initial coordinates for animation offsets
+    const initialZ = new Float32Array(vertexCount);
+    for (let i = 0; i < vertexCount; i++) {
+      // Displace Z to create a low-poly terrain/mountainous look
+      const zOffset = (Math.random() - 0.5) * 5.0;
+      positionAttribute.setZ(i, zOffset);
+      initialZ[i] = zOffset;
+    }
+    geometry.computeVertexNormals();
+
+    // 4. Create Flat-Shaded Material
+    const material = new THREE.MeshPhongMaterial({
+      color: theme === "dark" ? 0x0c152b : 0xe2e8f0, // Rich navy-slate base or light slate
+      specular: theme === "dark" ? 0x224488 : 0xffffff,
+      shininess: theme === "dark" ? 45 : 25,
+      flatShading: true,
+      transparent: false,
     });
+    materialRef.current = material;
 
-    const blob = new THREE.Mesh(geometry, material);
-    scene.add(blob);
+    // 5. Create Mesh
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.z = -5; // Recess back slightly
+    scene.add(mesh);
 
-    // Add a couple of smaller floating secondary blobs
-    const secondaryGeo = new THREE.IcosahedronGeometry(1, 16);
-    const secondaryMat = new THREE.MeshPhysicalMaterial({
-      color: 0x8b5cf6,
-      roughness: 0.2,
-      metalness: 0.2,
-      transparent: true,
-      opacity: 0.4,
-      transmission: 0.6,
-      ior: 1.2,
-      clearcoat: 0.5,
-    });
+    // 6. Setup Lights (Ambient + colorful Directional & Point lights with 0 decay)
+    const ambientLight = new THREE.AmbientLight(
+      theme === "dark" ? 0x0c1122 : 0xf1f5f9,
+      theme === "dark" ? 0.9 : 1.4
+    );
+    scene.add(ambientLight);
+    ambientLightRef.current = ambientLight;
 
-    const blob2 = new THREE.Mesh(secondaryGeo, secondaryMat);
-    blob2.position.set(4, 2, -2);
-    scene.add(blob2);
+    // Directional Light: casting broad cyan highlights
+    const dirLight = new THREE.DirectionalLight(
+      theme === "dark" ? 0x00f0ff : 0x3b82f6,
+      theme === "dark" ? 2.5 : 1.2
+    );
+    dirLight.position.set(1, 1, 1).normalize();
+    scene.add(dirLight);
+    dirLightRef.current = dirLight;
 
-    const blob3 = new THREE.Mesh(secondaryGeo, secondaryMat.clone());
-    blob3.material.color.setHex(0x06b6d4);
-    blob3.position.set(-4, -2, -1);
-    scene.add(blob3);
+    // Point Light 1: Cyan / Bright Blue (intensity with 0 decay for predictable volume)
+    const pointLight1 = new THREE.PointLight(
+      theme === "dark" ? 0x00f0ff : 0x3b82f6,
+      theme === "dark" ? 10 : 4,
+      120,
+      0 // zero decay
+    );
+    pointLight1.position.set(25, 15, 15);
+    scene.add(pointLight1);
+    pointLight1Ref.current = pointLight1;
 
-    // Keep track of original vertex positions for deformation
-    const positionAttribute = geometry.getAttribute("position");
-    const originalPositions = positionAttribute.array.slice();
+    // Point Light 2: Indigo / Purple
+    const pointLight2 = new THREE.PointLight(
+      theme === "dark" ? 0x7000ff : 0xc084fc,
+      theme === "dark" ? 8 : 3,
+      120,
+      0 // zero decay
+    );
+    pointLight2.position.set(-25, -15, 15);
+    scene.add(pointLight2);
+    pointLight2Ref.current = pointLight2;
 
-    // Resize handler
-    const handleResize = () => {
-      if (!mountRef.current) return;
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      
-      renderer.setSize(w, h);
+    // 7. Interactive Mouse Controls
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
 
-    // Animation loop
+    // 8. Animation and Render Loop
     let animationFrameId: number;
     const clock = new THREE.Clock();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
-      const time = clock.getElapsedTime();
+      // Smooth interpolation (lerping) for parallax movement
+      targetX += (mouseX - targetX) * 0.05;
+      targetY += (mouseY - targetY) * 0.05;
 
-      // Deform main blob vertices using sine/cosine waves for liquid effect
-      const positions = positionAttribute.array;
-      for (let i = 0; i < positions.length; i += 3) {
-        const vx = originalPositions[i];
-        const vy = originalPositions[i + 1];
-        const vz = originalPositions[i + 2];
+      // Apply subtle tilt to the low-poly mesh based on mouse position
+      mesh.rotation.x = targetY * 0.08;
+      mesh.rotation.y = targetX * 0.12;
 
-        // Calculate length of vertex from center
-        const len = Math.sqrt(vx * vx + vy * vy + vz * vz);
-        
-        // Complex wave function using space and time
-        const wave = 
-          Math.sin(vx * 1.2 + time * 1.5) * 0.15 +
-          Math.cos(vy * 1.5 + time * 1.2) * 0.15 +
-          Math.sin(vz * 1.0 + time * 2.0) * 0.1;
-
-        // Displace vertex along its normal (which is from center out, since it's a sphere at 0,0,0)
-        positions[i] = vx + (vx / len) * wave;
-        positions[i + 1] = vy + (vy / len) * wave;
-        positions[i + 2] = vz + (vz / len) * wave;
-      }
+      // Shift lighting positions slightly based on cursor to animate highlights
+      pointLight1.position.x = 25 + targetX * 15;
+      pointLight1.position.y = 15 + targetY * 10;
       
-      // Mark geometry for update
-      positionAttribute.needsUpdate = true;
-      geometry.computeVertexNormals();
-
-      // Rotate blobs slowly
-      blob.rotation.x = time * 0.1;
-      blob.rotation.y = time * 0.15;
-
-      blob2.rotation.x = -time * 0.2;
-      blob2.position.y = 2 + Math.sin(time * 0.5) * 0.5;
-      blob2.position.x = 4 + Math.cos(time * 0.5) * 0.3;
-
-      blob3.rotation.y = time * 0.3;
-      blob3.position.y = -2 + Math.cos(time * 0.7) * 0.4;
-      blob3.position.x = -4 + Math.sin(time * 0.7) * 0.3;
-
-      // Slowly move lights to shift reflections
-      light1.position.x = 5 + Math.sin(time * 0.5) * 2;
-      light1.position.y = 5 + Math.cos(time * 0.5) * 2;
-
-      light3.position.x = Math.sin(time * 1.0) * 3;
-      light3.position.y = Math.cos(time * 1.0) * 3;
+      pointLight2.position.x = -25 - targetX * 15;
+      pointLight2.position.y = -15 - targetY * 10;
 
       renderer.render(scene, camera);
     };
 
     animate();
 
-    // Cleanup
+    // 9. Resize Handling
+    const handleResize = () => {
+      if (!container) return;
+      const w = container.clientWidth || window.innerWidth;
+      const h = container.clientHeight || window.innerHeight;
+
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(w, h);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // 10. Clean up and resource disposal on component unmount
     return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
-      
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
 
-      // Dispose resources
       geometry.dispose();
-      secondaryGeo.dispose();
       material.dispose();
-      secondaryMat.dispose();
       renderer.dispose();
+      if (container && renderer.domElement) {
+        container.removeChild(renderer.domElement);
+      }
     };
   }, []);
+
+  // Update Three.js materials and lights dynamically when the app theme toggles
+  useEffect(() => {
+    if (materialRef.current) {
+      materialRef.current.color.setHex(theme === "dark" ? 0x0c152b : 0xe2e8f0);
+      materialRef.current.specular.setHex(theme === "dark" ? 0x224488 : 0xffffff);
+      materialRef.current.shininess = theme === "dark" ? 45 : 25;
+      materialRef.current.needsUpdate = true;
+    }
+
+    if (ambientLightRef.current) {
+      ambientLightRef.current.color.setHex(theme === "dark" ? 0x0c1122 : 0xf1f5f9);
+      ambientLightRef.current.intensity = theme === "dark" ? 0.9 : 1.4;
+    }
+
+    if (dirLightRef.current) {
+      dirLightRef.current.color.setHex(theme === "dark" ? 0x00f0ff : 0x3b82f6);
+      dirLightRef.current.intensity = theme === "dark" ? 2.5 : 1.2;
+    }
+
+    if (pointLight1Ref.current) {
+      pointLight1Ref.current.color.setHex(theme === "dark" ? 0x00f0ff : 0x3b82f6);
+      pointLight1Ref.current.intensity = theme === "dark" ? 10 : 4;
+    }
+
+    if (pointLight2Ref.current) {
+      pointLight2Ref.current.color.setHex(theme === "dark" ? 0x7000ff : 0xc084fc);
+      pointLight2Ref.current.intensity = theme === "dark" ? 8 : 3;
+    }
+  }, [theme]);
 
   return (
     <div
       ref={mountRef}
-      className="absolute inset-0 w-full h-full -z-10 overflow-hidden pointer-events-none opacity-60 mix-blend-screen"
+      className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none opacity-90 dark:opacity-85 transition-opacity duration-500"
       style={{
-        maskImage: "radial-gradient(circle at center, black 60%, transparent 100%)",
-        WebkitMaskImage: "radial-gradient(circle at center, black 60%, transparent 100%)",
+        maskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
+        WebkitMaskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
       }}
     />
   );

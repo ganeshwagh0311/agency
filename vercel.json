@@ -1,5 +1,22 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/seo-agency-rahuri",
+      "destination": "/seo-services-rahuri",
+      "permanent": true
+    },
+    {
+      "source": "/google-ads-agency-rahuri",
+      "destination": "/google-ads-rahuri",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!robots.txt|sitemap.xml|favicon.ico|assets|img|fonts|site.webmanifest).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

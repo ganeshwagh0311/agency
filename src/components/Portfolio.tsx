@@ -106,6 +106,58 @@ export function Portfolio() {
       : projects.filter((p) => p.category === filter);
 
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const leftItemVariants = {
+    hidden: { opacity: 0, x: -300 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8,
+      },
+    },
+  };
+
+  const middleItemVariants = {
+    hidden: { opacity: 0, y: 200 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8,
+      },
+    },
+  };
+
+  const rightItemVariants = {
+    hidden: { opacity: 0, x: 300 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8,
+      },
+    },
+  };
+
   return (
     <section id="portfolio" className="relative py-6 md:py-12 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden border-b border-slate-200 dark:border-white/5">
       {/* Decorative background blur */}
@@ -124,7 +176,7 @@ export function Portfolio() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-20px" }}
               className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-cyan-600 dark:text-cyan-300 font-medium text-xs tracking-wider uppercase mb-4"
             >
               <Briefcase className="w-4 h-4" />
@@ -134,7 +186,7 @@ export function Portfolio() {
             <motion.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ delay: 0.1 }}
               className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400"
             >
@@ -149,7 +201,7 @@ export function Portfolio() {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ delay: 0.2 }}
             className="flex flex-wrap items-center gap-2 bg-slate-900/[0.03] dark:bg-white/[0.03] backdrop-blur-md border border-slate-900/10 dark:border-white/10 p-1 rounded-2xl w-full sm:w-auto overflow-x-auto justify-start sm:justify-center"
           >
@@ -175,17 +227,31 @@ export function Portfolio() {
         </div>
 
         {/* Portfolio Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-100px" }}
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10"
+        >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                layout
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className={`group ${project.link ? "cursor-pointer" : ""}`}
+            {filteredProjects.map((project, index) => {
+              // Select variant based on the column position in a 3-column layout
+              let cardVariants = leftItemVariants;
+              if (index % 3 === 1) {
+                cardVariants = middleItemVariants;
+              } else if (index % 3 === 2) {
+                cardVariants = rightItemVariants;
+              }
+
+              return (
+                <motion.div
+                  layout
+                  key={project.id}
+                  variants={cardVariants}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className={`group ${project.link ? "cursor-pointer" : ""}`}
                 onClick={() => {
                   if (project.link) {
                     if (project.link.startsWith("http")) {
@@ -270,8 +336,9 @@ export function Portfolio() {
                     </div>
                   </div>
                 </TiltCard>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
       </div>

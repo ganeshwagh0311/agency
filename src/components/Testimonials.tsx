@@ -28,6 +28,7 @@ import newLogo10 from '../img/new-logo-10.png';
 import newLogo11 from '../img/new-logo-11.png';
 import newLogo12 from '../img/new-logo-12.png';
 import logoMarathi from '../img/logo-marathi.png';
+import logoUserAdded from '../img/logo-user-added.png';
 
 interface TestimonialItem {
   id: string;
@@ -121,22 +122,20 @@ export function Testimonials() {
     { src: newLogo12, isWhite: false },
     { src: logo10, isWhite: false },
     { src: logoMarathi, isWhite: false },
+    { src: logoUserAdded, isWhite: false },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const middleItemVariants = {
+    hidden: { opacity: 0, y: 200 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" as any },
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 130,
+        damping: 16,
+        mass: 0.8,
+      },
     },
   };
 
@@ -152,7 +151,7 @@ export function Testimonials() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/10 dark:border-white/10 text-purple-600 dark:text-purple-300 font-medium text-xs tracking-wider uppercase mb-4"
           >
             <MessageSquare className="w-4 h-4" />
@@ -162,7 +161,7 @@ export function Testimonials() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
@@ -175,7 +174,7 @@ export function Testimonials() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
@@ -184,7 +183,13 @@ export function Testimonials() {
         </div>
 
         {/* Testimonials Slider */}
-        <div className="relative max-w-7xl mx-auto overflow-hidden">
+        <motion.div
+          variants={middleItemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-100px" }}
+          className="relative max-w-7xl mx-auto overflow-hidden"
+        >
           {/* Fading edges */}
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
@@ -314,10 +319,16 @@ export function Testimonials() {
               ))}
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Client Logos Strip */}
-        <div className="mt-24 border-t border-slate-200 dark:border-white/[0.05] pt-12 overflow-hidden relative w-full">
+        <motion.div
+          variants={middleItemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-100px" }}
+          className="mt-24 border-t border-slate-200 dark:border-white/[0.05] pt-12 overflow-hidden relative w-full"
+        >
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white">
               Brands We've{" "}
@@ -407,7 +418,7 @@ export function Testimonials() {
               ))}
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, BarChart3, Cloud, ScrollText, CheckCircle2 } from "lucide-react";
-import { ThreeHeroBg } from "./ThreeHeroBg";
 import { TiltCard } from "./TiltCard";
 import { Shirt } from "lucide-react";
 import vishraLogo from "../img/new-logo-vishra.png";
@@ -43,8 +42,6 @@ function Counter({ from, to }: { from: number; to: number }) {
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex items-center overflow-hidden pt-24 md:pt-16">
-      {/* Three.js Liquid Background */}
-      <ThreeHeroBg />
 
       {/* Decorative Blur Orbs */}
       <div className="absolute top-[10%] left-[5%] w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
@@ -69,7 +66,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
             </span>
-            First Digital marketing & advertising agency in Rahuri
+            Leading Digital Marketing & Creative Agency in Rahuri
           </motion.div>
 
           <motion.h1
@@ -78,9 +75,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-extrabold text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-slate-400"
           >
-            Best Digital Marketing Agency in{" "}
+            Top Digital Marketing Agency in{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
-              Rahuri
+              Rahuri, Ahilyanagar
             </span>
           </motion.h1>
 

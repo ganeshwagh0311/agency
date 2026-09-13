@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /images/
+Allow: /fonts/
 
-# Sitemap
 Sitemap: https://www.drishak.in/sitemap.xml

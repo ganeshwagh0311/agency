@@ -7,18 +7,38 @@ interface RouterContextProps {
 
 const RouterContext = createContext<RouterContextProps | undefined>(undefined);
 
+const resolvePath = (rawPath: string) => {
+  if (typeof window !== "undefined" && window.location.protocol === "file:") {
+    return "/";
+  }
+  if (rawPath.endsWith("/index.html") || rawPath.endsWith("index.html")) {
+    return "/";
+  }
+  return rawPath;
+};
+
 export function RouterProvider({ children }: { children: React.ReactNode }) {
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(() => resolvePath(window.location.pathname));
 
   useEffect(() => {
     const handlePopState = () => {
-      setPath(window.location.pathname);
+      setPath(resolvePath(window.location.pathname));
     };
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   const navigate = (to: string) => {
+    if (typeof window !== "undefined" && window.location.protocol === "file:") {
+      if (to.startsWith("#")) {
+        const el = document.getElementById(to.slice(1));
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      setPath(to);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     if (window.location.pathname !== to) {
       window.history.pushState({}, "", to);
       setPath(to);

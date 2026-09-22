@@ -27,7 +27,7 @@ export default function App() {
   // Route routing logic
   const cleanPath = path.replace(/\/$/, ""); // Strip trailing slash for routing comparison
 
-  const isHome = cleanPath === "" || cleanPath === "/index.html";
+  const isHome = cleanPath === "" || cleanPath === "/index.html" || cleanPath.endsWith("index.html") || (typeof window !== "undefined" && window.location.protocol === "file:");
   
   // Handle legacy aliases for smooth client-side transition
   let targetPath = cleanPath;

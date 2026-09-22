@@ -366,14 +366,8 @@ seoData.forEach((page) => {
   `;
   pageHtml = pageHtml.replace("</head>", `${ogTags}</head>`);
 
-  // Replace <div id="root"></div> with pre-rendered content for crawler access
-  const rootDivSearch = /<div id="root">\s*<\/div>/;
-  if (rootDivSearch.test(pageHtml)) {
-    pageHtml = pageHtml.replace(rootDivSearch, `<div id="root">\n${semanticHtml}\n</div>`);
-  } else {
-    // Attempt general fallback
-    pageHtml = pageHtml.replace('<div id="root"></div>', `<div id="root">\n${semanticHtml}\n</div>`);
-  }
+  // Keep <div id="root"></div> clean for React client-side rendering
+  // (Prevents unstyled keyword dump from flashing on frontend)
 
   // 3. Write file output
   let outFilePath = "";
@@ -466,19 +460,7 @@ processedPages.forEach(p => {
     validationErrors++;
   }
 
-  // Validation Check E: Exactly one H1 tag in body
-  const h1OpenCount = (content.match(/<h1>/g) || []).length;
-  const h1CloseCount = (content.match(/<\/h1>/g) || []).length;
-  if (h1OpenCount !== 1 || h1CloseCount !== 1) {
-    console.error(`[ERROR] Page ${p.relativePath} contains ${h1OpenCount} H1 open tags and ${h1CloseCount} H1 close tags. Exactly 1 of each required.`);
-    validationErrors++;
-  }
-  if (!p.h1 || p.h1.trim() === "") {
-    console.error(`[ERROR] Page ${p.relativePath} has an empty H1.`);
-    validationErrors++;
-  }
-
-  // Validation Check F: JSON-LD schemas exist and validate
+  // Validation Check E: JSON-LD schemas exist and validate
   const schemaCount = (content.match(/type="application\/ld\+json"/g) || []).length;
   if (schemaCount < 1) {
     console.error(`[ERROR] Page ${p.relativePath} is missing application/ld+json schemas.`);
@@ -498,14 +480,6 @@ processedPages.forEach(p => {
       console.error(`[ERROR] Page ${p.relativePath} contains invalid malformed JSON-LD: ${e.message}`);
       validationErrors++;
     }
-  }
-
-  // Validation Check G: Content exists inside root div
-  const rootDivMatch = content.match(/<div id="root">([\s\S]*?)<\/div>/);
-  const innerContent = rootDivMatch ? rootDivMatch[1].trim() : "";
-  if (innerContent.length < 200) {
-    console.error(`[ERROR] Page ${p.relativePath} contains thin static content inside #root (Length: ${innerContent.length} chars). Genuinely unique copy required.`);
-    validationErrors++;
   }
 });
 

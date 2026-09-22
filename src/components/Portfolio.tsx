@@ -44,7 +44,7 @@ export function Portfolio() {
       category: "digital",
       categoryName: "Website Development",
       client: "Tech Solutions",
-      description: "Custom-built, high-performance website developed by our premier website design and SEO company in Rahuri, featuring modern glassmorphism design and seamless user experience.",
+      description: "Custom-built, high-performance website featuring modern glassmorphism design, fast loading speeds, and seamless user experience.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
       link: "https://ganeshwagh0311.github.io/portfolio/",
     },
@@ -54,7 +54,7 @@ export function Portfolio() {
       category: "digital",
       categoryName: "Social Media Handling",
       client: "Global Brand",
-      description: "End-to-end social media page management, content scheduling, and community engagement strategies by our expert social media marketing agency in Rahuri Maharashtra.",
+      description: "End-to-end social media page management, content scheduling, and community engagement strategies designed to scale brand awareness.",
       image: socialMediaMixedImg,
       links: [
         { label: "Cafe Delight", url: "https://www.instagram.com/cafe_delight_official?igsh=emI5cGZqaDR5M2Q5" },

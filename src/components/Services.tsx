@@ -82,14 +82,14 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
     {
       id: "digital",
       icon: Megaphone,
-      title: "Digital Marketing ",
-      description: "We orchestrate data-driven multi-channel digital campaigns. As a premier Meta Ads Agency Rahuri and an expert online marketing agency Rahuri, we capture attention, engage local audiences, and drive measurable ROI.",
+      title: "Digital Marketing",
+      description: "We orchestrate data-driven multi-channel digital campaigns that capture attention, engage audiences, and drive measurable ROI.",
       features: [
-        "Affordable SEO services in Rahuri",
-        "Social Media marketing agency in Rahuri Maharashtra",
-        "Google Ads management services in Rahuri",
-        "Google Business Profile Optimization Rahuri",
-        "PPC Services Rahuri & CRO",
+        "Search Engine Optimization (SEO)",
+        "Social Media Marketing & Management",
+        "Google Ads & PPC Campaigns",
+        "Branding & Creative Content Strategy",
+        "Conversion Rate Optimization (CRO)",
       ],
       colorClass: "from-indigo-500 to-purple-500 text-indigo-400",
       glowClass: "group-hover:shadow-indigo-500/20",
@@ -204,9 +204,9 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
             transition={{ delay: 0.1 }}
             className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400"
           >
-            Comprehensive Marketing & Print{" "}
+            A Unified Ecosystem for{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Services in Rahuri
+              Brand Growth
             </span>
           </motion.h2>
           
@@ -217,7 +217,7 @@ export function Services({ selectedService, setSelectedService }: ServicesProps)
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-light"
           >
-            We eliminate vendor fragmentation by providing local business marketing services in Rahuri under one roof. Our integrated digital and print solutions are designed for speed, scale, and uncompromising quality.
+            We eliminate vendor fragmentation by providing complete marketing, branding, and printing solutions under one roof. Our integrated solutions are designed for speed, scale, and uncompromising quality.
           </motion.p>
         </div>
 

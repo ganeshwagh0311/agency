@@ -13,24 +13,24 @@ export function FAQ() {
 
   const faqs: FAQItem[] = [
     {
-      question: "Why do I need local SEO services in Rahuri , Ahilyanagar?",
-      answer: "Local SEO ensures your business ranks high when customers in Rahuri and Ahilyanagar search for your products or services. As the best SEO company in Rahuri, we optimize your Google Business Profile and local keywords to drive foot traffic, effectively providing lead generation services for businesses in Rahuri to boost online inquiries directly to you."
+      question: "Why does my business need local search optimization?",
+      answer: "Local search optimization ensures your business ranks at the top when prospective customers search for your products or services. We optimize your Google Business Profile, business citations, and regional presence to drive foot traffic, generate qualified leads, and boost online inquiries directly to your business."
     },
     {
-      question: "What makes Drishak the best digital marketing agency in Rahuri ,Ahilyanagar for small businesses?",
-      answer: "We offer an integrated ecosystem combining digital marketing, branding, and printing. Our affordable SEO services in Rahuri, combined with our ROI-focused approach, allow small businesses to scale effectively without dealing with multiple vendors."
+      question: "What makes Drishak the ideal partner for growing businesses?",
+      answer: "We offer an integrated ecosystem combining digital marketing, branding, web development, and custom printing under one roof. Our ROI-focused strategy allows businesses to scale effectively without having to manage multiple separate vendors."
     },
     {
-      question: "Do you provide website development services in Rahuri , Ahilyanagar?",
-      answer: "Yes! We are a leading website design company in Rahuri. We build premium, high-performance websites optimized for SEO and conversion. Whether you need an e-commerce platform or a corporate site, our web development team delivers."
+      question: "Do you provide custom website design & development services?",
+      answer: "Yes! We build bespoke, high-performance websites engineered for speed, search visibility, and maximum conversion. Whether you need an e-commerce platform, corporate website, or interactive landing page, our team delivers modern, responsive solutions."
     },
     {
-      question: "How does your Google Ads management work?",
-      answer: "Our Google Ads agency in Rahuri focuses on high-intent keywords to minimize wasted ad spend. We create targeted PPC campaigns, optimize landing pages, and continuously monitor performance to guarantee the highest return on investment for our clients."
+      question: "How does your Google Ads & paid advertising management work?",
+      answer: "Our advertising campaigns focus on high-intent buyer searches to eliminate wasted ad budget. We build targeted PPC campaigns, optimize high-converting landing pages, and continuously monitor performance to deliver the highest possible return on ad spend."
     },
     {
-      question: "Can you manage our social media presence?",
-      answer: "Absolutely. As an expert social media marketing agency in Rahuri Maharashtra, we handle content creation, community management, and paid social campaigns across platforms like Instagram, Facebook, and LinkedIn to build your brand and engage your audience."
+      question: "Can you manage our complete social media presence?",
+      answer: "Absolutely. We handle comprehensive social media management, creative content production, community engagement, and performance-driven paid social campaigns across Instagram, Facebook, and LinkedIn to build brand authority and engage your audience."
     }
   ];
 

@@ -67,61 +67,46 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Digital Marketing & SEO */}
+          {/* Services */}
           <div className="lg:col-span-3">
             <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
-              Digital & SEO
+              Services
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm">
-              <li><Link to="/digital-marketing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Digital Marketing Services</Link></li>
-              <li><Link to="/seo-services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">SEO Optimization Services</Link></li>
+              <li><Link to="/digital-marketing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Digital Marketing</Link></li>
+              <li><Link to="/seo-services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Search Engine Optimization</Link></li>
               <li><Link to="/google-ads" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Google Ads & PPC Management</Link></li>
-              <li><Link to="/lead-generation" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">B2B Lead Generation</Link></li>
               <li><Link to="/social-media-marketing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Social Media Marketing</Link></li>
-              <li><Link to="/branding" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Custom Branding & Identity</Link></li>
+              <li><Link to="/website-design-development" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Website Design & Development</Link></li>
+              <li><Link to="/clothing-printing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Custom Clothing Printing</Link></li>
+              <li><Link to="/paper-printing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Commercial Paper Printing</Link></li>
             </ul>
           </div>
 
-          {/* Web & Print Solutions */}
-          <div className="lg:col-span-2">
-            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
-              Web & Print
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm">
-              <li><Link to="/website-design-development" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Website Design & Dev</Link></li>
-              <li><Link to="/clothing-printing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Clothing & T-Shirt Print</Link></li>
-              <li><Link to="/paper-printing" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">2400 DPI Paper Print</Link></li>
-              <li><Link to="/performance-marketing-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Performance Marketing</Link></li>
-              <li><Link to="/technical-seo-audit" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Technical SEO Audit</Link></li>
-            </ul>
-          </div>
-
-          {/* Local Agency Hubs */}
-          <div className="lg:col-span-2">
-            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
-              Local Hubs
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm">
-              <li><Link to="/digital-marketing-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Agency in Rahuri</Link></li>
-              <li><Link to="/seo-services-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">SEO in Rahuri</Link></li>
-              <li><Link to="/google-ads-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Google Ads Rahuri</Link></li>
-              <li><Link to="/website-design-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Web Design Rahuri</Link></li>
-              <li><Link to="/digital-marketing-ahilyanagar" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Ahilyanagar Agency</Link></li>
-              <li><Link to="/local-seo-rahuri" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Google Maps SEO</Link></li>
-            </ul>
-          </div>
-
-          {/* Company & Blog */}
-          <div className="lg:col-span-2">
+          {/* Company */}
+          <div className="lg:col-span-3">
             <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
               Company
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm">
-              <li><Link to="/blog" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Marketing Insights Blog</Link></li>
               <li><Link to="#about-us" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About Drishak</Link></li>
               <li><Link to="#process" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Our Workflow</Link></li>
+              <li><Link to="#portfolio" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Featured Work</Link></li>
               <li><Link to="#testimonials" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Client Reviews</Link></li>
               <li><Link to="#contact" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Contact Support</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources & Insights */}
+          <div className="lg:col-span-3">
+            <h4 className="font-sans font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-5">
+              Insights & Resources
+            </h4>
+            <ul className="flex flex-col gap-2.5 text-sm">
+              <li><Link to="/blog" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Marketing Insights Blog</Link></li>
+              <li><Link to="/technical-seo-audit" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Technical Website Audit</Link></li>
+              <li><Link to="/lead-generation" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">B2B Lead Generation</Link></li>
+              <li><Link to="/branding" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Custom Branding</Link></li>
               <li><Link to="/sitemap.xml" target="_blank" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">XML Sitemap</Link></li>
             </ul>
           </div>

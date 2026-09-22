@@ -88,7 +88,7 @@ export function BlogPage({ path }: BlogPageProps) {
           {/* Grid of articles */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((art) => {
-              // Determine category tags based on keywords/titles
+              // Determine category tags based on topic/titles
               let category = "SEO Insights";
               if (art.slug.includes("google-ads") || art.slug.includes("ppc")) category = "Google Ads";
               if (art.slug.includes("facebook") || art.slug.includes("lead-generation")) category = "Paid Social";
